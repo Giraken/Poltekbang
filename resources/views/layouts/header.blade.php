@@ -17,9 +17,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,19 +25,19 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-transparent">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Navbar</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a class="nav-link @yield('beranda')" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link" aria-current="page" href="#">Beranda</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle @yield('ats-message')" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       ATS Message
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -50,7 +47,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link @yield('incoming-message')" href="#">Incoming Message</a>
+                    <a class="nav-link" href="#">Incoming Message</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Sent Message</a>
@@ -62,14 +59,6 @@
               </div>
             </div>
           </nav>
-        <main class="py-4">
-            @yield('content')
-        </main>
-        <footer class="fixed-bottom d-flex bg-black justify-content-center align-items-center">
-            <div>
-                Copyright Poltekbang 2022
-            </div>
-        </footer>
     </div>
 </body>
 

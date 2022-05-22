@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="reg container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" style="border: 1px solid #000000;border-radius: 13px;margin-top:20%">
+            <div class="card" style="border: 1px solid #000000;border-radius: 13px;">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="row">
+                        <div class="row align-items-center p-3">
                             <div class="col-4">
-                                <img src="img/unnamed.jpg" alt="Logo" style="width:115%;margin-top:55%">
+                                <img src="img/unnamed.jpg" alt="Logo" style="width:100%;">
                             </div>
 
                             <div class="col-8">
-                                <h3 style="text-align: center;margin-left:10%;margin-bottom:10%">Flight Plan</h3>
+                                <h3 style="text-align: center;margin-left:0%;margin-bottom:10%">Flight Plan</h3>
                                 <div class="row mb-3">
                                     <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nama') }}</label>
 

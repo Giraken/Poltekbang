@@ -1,20 +1,16 @@
 @extends('layouts.app')
-
+@section('ats-message', 'active')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="border: 1px solid #000000;border-radius: 13px;">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="">
                         @csrf
                         <div class="row align-items-center p-3">
-                            <div class="col-4">
-                                <img src="img/unnamed.jpg" alt="Logo" style="width:120%">
-                            </div>
-
-                            <div class="col-8">
-                                <h3 style="text-align: center">Flight Plan</h3>
+                            <div class="col">
+                                <h3 style="text-align: center">Search ATS Message</h3>
                                 <div class="row mb-3">
                                     <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
@@ -61,16 +57,11 @@
 
                                 <div class="row mb-0" style="margin-top:3%">
                                     <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn" style="width: 38%;background-color:#FFFFFF;border: 1px solid #000000;">
-                                            {{ __('Login') }}
+                                        <button type="submit" class="btn btn" style="width: 70px; background-color:#FFFFFF;border: 1px solid #000000;">
+                                            {{ __('View') }}
                                         </button>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn" style="margin-top: 5%;background-color:#FFFFFF;border: 1px solid #000000">
-                                            {{ __('Create Account') }}
+                                        <button type="submit" class="btn btn" style="width: 70px; background-color:#FFFFFF;border: 1px solid #000000">
+                                            {{ __('Reset') }}
                                         </button>
                                     </div>
                                 </div>

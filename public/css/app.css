@@ -11287,6 +11287,10 @@ textarea.form-control-lg {
   }
 }
 
+#app {
+  /* position: relative; */
+}
+
 nav {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -11315,4 +11319,12 @@ footer {
   font-weight: 700;
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1380px) {
+  .reg {
+    margin-bottom: 50px;
+  }
 }

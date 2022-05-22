@@ -11323,6 +11323,11 @@ footer {
   bottom: 0;
 }
 
+form label {
+  overflow: visible;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 1380px) {
   .reg {
     margin-bottom: 50px;

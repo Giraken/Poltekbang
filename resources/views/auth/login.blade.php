@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" style="border: 1px solid #000000;border-radius: 13px;">
+            <div class="card shadow" style="border: 1px solid #000000;border-radius: 13px;">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" style="font-family: 'Poppins', sans-serif;">
                         @csrf
                         <div class="row align-items-center p-3">
                             <div class="col-4">
@@ -60,16 +60,11 @@
                                 @endif
 
                                 <div class="row mb-0" style="margin-top:3%">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn" style="width: 38%;background-color:#FFFFFF;border: 1px solid #000000;">
+                                    <div class="col-md-6 offset-md-4 d-flex flex-column gap-3 align-items-center">
+                                        <button type="submit" class="btn btn text-uppercase" style="width: 175px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                             {{ __('Login') }}
                                         </button>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn" style="margin-top: 5%;background-color:#FFFFFF;border: 1px solid #000000">
+                                        <button type="submit" class="btn btn text-uppercase" style="width: 175px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                             {{ __('Create Account') }}
                                         </button>
                                     </div>

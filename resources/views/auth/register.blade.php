@@ -4,9 +4,9 @@
 <div class="reg container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" style="border: 1px solid #000000;border-radius: 13px;">
+            <div class="card shadow" style="border: 1px solid #000000;border-radius: 13px;">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" style="font-family: 'Poppins', sans-serif;">
                         @csrf
                         <div class="row align-items-center p-3">
                             <div class="col-4">
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="row mb-5">
                                     <label for="nomor telfon" class="col-md-4 col-form-label text-md-end">{{ __('No. HP') }}</label>
 
                                     <div class="col-md-6">
@@ -111,19 +111,20 @@
                                 </div>
 
                                 <div class="row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn" style="margin-top: 5%;margin-left:15%;background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
+                                    <div class="col-md-6 offset-md-4 d-flex flex-column gap-3 justify-content-center align-items-center">
+                                        <button type="submit" class="btn btn" style="width: 175px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                             {{ __('Create Account') }}
                                         </button>
+                                        <div class="text-center" style="">
+                                            <p style="font-weight: 600;">Have Account?<br><a class="btn btn-link" href="{{ route('login') }}" style="margin-top: -10px; font-weight: 600">
+                                                {{ __('Login Now') }}
+                                            </a></p>
+
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div style="margin-left:47%">
-                                    <p style="margin-top:7%;font-weight: 600">Have Account?</p>
-                                    <a class="btn btn-link" href="{{ route('login') }}" style="margin-top:-16%;font-weight: 600">
-                                        {{ __('Login Now') }}
-                                    </a>
-                                </div>
+
 
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('ats-message', 'active')
 @section('content')
-<div class="container mt-5 mb-5">
+<div class="container mt-5" style="margin-bottom: 10rem;">
     <div class="row justify-content-center">
         <div class="col">
             <div class="card border-0 shadow" style="border-radius: 13px;">
@@ -10,7 +10,7 @@
                         @csrf
                         <div class="row align-items-center p-3">
                             <div class="col">
-                                <h3 class="text-uppercase">Departure (DEP) Message</h3>
+                                <h3 class="text-uppercase">Arrival (ARR) Message</h3>
                                 <div class="row mb-2">
                                     <div class="col-3 d-inline-flex gap-2">
                                         <button type="submit" class="btn btn-primary text-white">
@@ -143,24 +143,12 @@
                                     <div class="">
                                         <i class="bi bi-check2 fs-1"></i>
                                     </div>
-                                    <div>Departure (DEP)</div>
+                                    <div>Arrival (ARR)</div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
                                         <label for="aircraft-id" class="me-2 mb-0 col-form-label text-primary">{{ __('AIRCRAFT ID') }}</label>
                                         <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
-                                    </div>
-                                    <div class="col-1 me-4 fw-bold">
-                                        <label for="ssr-mode" class="me-2 mb-0 col-form-label text-primary">{{ __('SSR MODE') }}</label>
-                                        <div class="d-inline-flex align-items-center gap-2">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="A" style="width: 30px; height: 30px;">
-                                            <label class="form-check-label" for="inlineCheckbox1">A</label>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-1 me-4 fw-bold">
-                                        <label for="code" class="me-2 mb-0 col-form-label text-primary">{{ __('CODE') }}</label>
-                                        <input name="code" id="code" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
                                         <label for="dep-id" class="me-2 mb-0 col-form-label text-primary">{{ __('DEP ID') }}</label>
@@ -171,14 +159,22 @@
                                         <input name="time" id="time" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
-                                        <label for="dest-id" class="me-2 mb-0 col-form-label text-primary">{{ __('DEST ID') }}</label>
-                                        <input name="dest-id" id="dest-id" class="p-2 rounded form-control">
+                                        <label for="arr-id" class="me-2 mb-0 col-form-label text-primary">{{ __('ARR ID') }}</label>
+                                        <input name="arr-id" id="arr-id" class="p-2 rounded form-control">
                                     </div>
-                                    <div class="col-2 me-4 fw-bold">
-                                        <label for="dof" class="me-2 mb-0 col-form-label text-primary">{{ __('DOF') }}</label>
-                                        <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
+                                    <div class="col-1 me-4 fw-bold">
+                                        <label for="time" class="me-2 mb-0 col-form-label text-primary">{{ __('TIME') }}</label>
+                                        <input name="time" id="time" class="p-2 rounded form-control">
                                     </div>
                                 </div>
+                                {{-- <hr class="text-secondary border-1"> --}}
+                                <div class="row mb-3">
+                                    <div class="col-8 me-4 fw-bold">
+                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label text-primary">{{ __('ARRIVAL AERODROME') }}</label>
+                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                    </div>
+                                </div>
+                                {{-- <hr class="text-secondary border-1"> --}}
                                 <div class="row mb-3">
                                     <div class="col-3 me-4 fw-bold">
                                         <label for="filled-by" class="me-2 mb-0 col-form-label text-primary">{{ __('FILED BY') }}</label>

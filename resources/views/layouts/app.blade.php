@@ -38,7 +38,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg bg-transparent shadow">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
                 <img src="img/unnamed.jpg" alt="poltekbang-logo" width="50">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,13 +54,13 @@
                       ATS Message
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="/search">Search ATS Message</a></li><hr>
                       <li><a class="dropdown-item" href="#">Filed Flight Plane (FPL)</a></li>
                       <li><a class="dropdown-item" href="/delay">Delay (DLA)</a></li>
-                      <li><a class="dropdown-item" href="#">Modification (CHG)</a></li>
+                      <li><a class="dropdown-item" href="modification">Modification (CHG)</a></li>
                       <li><a class="dropdown-item" href="/cancellation">Flight Plan Cancellation (CNL)</a></li>
                       <li><a class="dropdown-item" href="/departure">Departure (DEP)</a></li>
-                      <li><a class="dropdown-item" href="#">Arrival (ARR)</a></li>
-                      <li><a class="dropdown-item" href="/search">Search ATS Message</a></li>
+                      <li><a class="dropdown-item" href="/arrival">Arrival (ARR)</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">

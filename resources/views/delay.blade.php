@@ -16,7 +16,7 @@
                                         <button type="submit" class="btn btn-primary text-white">
                                             {{ __('SEND') }}
                                         </button>
-                                        <button type="submit" class="btn btn-warning text-white" style="">
+                                        <button type="reset" class="btn btn-warning text-white" style="">
                                             {{ __('RESET') }}
                                         </button>
                                     </div>
@@ -33,6 +33,10 @@
                                         <label for="priority" class="me-2 mb-0 col-form-label fw-bold">{{ __('PRIORITY:') }}</label>
                                         <select name="priority" id="priority" class="p-2 rounded form-select" style="width: 70px;">
                                             <option value="ff">FF</option>
+                                            <option value="dd">DD</option>
+                                            <option value="gg">GG</option>
+                                            <option value="kk">KK</option>
+                                            <option value="ss">SS</option>
                                         </select>
                                     </div>
                                     <div class="col-3 d-inline-flex align-items-center me-4">
@@ -160,7 +164,7 @@
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
                                         <label for="dof" class="me-2 mb-0 col-form-label text-primary">{{ __('DOF') }}</label>
-                                        <input name="dof" id="dof" class="p-2 rounded form-control">
+                                        <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
                                     </div>
                                 </div>
                                 <div class="row mb-3">

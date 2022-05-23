@@ -31,6 +31,12 @@ Route::get('/cancellation', function () {
 Route::get('/departure', function () {
     return view('departure');
 });
+Route::get('/modification', function () {
+    return view('modification');
+});
+Route::get('/arrival', function () {
+    return view('arrival');
+});
 
 Auth::routes();
 

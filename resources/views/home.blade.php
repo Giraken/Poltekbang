@@ -2,157 +2,118 @@
 @section('beranda', 'active')
 @section('content')
 <style>
+    * {
+        overflow-x: hidden;
+    }
+
     img:hover{
         opacity: 0.5;
     }
-</style>
-    <img src="img/gerbang3.jpeg" alt="gerbang" style="width:100%;opacity:1">
-    <div style="
-        position: absolute;
-        top: 30%;
-        color:#FFFFFF;
-    ">
-        <p style="
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 55px;
-            line-height: 70px;
-            text-align: center;
-        ">
-            Menyelenggarakan program pendidikan vokasi, penelitian, dan pengabdian kepada masyarakat di bidang penerbangan.</p>
-    </div>
-    <div style="
-        position: absolute;
-        top: 65%;
-        left: 32%;
-        transform: translate(-10%, -10%);
-        color:#FFFFFF
-    ">
-        <p style="
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 25px;
-            line-height: 35px;
-            text-align: center;
-        ">
-            Taruna dan Taruni Poltekbang Surabaya belajar dan hidup di kampus,<br>
-            sehingga menjadikan kampus sebagai rumah kedua mereka </p>
-    </div>
 
-    <div style="
-        position: absolute;
-        top: 75%;
-        left: 25%;
-        transform: translate(-10%, -10%);
-        color:#FFFFFF
-    ">
-        <p style="
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 25px;
-            line-height: 29px;
-            text-align: center;
-        ">
-            Education and training supported by facilities and infrastructures with modern technology</p>
-    </div>
+    .hero {
+        height: 100vh;
+        width: 100vw;
+        background-image: url("img/gerbang3.jpeg");
+        background-position: center;
+        background-size: cover;
+    }
 
-    <div style="
-        top:115%;
-        left:40%;
-        position: absolute;
+    .hero-title-1 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 55px;
+        text-align: center;
+    }
 
-    ">
-        <p style="font-family: 'Poppins';
+    .hero-title-2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .hero-title-3 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .section-2 h1 {
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         font-size: 64px;
         line-height: 96px;
         text-align: center;
+        color: #474747;
+    }
 
-        color: #474747;">
-        Look At Us</p>
+    .section-2 .image {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        z-index: 1;
+        text-decoration: none;
+        overflow: hidden;
+    }
+
+    .section-2 .image1::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url("img/4.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        filter: brightness(50%);
+        z-index: 1;
+    }
+
+    .section-2 .image h2 {
+        font-family: 'Montserrat';
+        overflow: hidden;
+        color: #ffffff;
+        font-weight: bold;
+        z-index: 3;
+    }
+</style>
+<div>
+    <div class="hero d-flex flex-column justify-content-center p-5 align-items-center text-center overflow-hidden gap-5">
+        <h1 class="hero-title-1 text-center text-white fw-bold overflow-hidden w-75">
+            Menyelenggarakan program pendidikan vokasi, penelitian, dan pengabdian kepada masyarakat di bidang penerbangan.
+        </h1>
+        <h3 class="hero-title-2 text-white overflow-hidden w-50">
+            Taruna dan Taruni Poltekbang Surabaya belajar dan hidup di kampus,
+            sehingga menjadikan kampus sebagai rumah kedua mereka
+        </h3>
+        <h3 class="hero-title-3 text-white overflow-hidden w-100">
+            Education and training supported by facilities and infrastructures with modern technology
+        </h3>
     </div>
+    {{-- <img src="img/gerbang3.jpeg" alt="gerbang" style="width:100%;opacity:1"> --}}
 
-    <a href="">
-        <div style="
-            top:133%;
-            left:7%;
-            position: absolute;
-        ">
-            <img src="img/4.jpg" alt="about us" style="width: 75%;filter:brightness(70%)">
-            <div style="
-                top:50%;
-                left:25%;
-                position: absolute;
-            ">
-                <p style="
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 36px;
-                    line-height: 54px;
-                    text-align: center;
-                    color: #FFFFFF;
-                ">
-                    About Us</p>
-            </div>
+    <div class="section-2 mt-5">
+        <h1 class="">Look At Us</h1>
+        <div class="d-flex justify-content-center align-items-center gap-5 w-100">
+            <a href="" class="image image1 d-flex justify-content-center align-items-center">
+                <h2 class="fw-bold shadow">About Us</h2>
+            </a>
+            <a href="" class="image image1 d-flex justify-content-center align-items-center">
+                <h2 class="fw-bold shadow">About Us</h2>
+            </a>
+            <a href="" class="image image1 d-flex justify-content-center align-items-center">
+                <h2 class="fw-bold shadow">About Us</h2>
+            </a>
         </div>
-    </a>
-
-    <a href="">
-        <div style="
-            top:133%;
-            left:37%;
-            position: absolute;
-        ">
-            <img src="img/5.jpg" alt="about us" style="width: 125.5%;filter:brightness(70%)">
-            <div style="
-                top:50%;
-                left:40%;
-                position: absolute;
-            ">
-                <p style="
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 36px;
-                    line-height: 54px;
-                    text-align: center;
-                    color: #FFFFFF;
-                ">
-                    Message</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div style="
-            top:133%;
-            left:65.5%;
-            position: absolute;
-        ">
-            <img class="hover" src="img/6.jpg" alt="about us" style="width: 136.7%;filter:brightness(70%)">
-            <div style="
-                top:50%;
-                left:45%;
-                position: absolute;
-            ">
-                <p style="
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 36px;
-                    line-height: 54px;
-                    text-align: center;
-                    color: #FFFFFF;
-                ">
-                    Contact</p>
-            </div>
-        </div>
-    </a>
+    </div>
 
     <div class="Poltekbang Surabaya" style="
         top:190%;
@@ -293,5 +254,5 @@
             Email:mail@poltekbangsby.ac.id
         </p>
     </div>
-
+</div>
 @endsection

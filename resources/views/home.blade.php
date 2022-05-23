@@ -10,7 +10,7 @@
         opacity: 0.5;
     }
 
-    .hero {
+    .hero1 {
         height: 100vh;
         width: 100vw;
         background-image: url("img/gerbang3.jpeg");
@@ -18,7 +18,7 @@
         background-size: cover;
     }
 
-    .hero-title-1 {
+    .hero1-title-1 {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
@@ -26,7 +26,7 @@
         text-align: center;
     }
 
-    .hero-title-2 {
+    .hero1-title-2 {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
@@ -35,7 +35,7 @@
         text-align: center;
     }
 
-    .hero-title-3 {
+    .hero1-title-3 {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
@@ -56,8 +56,8 @@
 
     .section-2 .image {
         position: relative;
-        width: 350px;
-        height: 350px;
+        width: 450px;
+        height: 450px;
         z-index: 1;
         text-decoration: none;
         overflow: hidden;
@@ -77,6 +77,34 @@
         z-index: 1;
     }
 
+    .section-2 .image2::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url("img/5.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        filter: brightness(50%);
+        z-index: 1;
+    }
+
+    .section-2 .image3::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url("img/6.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        filter: brightness(50%);
+        z-index: 1;
+    }
+
     .section-2 .image h2 {
         font-family: 'Montserrat';
         overflow: hidden;
@@ -84,21 +112,121 @@
         font-weight: bold;
         z-index: 3;
     }
+
+    .section-2 h2 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 96px;
+        text-align: left;
+        color: #474747;
+        margin-left: 2%;
+    }
+
+    .hero2{
+        height: 100vh;
+        width: 100vw;
+        background-image: url("img/poltekbang.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero2-title-1 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 55px;
+        text-align: right;
+        margin-right:-20%;
+    }
+
+    .hero2-title-2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: right;
+        margin-right:-20%;
+    }
+
+    .hero2-title-3 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 55px;
+        text-align: left;
+        margin-left:-20%;
+        margin-top:3%;
+    }
+
+    .hero2-title-4 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: left;
+        margin-left:-20%;
+    }
+
+    .section-2 .contact {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 96px;
+        text-align: right;
+        color: #474747;
+        margin-right:2%
+    }
+
+    .hero3{
+        height: 70vh;
+        width: 100vw;
+        background-color: #002E3B;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero3-title-1 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .hero3-title-2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: left;
+        color:#99abb8;
+    }
+
+    .hero3-title-3 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        text-align: left;
+        color:#99abb8;
+    }
 </style>
 <div>
-    <div class="hero d-flex flex-column justify-content-center p-5 align-items-center text-center overflow-hidden gap-5">
-        <h1 class="hero-title-1 text-center text-white fw-bold overflow-hidden w-75">
+    <div class="hero1 d-flex flex-column justify-content-center p-5 align-items-center text-center overflow-hidden gap-5">
+        <h1 class="hero1-title-1 text-center text-white fw-bold overflow-hidden w-75">
             Menyelenggarakan program pendidikan vokasi, penelitian, dan pengabdian kepada masyarakat di bidang penerbangan.
         </h1>
-        <h3 class="hero-title-2 text-white overflow-hidden w-50">
+        <h3 class="hero1-title-2 text-white overflow-hidden w-50">
             Taruna dan Taruni Poltekbang Surabaya belajar dan hidup di kampus,
             sehingga menjadikan kampus sebagai rumah kedua mereka
         </h3>
-        <h3 class="hero-title-3 text-white overflow-hidden w-100">
+        <h3 class="hero1-title-3 text-white overflow-hidden w-100">
             Education and training supported by facilities and infrastructures with modern technology
         </h3>
     </div>
-    {{-- <img src="img/gerbang3.jpeg" alt="gerbang" style="width:100%;opacity:1"> --}}
 
     <div class="section-2 mt-5">
         <h1 class="">Look At Us</h1>
@@ -106,153 +234,69 @@
             <a href="" class="image image1 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">About Us</h2>
             </a>
-            <a href="" class="image image1 d-flex justify-content-center align-items-center">
-                <h2 class="fw-bold shadow">About Us</h2>
+            <a href="" class="image image2 d-flex justify-content-center align-items-center">
+                <h2 class="fw-bold shadow">Message</h2>
             </a>
-            <a href="" class="image image1 d-flex justify-content-center align-items-center">
-                <h2 class="fw-bold shadow">About Us</h2>
+            <a href="" class="image image3 d-flex justify-content-center align-items-center">
+                <h2 class="fw-bold shadow">Contact</h2>
             </a>
         </div>
     </div>
 
-    <div class="Poltekbang Surabaya" style="
-        top:190%;
-        left:2%;
-        position: absolute;
-
-    ">
-        <p style="font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 96px;
-        text-align: center;
-
-        color: #474747;">
-        Poltekbang Surabaya</p>
+    <div class="section-2 mt-5">
+        <h2 class="">Poltekbang Surabaya</h2>
     </div>
 
-    <div style="
-        top:200%;
-        position: absolute;
-    ">
-        <img src="img/poltekbang.jpg" alt="about us" style="opacity: 1.0;filter:brightness(50%);width:185.9%">
-    </div>
-
-    <div style="
-        top:210%;
-        left:72%;
-        position: absolute;
-
-    ">
-        <p style="
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 42px;
-        line-height: 51px;
-        text-align: center;
-
-        color: #FFFFFF;">
-        Lembaga Pendidikan</p>
-    </div>
-
-    <div style="
-        top:220%;
-        left:15%;
-        right:3%;
-        position: absolute;
-
-    ">
-        <p style="
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 29px;
-        text-align: right;
-
-        color: #FFFFFF;">
+    <div class="hero2 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-5">
+        <h1 class="hero2-title-1 text-right text-white fw-bold overflow-hidden w-75">
+            Lembaga Pendidikan
+        </h1>
+        <h3 class="hero2-title-2 text-right text-white overflow-hidden w-75">
             Politeknik Penerbangan (Poltekbang) Surabaya (dh ATKP Surabaya) merupakan Lembaga Pendidikan Vokasi bidang aviasi yang Kredibel,
             baik dari lembaganya sendiri maupun dari dosen & pengajarnya. Terbukti dengan lulusannya yg handal dalam memberikan pelayanan pengendalian
             lalu lintas udara  di bandara yg sibuk di Indonesia dan sebagian dari alumninya sekarang sudah menduduki lower manager dalam usia yg relatif
             masih muda. <br><br>
             M. Khatim <br>
-            - Direktur Operasi Airnav Indonesia</p>
-    </div>
-
-    <div style="
-        top:270%;
-        left:2%;
-        position: absolute;
-
-    ">
-        <p style="
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 42px;
-        line-height: 51px;
-        text-align: center;
-
-        color: #FFFFFF;">
-        Professional</p>
-    </div>
-
-    <div style="
-        top:280%;
-        left:2%;
-        rigth:5%;
-        position: absolute;
-
-    ">
-        <p style="
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 29px;
-        text-align: left;
-
-        color: #FFFFFF;">
+            - Direktur Operasi Airnav Indonesia
+        </h3>
+        <h1 class="hero2-title-3 text-left text-white fw-bold overflow-hidden w-75">
+            Professional
+        </h1>
+        <h3 class="hero2-title-4 text-left text-white overflow-hidden w-75">
             Alumni ATKP/Poltekbang SBY terkenal memiliki sikap yang Baik, Respect dan peduli kepada orang lain <br> serta memiliki
             pengetahuan yang paripurna di bidangnya, sehingga dapat diterima di dunia Aviasi Indonesia. <br> <br>
             Alvin Surya Widiantara (Enroute 2007) <br>
-            - Airnav Indonesia, Alumni RKP 2A Tahun 2009	</p>
+            - Airnav Indonesia, Alumni RKP 2A Tahun 2009
+        </h3>
     </div>
 
-    <div class="Contact" style="
-        top:325%;
-        left:83%;
-        position: absolute;
-
-    ">
-        <p style="font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 64px;
-        line-height: 96px;
-        text-align: center;
-
-        color: #474747;">
-        Contact </p>
+    <div class="section-2 mt-5">
+        <h2 class="contact">Contact</h2>
     </div>
 
-    <div style="
-        top:335%;
-        position: absolute;
-        background-color:#002E3B;
-        color:#99abb8;
-
-    ">
-        <p>OUR ADDRESS #ffffff;</p>
-        font-family: Raleway;
-        <p>Poltekbang Surabaya
-            Jalan Jemur Andayani I No 73 Surabaya 60236 <br>
-            Phone:62 31 8410871 <br>
-            Fax: 62 31 8490005 <br>
-            Email:mail@poltekbangsby.ac.id
-        </p>
+    <div class="hero3 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-3">
+        <div class="row">
+            <div class="col-9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.1808770536636!2d112.73394434867716!3d-7.333573194681593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb472767ef69%3A0xa9dfcc58e1aa9194!2sPoltekbang%20Surabaya%2C%20Siwalankerto%2C%20Kec.%20Wonocolo%2C%20Kota%20SBY%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1653315917888!5m2!1sid!2sid"
+                width="1500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-3">
+                <img src="img/logo.png" alt="logo" style="width: 30%">
+                <h1 class="hero3-title-1 text-right text-white fw-bold overflow-hidden w-75">
+                    OUR ADDRESS
+                </h1>
+                <h3 class="hero3-title-2 text-right text-white fw-bold overflow-hidden w-75">
+                    Poltekbang Surabaya
+                </h3>
+                <p class="hero3-title-3 text-right text-white overflow-hidden w-75">
+                    Jalan Jemur Andayani I No 73 Surabaya 60236 <br>
+                    Phone:62 31 8410871 <br>
+                    Fax: 62 31 8490005 <br>
+                    Email:mail@poltekbangsby.ac.id
+                </p>
+            </div>
+        </div>
     </div>
+
 </div>
 @endsection

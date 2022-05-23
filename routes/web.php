@@ -22,6 +22,9 @@ Route::get('/home', function () {
 Route::get('/search', function () {
     return view('search');
 });
+Route::get('/delay', function () {
+    return view('delay');
+});
 
 Auth::routes();
 

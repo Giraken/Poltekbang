@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card shadow" style="border: 1px solid #000000;border-radius: 13px;">
+            <div class="card border-0 shadow" style="border-radius: 13px;">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" style="font-family: 'Poppins', sans-serif;">
                         @csrf
@@ -14,7 +14,7 @@
                             </div>
 
                             <div class="col-8">
-                                <h3 style="text-align: center">Flight Plan</h3>
+                                <h3 class="text-uppercase" style="text-align: center">Flight Plan</h3>
                                 <div class="row mb-3">
                                     <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 

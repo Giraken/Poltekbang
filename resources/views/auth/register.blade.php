@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="reg container">
+<div class="reg container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card shadow" style="border: 1px solid #000000;border-radius: 13px;">
+            <div class="card border-0 shadow" style="border-radius: 13px;">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" style="font-family: 'Poppins', sans-serif;">
                         @csrf

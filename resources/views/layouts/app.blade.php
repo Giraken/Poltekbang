@@ -17,6 +17,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
+    {{-- Bootstrap Icons --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -32,7 +34,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-transparent">
+        <nav class="navbar navbar-expand-lg bg-transparent shadow">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <img src="img/unnamed.jpg" alt="poltekbang-logo" width="50">
@@ -51,7 +53,7 @@
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item" href="#">Filed Flight Plane (FPL)</a></li>
-                      <li><a class="dropdown-item" href="#">Delay (DLA)</a></li>
+                      <li><a class="dropdown-item" href="/delay">Delay (DLA)</a></li>
                       <li><a class="dropdown-item" href="#">Modification (CHG)</a></li>
                       <li><a class="dropdown-item" href="#">Flight Plan Cancellation (CNL)</a></li>
                       <li><a class="dropdown-item" href="#">Departure (DEP)</a></li>

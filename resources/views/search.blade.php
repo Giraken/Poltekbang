@@ -2,7 +2,7 @@
 @section('ats-message', 'active')
 @section('content')
 <div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-5">
         <div class="col">
             <div class="card border-0 shadow" style="border-radius: 13px;">
                 <div class="card-body">
@@ -16,11 +16,12 @@
                                         <label for="msg-type" class="col-md-4 mb-0 col-form-label">{{ __('Type Message') }}</label>
                                         <select name="msg-type" id="msg-type" class="p-2 rounded form-select">
                                             <option value="FPL">FPL</option>
-                                            <option value="DLA">DLA</option>
                                             <option value="CHG">CHG</option>
+                                            <option value="DLA">DLA</option>
                                             <option value="CNL">CNL</option>
                                             <option value="DEP">DEP</option>
                                             <option value="ARR">ARR</option>
+                                            <option value="all-messages">-- ALL MESSAGES --</option>
                                         </select>
                                     </div>
                                     <div class="col">
@@ -41,17 +42,17 @@
                                     </div>
                                     <div class="col">
                                         <label for="etd" class="col-md-4 mb-0 col-form-label">{{ __('ETD') }}</label>
-                                        <input name="etd" id="etd" class="p-2 rounded form-control">
+                                        <input name="etd" type="number" id="etd" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col">
                                         <label for="to" class="col-md-4 mb-0 col-form-label">{{ __('TO') }}</label>
-                                        <input name="to" id="to" class="p-2 rounded form-control">
+                                        <input name="to" id="to" type="number" class="p-2 rounded form-control">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 d-inline-flex align-items-center me-4">
                                         <label for="dof" class="me-2 mb-0 col-form-label">{{ __('DOF') }}</label>
-                                        <input name="dof" id="dof" class="p-2 rounded form-control">
+                                        <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-2 d-inline-flex align-items-center me-4">
                                         <label for="reg" class="me-2 mb-0 col-form-label">{{ __('REG') }}</label>
@@ -65,27 +66,32 @@
                                 <div class="row mb-3">
                                     <div class="col-3 d-inline-flex align-items-center me-4">
                                         <label for="dof" class="me-2 mb-0 col-form-label">{{ __('Type of Flight') }}</label>
-                                        <select name="msg-type" id="msg-type" class="p-2 rounded form-select">
-                                            <option value="schedule">SCHEDULE</option>
+                                        <select name="msg-type" id="msg-type" class="p-2 rounded form-select text-uppercase">
+                                            <option value="schedule">Schedule</option>
+                                            <option value="non-schedule">Non schedule</option>
+                                            <option value="all-types">-- All types --</option>
                                         </select>
                                     </div>
                                     <div class="col-3 d-inline-flex align-items-center me-4">
                                         <label for="dof" class="me-2 mb-0 col-form-label">{{ __('Group') }}</label>
-                                        <select name="msg-type" id="msg-type" class="p-2 rounded form-select">
-                                            <option value="domestic">DOMESTIC</option>
+                                        <select name="msg-type" id="msg-type" class="p-2 rounded form-select text-uppercase">
+                                            <option value="domestic">Domestic</option>
+                                            <option value="overflying">Overflying</option>
+                                            <option value="international">international</option>
+                                            <option value="all-messages">-- All messages --</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 d-inline-flex align-items-center me-4">
                                         <label for="from" class="fw-bold me-2 mb-0 col-form-label" style="width: 50px;">{{ __('From') }}</label>
-                                        <input name="from" id="from" class="p-2 rounded form-control" placeholder="YYYY-MM-DD">
+                                        <input name="from" id="from" type="datetime-local" class="p-2 rounded form-control" placeholder="YYYY-MM-DD">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 d-inline-flex align-items-center me-4">
                                         <label for="to" class="fw-bold me-2 mb-0 col-form-label" style="width: 52px;">{{ __('To') }}</label>
-                                        <input name="to" id="to" class="p-2 rounded form-control" placeholder="YYYY-MM-DD">
+                                        <input name="to" id="to" type="datetime-local" class="p-2 rounded form-control" placeholder="YYYY-MM-DD">
                                     </div>
                                 </div>
                                 <div class="row mb-0">
@@ -93,7 +99,7 @@
                                         <button type="submit" class="btn btn-primary text-white">
                                             {{ __('VIEW') }}
                                         </button>
-                                        <button type="submit" class="btn btn-warning text-white" style="">
+                                        <button type="reset" class="btn btn-warning text-white" style="">
                                             {{ __('RESET') }}
                                         </button>
                                     </div>
@@ -102,7 +108,50 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card border-0 shadow" style="border-radius: 13px;">
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Originator</th>
+                            <th scope="col">Date/Time</th>
+                            <th scope="col">Aircraft ID</th>
+                            <th scope="col">REG</th>
+                            <th scope="col">TYPE OF FLIGHT</th>
+                            <th scope="col">DOF</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">DEP AD</th>
+                            <th scope="col">EOBT</th>
+                            <th scope="col">Speed</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Route</th>
+                            <th scope="col">DEST AD</th>
+                            <th scope="col">EET</th>
+                            <th scope="col">ATD</th>
+                            <th scope="col">RMK</th>
+                            <th scope="col">ATA</th>
+                            <th scope="col">DLA</th>
+                            <th scope="col">CHG</th>
+                            <th scope="col">CNL</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
             </div>
         </div>
     </div>

@@ -37,6 +37,12 @@ Route::get('/modification', function () {
 Route::get('/arrival', function () {
     return view('arrival');
 });
+Route::get('/profil', function () {
+    return view('profil');
+});
+Route::get('/admin', function () {
+    return view('admin');
+});
 
 Auth::routes();
 

@@ -70,7 +70,7 @@
                     <a class="nav-link" href="#">Sent Message</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">User</a>
+                    <a class="nav-link @yield('user')" href="/profil">User</a>
                   </li>
                 </ul>
               </div>

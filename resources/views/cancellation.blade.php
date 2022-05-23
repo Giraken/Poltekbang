@@ -10,7 +10,7 @@
                         @csrf
                         <div class="row align-items-center p-3">
                             <div class="col">
-                                <h3 class="text-uppercase">Delay (DLA) Message</h3>
+                                <h3 class="text-uppercase">Flight Plane Cancellation (CNL) Message</h3>
                                 <div class="row mb-2">
                                     <div class="col-3 d-inline-flex gap-2">
                                         <button type="submit" class="btn btn-primary text-white">
@@ -139,7 +139,7 @@
                                     <div class="">
                                         <i class="bi bi-check2 fs-1"></i>
                                     </div>
-                                    <div>Delay (DLA)</div>
+                                    <div>Cancellation (CNL)</div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">

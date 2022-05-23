@@ -25,6 +25,12 @@ Route::get('/search', function () {
 Route::get('/delay', function () {
     return view('delay');
 });
+Route::get('/cancellation', function () {
+    return view('cancellation');
+});
+Route::get('/departure', function () {
+    return view('departure');
+});
 
 Auth::routes();
 

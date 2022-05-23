@@ -55,8 +55,8 @@
                       <li><a class="dropdown-item" href="#">Filed Flight Plane (FPL)</a></li>
                       <li><a class="dropdown-item" href="/delay">Delay (DLA)</a></li>
                       <li><a class="dropdown-item" href="#">Modification (CHG)</a></li>
-                      <li><a class="dropdown-item" href="#">Flight Plan Cancellation (CNL)</a></li>
-                      <li><a class="dropdown-item" href="#">Departure (DEP)</a></li>
+                      <li><a class="dropdown-item" href="/cancellation">Flight Plan Cancellation (CNL)</a></li>
+                      <li><a class="dropdown-item" href="/departure">Departure (DEP)</a></li>
                       <li><a class="dropdown-item" href="#">Arrival (ARR)</a></li>
                       <li><a class="dropdown-item" href="/search">Search ATS Message</a></li>
                     </ul>

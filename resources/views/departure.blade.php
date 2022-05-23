@@ -10,7 +10,7 @@
                         @csrf
                         <div class="row align-items-center p-3">
                             <div class="col">
-                                <h3 class="text-uppercase">Delay (DLA) Message</h3>
+                                <h3 class="text-uppercase">Flight Plane Cancellation (CNL) Message</h3>
                                 <div class="row mb-2">
                                     <div class="col-3 d-inline-flex gap-2">
                                         <button type="submit" class="btn btn-primary text-white">
@@ -139,12 +139,24 @@
                                     <div class="">
                                         <i class="bi bi-check2 fs-1"></i>
                                     </div>
-                                    <div>Delay (DLA)</div>
+                                    <div>Departure (DEP)</div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
                                         <label for="aircraft-id" class="me-2 mb-0 col-form-label text-primary">{{ __('AIRCRAFT ID') }}</label>
                                         <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
+                                    </div>
+                                    <div class="col-1 me-4 fw-bold">
+                                        <label for="ssr-mode" class="me-2 mb-0 col-form-label text-primary">{{ __('SSR MODE') }}</label>
+                                        <div class="d-inline-flex align-items-center gap-2">
+                                            <input name="ssr-mode" id="ssr-mode" class="p-2 w-50 rounded form-control">
+                                            <label for="ssr-mode">A</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-1 me-4 fw-bold">
+                                        <label for="code" class="me-2 mb-0 col-form-label text-primary">{{ __('CODE') }}</label>
+                                        <input name="code" id="code" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
                                         <label for="dep-id" class="me-2 mb-0 col-form-label text-primary">{{ __('DEP ID') }}</label>

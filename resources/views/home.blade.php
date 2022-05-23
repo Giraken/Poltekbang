@@ -6,10 +6,6 @@
         overflow-x: hidden;
     }
 
-    img:hover{
-        opacity: 0.5;
-    }
-
     .hero1 {
         height: 100vh;
         width: 100vw;

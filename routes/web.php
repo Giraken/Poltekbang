@@ -46,6 +46,9 @@ Route::get('/admin', function () {
 Route::get('/incoming-message', function () {
     return view('incoming-message');
 });
+Route::get('/message', function () {
+    return view('message');
+});
 
 Auth::routes();
 

@@ -148,12 +148,55 @@
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>
+                                {{-- <a href="/message" type="button" class="btn btn-dark text-white"><i class="bi bi-search"></i></a> --}}
+                                <button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="modal fade" id="message-box" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5> --}}
+          <h3 class="modal-title text-uppercase">View AFTN</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {{-- Pesan nya ada di sini --}}
+            {{-- Contoh :
+            FF WADDZTZX WARRZTZX WAAFZQZA WADDZPZX WRRRZPZX WADDZPZX WAAAZPZX
+            240209 WADDZPZX
+            (DLA-LNI923-WADD1050-WARR-DOF/220524) --}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+          </div>
+      </div>
     </div>
 </div>
 @endsection

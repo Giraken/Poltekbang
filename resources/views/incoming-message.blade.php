@@ -6,7 +6,7 @@
         <div class="col">
             <div class="card border-0 shadow" style="border-radius: 13px;">
                 <div class="card-body table-responsive p-5">
-                    <h3 class="text-uppercase mb-5">Incoming Messages</h3>
+                    <h3 class="text-uppercase mb-5 fw-bold">Incoming Messages</h3>
                     <nav>
                         <div class="nav nav-tabs text-black" id="nav-tab" role="tablist">
                           <button class="nav-link text-black active" id="nav-first-tab" data-bs-toggle="tab" data-bs-target="#nav-first" type="button" role="tab" aria-controls="nav-first" aria-selected="true">WEB Flight Plan</button>

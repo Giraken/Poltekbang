@@ -35,7 +35,7 @@
         }
     }
 </style>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5 shadow border-0 p-5" style="border-radius: 13px;">
         <p>
             <b>Account Information</b>
             <table>
@@ -68,7 +68,7 @@
                     <label for="oldpassword">Old Password :</label>
                 </div>
                 <div class="col-25">
-                    <input type="text" id="oldpassword" name="oldpassword" placeholder="Enter old password">
+                    <input type="text" class="form-control" id="oldpassword" name="oldpassword" placeholder="Enter old password">
                 </div>
             </div>
             <div class="row">
@@ -76,7 +76,7 @@
                     <label for="newpassword">New Password :</label>
                 </div>
                 <div class="col-25">
-                    <input type="text" id="newpassword" name="newpassword" placeholder="Enter new password">
+                    <input type="text" class="form-control" id="newpassword" name="newpassword" placeholder="Enter new password">
                 </div>
             </div>
             <div class="row">
@@ -84,7 +84,7 @@
                     <label for="confirm">Confirm New Password :</label>
                 </div>
                 <div class="col-25">
-                    <input type="text" id="confirm" name="confirm" placeholder="Re-type new password">
+                    <input type="text" class="form-control" id="confirm" name="confirm" placeholder="Re-type new password">
                 </div>
             </div>
         </form>

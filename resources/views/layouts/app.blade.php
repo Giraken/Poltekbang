@@ -36,10 +36,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-transparent shadow">
+        <nav class="navbar @yield('nav-position') navbar-expand-lg bg-light shadow">
             <div class="container-fluid">
               <a class="navbar-brand" href="/">
-                <img src="img/logo.png" alt="poltekbang-logo" width="100">
+                <img src="img/logo.png" alt="poltekbang-logo" width="80">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link @yield('incoming-message')" href="#">Incoming Message</a>
+                    <a class="nav-link @yield('incoming-message')" href="/incoming-message">Incoming Message</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Sent Message</a>

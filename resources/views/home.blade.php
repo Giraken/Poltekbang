@@ -1,17 +1,23 @@
 @extends('layouts.app')
+@section('nav-position', 'fixed-top')
 @section('beranda', 'active')
 @section('content')
 <style>
     * {
-        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
     }
 
     .hero1 {
         height: 100vh;
         width: 100vw;
-        background-image: url("img/gerbang3.jpeg");
+        /* background-image: url("img/gerbang3.jpeg"); */
         background-position: center;
         background-size: cover;
+        background-image:
+            linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),
+            url("img/gerbang3.jpeg")
+        ;
     }
 
     .hero1-title-1 {
@@ -123,9 +129,14 @@
     .hero2{
         height: 100vh;
         width: 100vw;
-        background-image: url("img/poltekbang.jpg");
+        background-image:
+            linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.5)),
+            url("img/poltekbang.jpg")
+        ;
         background-position: center;
         background-size: cover;
+        background-repeat: no-repeat;
+        /* background-image: url("img/poltekbang.jpg"); */
     }
 
     .hero2-title-1 {
@@ -190,6 +201,19 @@
         font-weight: 700;
         font-size: 24px;
         text-align: left;
+        position: relative;
+        z-index: 1;
+        /* background-color: red; */
+    }
+
+    .hero3-title-1::after {
+        content: '';
+        position: absolute;
+        background-color: #ffffff;
+        width: 12%;
+        height: 5px;
+        bottom: 0;
+        left: 0;
     }
 
     .hero3-title-2 {
@@ -210,7 +234,7 @@
         color:#99abb8;
     }
 </style>
-<div>
+<div class="" style="overflow-x: hidden;">
     <div class="hero1 d-flex flex-column justify-content-center p-5 align-items-center text-center overflow-hidden gap-5">
         <h1 class="hero1-title-1 text-center text-white fw-bold overflow-hidden w-75">
             Menyelenggarakan program pendidikan vokasi, penelitian, dan pengabdian kepada masyarakat di bidang penerbangan.
@@ -227,64 +251,65 @@
     <div class="section-2 mt-5">
         <h1 class="">Look At Us</h1>
         <div class="d-flex justify-content-center align-items-center gap-5 w-100">
-            <a href="" class="image image1 d-flex justify-content-center align-items-center">
+            <a href="#about" class="image image1 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">About Us</h2>
             </a>
             <a href="" class="image image2 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">Message</h2>
             </a>
-            <a href="" class="image image3 d-flex justify-content-center align-items-center">
+            <a href="#contact" class="image image3 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">Contact</h2>
             </a>
         </div>
     </div>
+    <div id="about" class="pt-5">
+        <div class="section-2 mt-5">
+            <h2 class="">Poltekbang Surabaya</h2>
+        </div>
 
-    <div class="section-2 mt-5">
-        <h2 class="">Poltekbang Surabaya</h2>
+        <div class="hero2 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-5">
+            <h1 class="hero2-title-1 text-right text-white fw-bold overflow-hidden w-75">
+                Lembaga Pendidikan
+            </h1>
+            <h3 class="hero2-title-2 text-right text-white overflow-hidden w-75">
+                Politeknik Penerbangan (Poltekbang) Surabaya (dh ATKP Surabaya) merupakan Lembaga Pendidikan Vokasi bidang aviasi yang Kredibel,
+                baik dari lembaganya sendiri maupun dari dosen & pengajarnya. Terbukti dengan lulusannya yg handal dalam memberikan pelayanan pengendalian
+                lalu lintas udara  di bandara yg sibuk di Indonesia dan sebagian dari alumninya sekarang sudah menduduki lower manager dalam usia yg relatif
+                masih muda. <br><br>
+                M. Khatim <br>
+                - Direktur Operasi Airnav Indonesia
+            </h3>
+            <h1 class="hero2-title-3 text-left text-white fw-bold overflow-hidden w-75">
+                Professional
+            </h1>
+            <h3 class="hero2-title-4 text-left text-white overflow-hidden w-75">
+                Alumni ATKP/Poltekbang SBY terkenal memiliki sikap yang Baik, Respect dan peduli kepada orang lain <br> serta memiliki
+                pengetahuan yang paripurna di bidangnya, sehingga dapat diterima di dunia Aviasi Indonesia. <br> <br>
+                Alvin Surya Widiantara (Enroute 2007) <br>
+                - Airnav Indonesia, Alumni RKP 2A Tahun 2009
+            </h3>
+        </div>
     </div>
 
-    <div class="hero2 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-5">
-        <h1 class="hero2-title-1 text-right text-white fw-bold overflow-hidden w-75">
-            Lembaga Pendidikan
-        </h1>
-        <h3 class="hero2-title-2 text-right text-white overflow-hidden w-75">
-            Politeknik Penerbangan (Poltekbang) Surabaya (dh ATKP Surabaya) merupakan Lembaga Pendidikan Vokasi bidang aviasi yang Kredibel,
-            baik dari lembaganya sendiri maupun dari dosen & pengajarnya. Terbukti dengan lulusannya yg handal dalam memberikan pelayanan pengendalian
-            lalu lintas udara  di bandara yg sibuk di Indonesia dan sebagian dari alumninya sekarang sudah menduduki lower manager dalam usia yg relatif
-            masih muda. <br><br>
-            M. Khatim <br>
-            - Direktur Operasi Airnav Indonesia
-        </h3>
-        <h1 class="hero2-title-3 text-left text-white fw-bold overflow-hidden w-75">
-            Professional
-        </h1>
-        <h3 class="hero2-title-4 text-left text-white overflow-hidden w-75">
-            Alumni ATKP/Poltekbang SBY terkenal memiliki sikap yang Baik, Respect dan peduli kepada orang lain <br> serta memiliki
-            pengetahuan yang paripurna di bidangnya, sehingga dapat diterima di dunia Aviasi Indonesia. <br> <br>
-            Alvin Surya Widiantara (Enroute 2007) <br>
-            - Airnav Indonesia, Alumni RKP 2A Tahun 2009
-        </h3>
-    </div>
+    <div class="pt-5" id="contact">
+        <div class="section-2 mt-5">
+            <h2 class="contact">Contact</h2>
+        </div>
 
-    <div class="section-2 mt-5">
-        <h2 class="contact">Contact</h2>
-    </div>
-
-    <div class="hero3 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-3">
-        <div class="row">
-            <div class="col-9">
+        <div class="hero3 d-inline-flex p-0 align-items-center overflow-hidden gap-5">
+            <div class="col-8 h-100">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.1808770536636!2d112.73394434867716!3d-7.333573194681593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb472767ef69%3A0xa9dfcc58e1aa9194!2sPoltekbang%20Surabaya%2C%20Siwalankerto%2C%20Kec.%20Wonocolo%2C%20Kota%20SBY%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1653315917888!5m2!1sid!2sid"
-                width="1500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                width="100%" height="100%" style="border:0;" allowfullscreen="1" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col-3">
+            <div class="col-4 h-100 d-flex flex-column justify-content-center gap-3">
                 <img src="img/logo.png" alt="logo" style="width: 30%">
-                <h1 class="hero3-title-1 text-right text-white fw-bold overflow-hidden w-75">
+                <h1 class="hero3-title-1 pb-4 text-white fw-bold overflow-hidden w-75">
                     OUR ADDRESS
                 </h1>
-                <h3 class="hero3-title-2 text-right text-white fw-bold overflow-hidden w-75">
+                <h3 class="hero3-title-2 text-white fw-bold overflow-hidden w-75">
                     Poltekbang Surabaya
                 </h3>
-                <p class="hero3-title-3 text-right text-white overflow-hidden w-75">
+                <p class="hero3-title-3 text-white overflow-hidden w-75">
                     Jalan Jemur Andayani I No 73 Surabaya 60236 <br>
                     Phone:62 31 8410871 <br>
                     Fax: 62 31 8490005 <br>
@@ -293,6 +318,5 @@
             </div>
         </div>
     </div>
-
 </div>
 @endsection

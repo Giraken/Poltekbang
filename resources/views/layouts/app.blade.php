@@ -55,9 +55,9 @@
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item" href="/search">Search ATS Message</a></li><hr>
-                      <li><a class="dropdown-item" href="#">Filed Flight Plane (FPL)</a></li>
+                      <li><a class="dropdown-item" href="/filed-message">Filed Flight Plane (FPL)</a></li>
                       <li><a class="dropdown-item" href="/delay">Delay (DLA)</a></li>
-                      <li><a class="dropdown-item" href="modification">Modification (CHG)</a></li>
+                      <li><a class="dropdown-item" href="/modification">Modification (CHG)</a></li>
                       <li><a class="dropdown-item" href="/cancellation">Flight Plan Cancellation (CNL)</a></li>
                       <li><a class="dropdown-item" href="/departure">Departure (DEP)</a></li>
                       <li><a class="dropdown-item" href="/arrival">Arrival (ARR)</a></li>
@@ -67,7 +67,7 @@
                     <a class="nav-link @yield('incoming-message')" href="/incoming-message">Incoming Message</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Sent Message</a>
+                    <a class="nav-link @yield('message-sent')" href="/message-sent">Message Sent</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link @yield('user')" href="/profil">User</a>

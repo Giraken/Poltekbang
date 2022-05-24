@@ -16,7 +16,7 @@
                                         <button type="submit" class="btn btn-primary text-white">
                                             {{ __('SEND') }}
                                         </button>
-                                        <button type="reset" class="btn btn-warning text-white" style="">
+                                        <button type="reset" class="btn btn-warning text-white">
                                             {{ __('RESET') }}
                                         </button>
                                     </div>

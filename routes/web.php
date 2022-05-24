@@ -49,7 +49,15 @@ Route::get('/incoming-message', function () {
 Route::get('/message', function () {
     return view('message');
 });
-
+Route::get('/message', function () {
+    return view('message');
+});
+Route::get('/filed-message', function () {
+    return view('filed-message');
+});
+Route::get('/message-sent', function () {
+    return view('message-sent');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

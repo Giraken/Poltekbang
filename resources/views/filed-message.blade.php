@@ -24,11 +24,20 @@
         <div class="col">
             <div class="card border-0 shadow" style="border-radius: 13px;">
                 <div class="card-body">
+                    @if(session()->has('berhasil'))
+                    <div class="alert alert-success la la-thumbs-up"> {{session()->get('berhasil')}} </div> @endif 
                     <form method="POST" action="" style="font-family: 'Poppins', sans-serif;">
                         @csrf
                         <div class="row align-items-center p-3">
                             <div class="col">
                                 <div class="row mb-2">
+                                    @if(count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                        {{ $error }} <br/>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                     <div class="col-3 d-inline-flex gap-2">
                                         <button type="submit" class="btn btn-primary text-white">
                                             {{ __('SEND') }}
@@ -72,114 +81,23 @@
                                     </div>
                                     <div class="col-3 d-inline-flex align-items-center me-4">
                                         <label for="filling-time" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('FILING TIME:') }}</label>
-                                        <input name="filling-time" id="filling-time" class="p-2 me-1 rounded form-control" placeholder="240408">
+                                        <input name="filling-time" id="filling-time" class="p-2 me-1 rounded form-control" value="070925" readonly>
                                         <button class="btn btn-primary text-white"><i class="bi bi-arrow-counterclockwise"></i></button>
                                     </div>
                                     <div class="col-3 d-inline-flex align-items-center me-4">
                                         <label for="originator" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('ORIGINATOR:') }}</label>
-                                        <input name="originator" id="originator" class="p-2 me-1 rounded form-control" placeholder="WARRATKP">
+                                        <input name="originator" id="originator" class="p-2 me-1 rounded form-control" value="{{Auth::user()->name}}" readonly>
                                     </div>
                                 </div>
                                 <div class="row text-uppercase">
                                     <label class="text-uppercase fw-bold" for="address">Address:</label>
                                 </div>
                                 <div class="d-flex flex-wrap gap-2 mb-3" style="width: 90%;">
+                                    @for($i = 1; $i <= 28; $i++)
                                     <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
+                                        <input name="address{{$i}}" id="address{{$i}}" class="p-2 rounded form-control" style="width: 120px">
                                     </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
-                                    <div class="">
-                                        <input name="address" id="address" class="p-2 rounded form-control" style="width: 120px">
-                                    </div>
+                                    @endfor
                                 </div>
                                 <div class="col mb-3 d-flex align-items-center rounded-3 text-uppercase fw-bold px-3 py-0"
                                 style="color: #6bbf17; background-color: #dffdc3; border: 1px solid; border-color: #6bbf17">
@@ -194,8 +112,8 @@
                                         <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="dep-id" class="me-2 mb-0 col-form-label text-primary"><i>{{ __('REG/') }}</i></label>
-                                        <input name="dep-id" id="dep-id" class="p-2 rounded form-control" placeholder="SEARCH REG">
+                                        <label for="reg" class="me-2 mb-0 col-form-label text-primary"><i>{{ __('REG/') }}</i></label>
+                                        <input name="reg" id="reg" class="p-2 rounded form-control" placeholder="SEARCH REG">
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
                                         <label for="rules" class="me-2 mb-0 col-form-label text-primary">{{ __('8. FLIGHT RULES') }}</label>
@@ -220,7 +138,7 @@
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
                                         <label for="number" class="me-2 mb-0 col-form-label text-primary">{{ __('9.NUMBER') }}</label>
-                                        <input name="number" type="number" min="2" max="10" maxlength="2" class="style3" value="" style="width: 90px;text-transform: uppercase" onkeypress="return numberonly(this, event)" pattern="[0-9]{0,2}" data-pattern-error="Number should be numeric upto 2 characters" tooltiptext="Number of Aircraft (if more than one)<br><br>1 to 2 NUMERICS giving the number of aircraft in the flight. " onchange="showHintnumber()">
+                                        <input id="number" name="number" type="number" min="2" max="10" maxlength="2" class="style3" value="" style="width: 90px;text-transform: uppercase" onkeypress="return numberonly(this, event)" pattern="[0-9]{0,2}" data-pattern-error="Number should be numeric upto 2 characters" tooltiptext="Number of Aircraft (if more than one)<br><br>1 to 2 NUMERICS giving the number of aircraft in the flight. " onchange="showHintnumber()">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -229,8 +147,8 @@
                                         <input name="type-aircraft" id="type-aircraft" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="rules" class="me-2 mb-0 col-form-label text-primary">{{ __('WAKE TURB. CAT.') }}</label>
-                                        <select name="rules" id="rules" class="p-2 rounded form-select" style="width: 130px;">
+                                        <label for="fpl_wake_turb" class="me-2 mb-0 col-form-label text-primary">{{ __('WAKE TURB. CAT.') }}</label>
+                                        <select name="fpl_wake_turb" id="fpl_wake_turb" class="p-2 rounded form-select" style="width: 130px;">
                                             <option value=""></option>
                                             <option value="H">H - Heavy</option>
                                             <option value="M">M - Medium</option>
@@ -249,8 +167,8 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-1 me-4 fw-bold">
-                                        <label for="dep-ad" class="me-2 mb-0 col-form-label text-primary">{{ __('13.DEP AD') }}</label>
-                                        <input name="dep-ad" id="dep-ad" class="p-2 rounded form-control">
+                                        <label for="dep-id" class="me-2 mb-0 col-form-label text-primary">{{ __('13.DEP AD') }}</label>
+                                        <input name="dep-id" id="dep-id" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
                                         <label for="eobt" class="me-2 mb-0 col-form-label text-primary">{{ __('EOBT') }}</label>
@@ -261,8 +179,8 @@
                                         <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
-                                        <label for="dest-ad" class="me-2 mb-0 col-form-label text-primary">{{ __('16.DEST AD') }}</label>
-                                        <input name="dest-ad" id="dest-ad" class="p-2 rounded form-control">
+                                        <label for="dest-id" class="me-2 mb-0 col-form-label text-primary">{{ __('16.DEST AD') }}</label>
+                                        <input name="dest-id" id="dest-id" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-1 me-4 fw-bold">
                                         <label for="eet" class="me-2 mb-0 col-form-label text-primary">{{ __('EET') }}</label>
@@ -296,8 +214,8 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="rules" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
-                                        <select name="rules" id="rules" class="p-2 rounded form-select" style="width: 130px;">
+                                        <label for="point" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
+                                        <select name="point" id="point" class="p-2 rounded form-select" style="width: 130px;">
                                             <option value=""></option>
                                             <option value="KIMON">KIMON</option>
                                             <option value="BALIPAPAN HARBOR">BALIPAPAN HARBOR</option>
@@ -849,8 +767,8 @@
                                     </button>
                                 </div>
                                 <div class="col-8 me-4 fw-bold">
-                                    <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label"></label>
-                                    <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                    <label for="routeP" class="me-2 mb-0 col-form-label"></label>
+                                    <textarea class="form-control" name="routeP"  style="height: 100px;"></textarea>
                                 </div>
                                 <div class="row">
                                     <div class="col-1 me-4">
@@ -859,108 +777,108 @@
                                         </button>
                                     </div>
                                     <div class="col-2 me-4">
-                                        <button type="submit" class="btn btn-warning text-white">
+                                        <a href="#" class="btn btn-warning text-white">
                                             Route Chart
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <p>18. OTHER INFORMATION</p>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('STS/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('STS/') }}</label>
+                                        <textarea class="form-control" id="STS" name="STS" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('PBN/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('PBN/') }}</label>
+                                        <textarea class="form-control" id="PBN" name="PBN" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('NAV/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('NAV/') }}</label>
+                                        <textarea class="form-control" id="NAV" name="NAV" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('COM/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('COM/') }}</label>
+                                        <textarea class="form-control" id="COM" name="COM" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('DAT/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('SUR/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
-                                    </div>
-                                    <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('DEP/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
-                                    </div>
-                                    <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('DEST/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
-                                    </div>
-                                    <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label text-primary">{{ __('REG/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
-                                    </div>
-                                    <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('EET/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('DAT/') }}</label>
+                                        <textarea class="form-control" id="DAT" name="DAT" style="height: 100px;"></textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('SEL/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('SUR/') }}</label>
+                                        <textarea class="form-control" id="SUR" name="SUR" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('TYP/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('DEP/') }}</label>
+                                        <textarea class="form-control" id="DEP" name="DEP" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('CODE/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('DEST/') }}</label>
+                                        <textarea class="form-control" id="DEST" name="DEST" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('DLE/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label text-primary">{{ __('REG/') }}</label>
+                                        <textarea class="form-control" id="REG" name="REG" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label text-primary">{{ __('OPR/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('EET/') }}</label>
+                                        <textarea class="form-control" id="EET" name="EET" style="height: 100px;"></textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('ORGN/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('SEL/') }}</label>
+                                        <textarea class="form-control" id="SEL" name="SEL" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('PER/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('TYP/') }}</label>
+                                        <textarea class="form-control" id="TYP" name="TYP" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('ALTN/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('CODE/') }}</label>
+                                        <textarea class="form-control" id="CODE" name="CODE" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('RALT/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('DLE/') }}</label>
+                                        <textarea class="form-control" id="DLE" name="DLE" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('TALT/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label text-primary">{{ __('OPR/') }}</label>
+                                        <textarea class="form-control" id="OPR" name="OPR" style="height: 100px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-2 me-4 fw-bold">
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('ORGN/') }}</label>
+                                        <textarea class="form-control" id="ORGN" name="ORGN" style="height: 100px;"></textarea>
+                                    </div>
+                                    <div class="col-2 me-4 fw-bold">
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('PER/') }}</label>
+                                        <textarea class="form-control" id="PER" name="PER" style="height: 100px;"></textarea>
+                                    </div>
+                                    <div class="col-2 me-4 fw-bold">
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('ALTN/') }}</label>
+                                        <textarea class="form-control" id="ALTN" name="ALTN" style="height: 100px;"></textarea>
+                                    </div>
+                                    <div class="col-2 me-4 fw-bold">
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('RALT/') }}</label>
+                                        <textarea class="form-control" id="RALT" name="RALT" style="height: 100px;"></textarea>
+                                    </div>
+                                    <div class="col-2 me-4 fw-bold">
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('TALT/') }}</label>
+                                        <textarea class="form-control" id="TALT" name="TALT" style="height: 100px;"></textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-5">
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('RIF/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('RIF/') }}</label>
+                                        <textarea class="form-control" id="RIF" name="RIF" style="height: 100px;"></textarea>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('RMK/') }}</label>
-                                        <textarea class="form-control" id="arrival-aerodrome" style="height: 100px;"></textarea>
+                                        <label for="" class="me-2 mb-0 col-form-label">{{ __('RMK/') }}</label>
+                                        <textarea class="form-control" id="RMK" name="RMK" style="height: 100px;"></textarea>
                                     </div>
                                 </div>
                                 <hr>
@@ -971,35 +889,35 @@
                                         <input name="endurance" id="endurance" class="p-2 rounded form-control">
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('PERSON ON BOARD') }}</label>
+                                        <label for="supp_people" class="me-2 mb-0 col-form-label text-primary">{{ __('PERSON ON BOARD') }}</label>
                                         <div class="row">
                                             <div class="col-3">
                                                 <p>P/</p>
                                             </div>
                                             <div class="col-lg">
-                                                <input name="endurance" id="endurance" class="p-2 rounded form-control">
+                                                <input name="supp_people" id="supp_people" class="p-2 rounded form-control">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-4 me-4 fw-bold">
-                                        <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('EMERGENCY RADIO') }}</label>
+                                        <label for="supp_radio" class="me-2 mb-0 col-form-label text-primary">{{ __('EMERGENCY RADIO') }}</label>
                                         <div class="row">
                                             <div class="col-2">
                                                 R/
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">UHF
-                                                    <input type="checkbox">
+                                                    <input id="supp_radio[]" name="supp_radio[]" type="checkbox" value="UHF">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">VHF
-                                                    <input type="checkbox">
+                                                    <input id="supp_radio[]" name="supp_radio[]" type="checkbox" value="VHF">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">ELT
-                                                    <input type="checkbox">
+                                                    <input id="supp_radio[]" name="supp_radio[]" type="checkbox" value="ELT">
                                                 </label>
                                             </div>
                                         </div>
@@ -1007,31 +925,31 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-6 me-4 fw-bold">
-                                        <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('EMERGENCY RADIO') }}</label>
+                                        <label for="supp_survival" class="me-2 mb-0 col-form-label text-primary">{{ __('SURVIVAL EQUIPMENT') }}</label>
                                         <div class="row">
                                             <div class="col-1">
                                                 <label class="container">S/
-                                                    <input type="checkbox">
+                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="S/">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">POLAR
-                                                    <input type="checkbox">
+                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="POLAR">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">DESERT
-                                                    <input type="checkbox">
+                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="DESERT">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">MARITIME
-                                                    <input type="checkbox">
+                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="MARITIME">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">JUNGLE
-                                                    <input type="checkbox">
+                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="JUNGLE">
                                                 </label>
                                             </div>
                                         </div>
@@ -1041,27 +959,27 @@
                                         <div class="row">
                                             <div class="col-1">
                                                 <label class="container">J/
-                                                    <input type="checkbox">
+                                                    <input name="supp_jacket[]" type="checkbox" value="J/">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">LIGHT
-                                                    <input type="checkbox">
+                                                    <input name="supp_jacket[]" type="checkbox" value="LIGHT">
                                                 </label>
                                             </div>
                                             <div class="col-3">
                                                 <label class="container">FLUORES
-                                                    <input type="checkbox">
+                                                    <input name="supp_jacket[]" type="checkbox" value="FLUORES">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">UHF
-                                                    <input type="checkbox">
+                                                    <input name="supp_jacket[]" type="checkbox" value="UHF">
                                                 </label>
                                             </div>
                                             <div class="col-2">
                                                 <label class="container">VHF
-                                                    <input type="checkbox">
+                                                    <input name="supp_jacket[]" type="checkbox" value="VHF">
                                                 </label>
                                             </div>
                                         </div>
@@ -1069,9 +987,9 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('COVER') }}</label>
+                                        <label for="supp_cover" class="me-2 mb-0 col-form-label text-primary">{{ __('COVER') }}</label>
                                         <label class="container">C
-                                            <input type="checkbox">
+                                            <input name="supp_cover" type="checkbox" value="C">
                                         </label>
                                     </div>
                                     <div class="col-2 me-4 fw-bold">
@@ -1091,34 +1009,34 @@
                                     </div>
                                     <div class="col-3 me-4 fw-bold">
                                         <div class="row">
-                                            <label for="endurance" class="me-2 mb-0 col-form-label">{{ __('REMARKS') }}</label>
+                                            <label for="supp_remark" class="me-2 mb-0 col-form-label">{{ __('REMARKS') }}</label>
                                             <div class="col-3">
                                                 <label class="container">N/
-                                                    <input type="checkbox">
+                                                    <input name="supp_remark" value="N/" type="checkbox">
                                                 </label>
                                             </div>
                                             <div class="col-8">
-                                                <input name="remarks" id="remarks" class="p-2 rounded form-control" placeholder="NIL">
+                                                <input name="supp_remark_desc" id="supp_remark_desc" class="p-2 rounded form-control" placeholder="NIL">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-4 me-4 fw-bold">
                                             <div class="row">
-                                                <label for="aircraft-colour" class="me-2 mb-0 col-form-label text-primary">{{ __('PILOT IN COMMAND') }}</label>
+                                                <label for="supp_pilot" class="me-2 mb-0 col-form-label text-primary">{{ __('PILOT IN COMMAND') }}</label>
                                                 <div class="col-2">
                                                     <p>C/</p>
                                                 </div>
                                                 <div class="col-9">
-                                                    <input name="aircraft-colour" id="aircraft-colour" class="p-2 rounded form-control">
+                                                    <input name="supp_pilot" id="supp_pilot" class="p-2 rounded form-control">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-4 me-4 fw-bold">
-                                            <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label">{{ __('SPACE RESERVED/') }}</label>
-                                            <textarea class="form-control" id="arrival-aerodrome" style="height: 120px;">NIL</textarea>
+                                            <label for="supp_reserved" class="me-2 mb-0 col-form-label">{{ __('SPACE RESERVED/') }}</label>
+                                            <textarea class="form-control" name="supp_reserved" style="height: 120px;">NIL</textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-5">
@@ -1130,7 +1048,7 @@
                                     <div class="row mb-3">
                                         <div class="col-2 me-4 fw-bold">
                                             <label class="container text-primary">
-                                                <input type="checkbox"> I accept the Terms adn Conditions
+                                                <input name="accept" type="checkbox" value="accept"> I accept the Terms adn Conditions
                                             </label>
                                         </div>
                                     </div>

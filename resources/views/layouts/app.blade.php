@@ -77,7 +77,7 @@
             </div>
           </nav>
         <main class="d-flex h-100 align-items-center">
-            @yield('content')
+          @yield('content')
         </main>
         {{-- <footer class="d-flex bg-black justify-content-center align-items-center">
           <div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,45 +20,67 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/search', function () {
-    return view('search');
-});
-Route::get('/delay', function () {
-    return view('delay');
-});
-Route::get('/cancellation', function () {
-    return view('cancellation');
-});
-Route::get('/departure', function () {
-    return view('departure');
-});
-Route::get('/modification', function () {
-    return view('modification');
-});
-Route::get('/arrival', function () {
-    return view('arrival');
-});
-Route::get('/profil', function () {
-    return view('profil');
-});
-Route::get('/admin', function () {
-    return view('admin');
-});
-Route::get('/incoming-message', function () {
-    return view('incoming-message');
-});
-Route::get('/message', function () {
-    return view('message');
-});
-Route::get('/message', function () {
-    return view('message');
-});
-Route::get('/filed-message', function () {
-    return view('filed-message');
-});
 Route::get('/message-sent', function () {
     return view('message-sent');
 });
+/*
+|--------------------------------------------------------------------------
+| Profil
+|--------------------------------------------------------------------------
+|
+*/
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profil', [App\Http\Controllers\HomeController::class, 'profil'])->name('profil');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
+/*
+|--------------------------------------------------------------------------
+| ATS Message
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
+Route::get('/filed-message', [App\Http\Controllers\ATSController::class, 'filled_message'])->name('filled-message');
+Route::post('/filed-message', [App\Http\Controllers\ATSController::class, 'filled_messagePost'])->name('filled-messagePost');
+Route::get('/delay', [App\Http\Controllers\ATSController::class, 'delay'])->name('delay');
+Route::post('/delay', [App\Http\Controllers\ATSController::class, 'delayPost'])->name('delayPost');
+Route::get('/modification', [App\Http\Controllers\ATSController::class, 'modification'])->name('modification');
+Route::post('/modification', [App\Http\Controllers\ATSController::class, 'modificationPost'])->name('modificationPost');
+Route::get('/cancellation', [App\Http\Controllers\ATSController::class, 'cancellation'])->name('cancellation');
+Route::post('/cancellation', [App\Http\Controllers\ATSController::class, 'cancellationPost'])->name('cancellationPost');
+Route::get('/departure', [App\Http\Controllers\ATSController::class, 'departure'])->name('departure');
+Route::post('/departure', [App\Http\Controllers\ATSController::class, 'departurePost'])->name('departurePost');
+Route::get('/arrival', [App\Http\Controllers\ATSController::class, 'arrival'])->name('arrival');
+Route::post('/arrival', [App\Http\Controllers\ATSController::class, 'arrivalPost'])->name('arrivalPost');
+/*
+|--------------------------------------------------------------------------
+| Incoming Message
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/incoming-message', [App\Http\Controllers\IncomingController::class, 'incomingMessage'])->name('incomingMessage');
+Route::get('/incoming-message/api', [App\Http\Controllers\IncomingController::class, 'incomingMessageApi'])->name('incomingMessageApi');
+
+Route::get('/message', [App\Http\Controllers\IncomingController::class, 'message'])->name('message');
+
+Route::get('/incoming', function (Request $request) {
+    if ($request->ajax()) {
+            $data = DB::table('messages')->
+            join('aftn_header','aftn_header.message_id','=','messages.id')->
+            join('users','users.id','=','messages.user_id')->get();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+})->name('incoming'); 
+
+Route::get('/test', function () {
+   
+    return view('test');
+});

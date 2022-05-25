@@ -24,7 +24,7 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
-        font-size: 55px;
+        font-size: 3vw;
         text-align: center;
     }
 
@@ -32,7 +32,7 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
-        font-size: 25px;
+        font-size: 1.5vw;
         line-height: 35px;
         text-align: center;
     }
@@ -41,7 +41,7 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
-        font-size: 25px;
+        font-size: 1.5vw;
         line-height: 35px;
         text-align: center;
     }
@@ -143,7 +143,7 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 700;
-        font-size: 55px;
+        font-size: 2vw;
         text-align: right;
         margin-right:-20%;
     }
@@ -152,7 +152,7 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 1.3vw;
         text-align: right;
         margin-right:-20%;
     }
@@ -161,7 +161,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-        font-size: 55px;
+        font-size: 2vw;
         text-align: left;
         margin-left:-20%;
         margin-top:3%;
@@ -171,7 +171,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 1.3vw;
         text-align: left;
         margin-left:-20%;
     }
@@ -236,7 +236,7 @@
 </style>
 <div class="" style="overflow-x: hidden;">
     <div class="hero1 d-flex flex-column justify-content-center p-5 align-items-center text-center overflow-hidden gap-5">
-        <h1 class="hero1-title-1 text-center text-white fw-bold overflow-hidden w-75">
+        <h1 class="hero1-title-1 text-center text-white fw-bold overflow-hidden w-75 mt-5">
             Menyelenggarakan program pendidikan vokasi, penelitian, dan pengabdian kepada masyarakat di bidang penerbangan.
         </h1>
         <h3 class="hero1-title-2 text-white overflow-hidden w-50">
@@ -268,10 +268,10 @@
         </div>
 
         <div class="hero2 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-5">
-            <h1 class="hero2-title-1 text-right text-white fw-bold overflow-hidden w-75">
+            <h1 class="hero2-title-1 text-right text-white fw-bold w-75">
                 Lembaga Pendidikan
             </h1>
-            <h3 class="hero2-title-2 text-right text-white overflow-hidden w-75">
+            <h3 class="hero2-title-2 text-right text-white w-75">
                 Politeknik Penerbangan (Poltekbang) Surabaya (dh ATKP Surabaya) merupakan Lembaga Pendidikan Vokasi bidang aviasi yang Kredibel,
                 baik dari lembaganya sendiri maupun dari dosen & pengajarnya. Terbukti dengan lulusannya yg handal dalam memberikan pelayanan pengendalian
                 lalu lintas udara  di bandara yg sibuk di Indonesia dan sebagian dari alumninya sekarang sudah menduduki lower manager dalam usia yg relatif
@@ -279,10 +279,10 @@
                 M. Khatim <br>
                 - Direktur Operasi Airnav Indonesia
             </h3>
-            <h1 class="hero2-title-3 text-left text-white fw-bold overflow-hidden w-75">
+            <h1 class="hero2-title-3 text-left text-white fw-bold w-75">
                 Professional
             </h1>
-            <h3 class="hero2-title-4 text-left text-white overflow-hidden w-75">
+            <h3 class="hero2-title-4 text-left text-white w-75">
                 Alumni ATKP/Poltekbang SBY terkenal memiliki sikap yang Baik, Respect dan peduli kepada orang lain <br> serta memiliki
                 pengetahuan yang paripurna di bidangnya, sehingga dapat diterima di dunia Aviasi Indonesia. <br> <br>
                 Alvin Surya Widiantara (Enroute 2007) <br>
@@ -291,12 +291,12 @@
         </div>
     </div>
 
-    <div class="pt-5" id="contact">
+    <div class="pt-5 mb-0" id="contact">
         <div class="section-2 mt-5">
             <h2 class="contact">Contact</h2>
         </div>
 
-        <div class="hero3 d-inline-flex p-0 align-items-center overflow-hidden gap-5">
+        <div class="hero3 d-inline-flex p-0 align-items-center gap-5">
             <div class="col-8 h-100">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.1808770536636!2d112.73394434867716!3d-7.333573194681593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb472767ef69%3A0xa9dfcc58e1aa9194!2sPoltekbang%20Surabaya%2C%20Siwalankerto%2C%20Kec.%20Wonocolo%2C%20Kota%20SBY%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1653315917888!5m2!1sid!2sid"
                 width="100%" height="100%" style="border:0;" allowfullscreen="1" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -112,7 +112,7 @@ class ATSController extends Controller
             'supp_pilot' => 'nullable|string',
             'supp_reserved' => 'nullable|string',
             'filled-by' => 'required|string',
-            'accept' => 'required'    
+            'accept' => 'required'
         ]);
 
         DB::table('messages')->insert([
@@ -225,12 +225,12 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         return redirect()->route('filled-message')->with('berhasil','Pesan telah berhasil dikirim');
     }
     public function delay()
     {
-        return view('delay');       
+        return view('delay');
     }
     public function delayPost(Request $request)
     {
@@ -326,7 +326,7 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         return redirect()->route('delay')->with('berhasil','Pesan telah berhasil dikirim');
     }
 
@@ -378,7 +378,7 @@ class ATSController extends Controller
             'address27' => 'nullable|string',
             'address28' => 'nullable|string',
         ]);
-        
+
         DB::table('messages')->insert([
             'user_id' => $user->id,
             'type' => $type,
@@ -392,7 +392,7 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         $message = DB::table('messages')->where('user_id',$iduser)->latest('created_at')->first();
 
         $ATK = DB::table('aftn_header')->insert([
@@ -431,7 +431,7 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         return redirect()->route('modification')->with('berhasil','Pesan telah berhasil dikirim');
     }
 
@@ -534,7 +534,7 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         return redirect()->route('cancellation')->with('berhasil','Pesan telah berhasil dikirim');
     }
 
@@ -641,7 +641,7 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         return redirect()->route('departure')->with('berhasil','Pesan telah berhasil dikirim');
     }
 
@@ -746,8 +746,8 @@ class ATSController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
-        
+
         return redirect()->route('arrival')->with('berhasil','Pesan telah berhasil dikirim');
     }
-    
+
 }

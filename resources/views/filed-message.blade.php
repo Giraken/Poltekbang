@@ -72,8 +72,9 @@
                                     </div>
                                     <div class="col-4 d-inline-flex align-items-center me-4">
                                         <label for="filing-time" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('FILING TIME:') }}</label>
-                                        <input name="filing-time" id="filing-time" value="" class="p-2 me-1 rounded form-control" placeholder="" style="width: 120px;">
-                                        <input onclick="resetValue()" class="btn btn-primary text-white" value="Reset" style="width: 75px;">
+                                        <input name="filing-time" id="filing-time" class="p-2 me-1 rounded form-control" placeholder="DDhhmm" style="width: 120px;">
+                                        {{-- <input onclick="resetValue()" class="btn btn-primary text-white" value="Reset" style="width: 75px;"> --}}
+                                        <button type="button" onclick="resetValue()" class="btn btn-primary text-white"><i class="bi bi-arrow-counterclockwise"></i></button>
                                     </div>
                                     <div class="col-3 d-inline-flex align-items-center me-4">
                                         <label for="originator" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('ORIGINATOR:') }}</label>
@@ -296,8 +297,8 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-2 me-4 fw-bold">
-                                        <label for="rules" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
-                                        <select name="rules" id="rules" class="p-2 rounded form-select" style="width: 130px;">
+                                        <label for="pointSelect" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
+                                        <select name="pointSelect" id="pointSelect" class="p-2 rounded form-select" style="width: 130px;">
                                             <option value=""></option>
                                             <option value="KIMON">KIMON</option>
                                             <option value="BALIPAPAN HARBOR">BALIPAPAN HARBOR</option>
@@ -844,7 +845,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2 me-4">
-                                    <button type="submit" class="btn btn-primary text-white">
+                                    <button type="button" onclick="addPoint()" class="btn btn-primary text-white">
                                         +
                                     </button>
                                 </div>
@@ -854,7 +855,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-1 me-4">
-                                        <button type="submit" class="btn btn-danger text-white">
+                                        <button type="button" onclick="removePoint()" class="btn btn-danger text-white">
                                             <-
                                         </button>
                                     </div>
@@ -1139,17 +1140,8 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    function resetValue() {
-        document.getElementById('filing-time').value = '';
-        // let nilai = document.getElementById('filing-time');
-        // nilai.value = '';
-    }
-</script>
 @endsection

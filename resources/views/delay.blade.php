@@ -41,8 +41,9 @@
                                     </div>
                                     <div class="col-4 d-inline-flex align-items-center me-4">
                                         <label for="filing-time" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('FILING TIME:') }}</label>
-                                        <input name="filing-time" id="filing-time" value="" class="p-2 me-1 rounded form-control" placeholder="" style="width: 120px;">
-                                        <input onclick="resetValue()" class="btn btn-primary text-white" value="Reset" style="width: 75px;">
+                                        <input name="filing-time" id="filing-time" class="p-2 me-1 rounded form-control" placeholder="DDhhmm" style="width: 120px;">
+                                        {{-- <input onclick="resetValue()" class="btn btn-primary text-white" value="Reset" style="width: 75px;"> --}}
+                                        <button type="button" onclick="resetValue()" class="btn btn-primary text-white"><i class="bi bi-arrow-counterclockwise"></i></button>
                                     </div>
                                     <div class="col-3 d-inline-flex align-items-center me-4">
                                         <label for="originator" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('ORIGINATOR:') }}</label>
@@ -182,12 +183,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    function resetValue() {
-        document.getElementById('filing-time').value = '';
-        // let nilai = document.getElementById('filing-time');
-        // nilai.value = '';
-    }
-</script>
 @endsection

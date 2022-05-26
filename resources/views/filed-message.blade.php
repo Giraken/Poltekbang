@@ -214,10 +214,10 @@
                                     </select>
                                 </div>
                                 <div class="row mb-0">
-                                    <div class="col-3 me-4 fw-bold gap-2">
+                                    <div class="col-3 fw-bold gap-2">
                                         <label for="pointSelect" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
                                         <div class="d-inline-flex align-items-center gap-2">
-                                            <select name="pointSelect" id="pointSelect" class="p-2 rounded form-select" style="width: 130px;">
+                                            <select name="pointSelect" id="pointSelect" class="p-2 rounded form-select" style="width: 200px;">
                                                 <option value=""></option>
                                                 <option value="KIMON">KIMON</option>
                                                 <option value="BALIPAPAN HARBOR">BALIPAPAN HARBOR</option>
@@ -767,14 +767,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2 me-4">
-                                    <button type="button" onclick="addPoint()" class="btn btn-primary text-white">
-                                        +
-                                    </button>
-                                </div>
-                                <div class="col-8 me-4 fw-bold">
-                                    <label for="routeP" class="me-2 mb-0 col-form-label"></label>
-                                    <textarea class="form-control" id="routeP" name="routeP"  style="height: 100px;"></textarea>
+                                <div class="row mb-2">
+                                    <div class="col-6 fw-bold">
+                                        <label for="routeP" class="me-2 mb-0 col-form-label"></label>
+                                        <textarea class="form-control" id="routeP" name="routeP" style="height: 100px;"></textarea>
+                                    </div>
                                 </div>
                                 <div class="row mb-5">
                                     <div class="col-5 d-inline-flex gap-2">

@@ -45,14 +45,14 @@
 
                     <td style="width: 3%">:</td>
 
-                    <td>WARRAKTP (user)</td>
+                    <td>{{Auth::user()->name}}</td>
                 </tr>
                 <tr>
                     <td style="width: 57%">Originator </td>
 
                     <td style="width: 3%">:</td>
 
-                    <td>WARRAKTP (password)</td>
+                    <td>{{Auth::user()->name}}</td>
                 </tr>
             </table> <br>
 

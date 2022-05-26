@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use DataTables;
 
 class ATSController extends Controller
 {
@@ -12,8 +13,23 @@ class ATSController extends Controller
     {
         $this->middleware('auth');
     }
-    public function search()
+    public function search(Request $request)
     {
+        $data = DB::table('messages')
+            ->join('aftn_header','aftn_header.message_id','=','messages.id')
+            ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
+            ->get();
+        if($request->ajax())
+        {
+        return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
         return view('search');
     }
     public function filled_message()
@@ -30,6 +46,7 @@ class ATSController extends Controller
             'status' => 'required|in:send-and-save,save',
             'permit-letter' => 'nullable|max:2000|mimes:png,jpg,jpeg,pdf,docx',
             'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
             'address1' => 'nullable|string',
             'address2' => 'nullable|string',
             'address3' => 'nullable|string',
@@ -101,13 +118,16 @@ class ATSController extends Controller
             'RMK' => 'nullable|string',
             'endurance' => 'nullable|string',
             'supp_people' => 'nullable|string',
-            'supp_radio.*' => 'nullable|string',
-            'supp_survival.*' => 'nullable|string',
-            'supp_jacket.*' => 'nullable|string',
-            'supp_cover' => 'nullable|string',
+            'supp_radio' => 'required|',
+            'supp_radio.*' => 'required|string',
+            'supp_survival.*' => 'required|string',
+            'supp_survival' => 'required|',
+            'supp_jacket.*' => 'required|string',
+            'supp_jacket' => 'required|',
+            'supp_cover' => 'required|string',
             'colour' => 'nullable|string',
             'aircraft-colour' => 'nullable|string',
-            'supp_remark' => 'nullable|string',
+            'supp_remark' => 'required|string',
             'supp_remark_desc' => 'nullable|string',
             'supp_pilot' => 'nullable|string',
             'supp_reserved' => 'nullable|string',
@@ -150,6 +170,7 @@ class ATSController extends Controller
             'message_id' => $message->id,
             'user_id' => $iduser,
             'originator' => $user->name,
+            'filing_time' => $validateData['filing-time'],
             'address1' => $validateData['address1'],
             'address2' => $validateData['address2'],
             'address3' => $validateData['address3'],
@@ -239,6 +260,7 @@ class ATSController extends Controller
         $type = 'DLA'; //tipe pesan
         $validateData = $request->validate([
             'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
             'dep-id' => 'required|string',
             'time' => 'required|numeric',
@@ -292,6 +314,7 @@ class ATSController extends Controller
 
         $ATK = DB::table('aftn_header')->insert([
             'priority' => $validateData['priority'],
+            'filing_time' => $validateData['filing-time'],
             'message_id' => $message->id,
             'user_id' => $iduser,
             'originator' => $user->name,
@@ -342,6 +365,7 @@ class ATSController extends Controller
         $type = 'CHG'; //tipepesan
         $validateData = $request->validate([
             'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
             'dep-id' => 'required|string',
             'time' => 'required|numeric',
@@ -397,6 +421,7 @@ class ATSController extends Controller
 
         $ATK = DB::table('aftn_header')->insert([
             'priority' => $validateData['priority'],
+            'filing_time' => $validateData['filing-time'],
             'message_id' => $message->id,
             'user_id' => $iduser,
             'originator' => $user->name,
@@ -447,6 +472,7 @@ class ATSController extends Controller
         $type = 'CNL'; //tipe pesan
         $validateData = $request->validate([
             'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
             'dep-id' => 'required|string',
             'time' => 'required|numeric',
@@ -500,6 +526,7 @@ class ATSController extends Controller
 
         $ATK = DB::table('aftn_header')->insert([
             'priority' => $validateData['priority'],
+            'filing_time' => $validateData['filing-time'],
             'message_id' => $message->id,
             'user_id' => $iduser,
             'originator' => $user->name,
@@ -550,6 +577,7 @@ class ATSController extends Controller
         $type = 'DEP'; //tipe pesan
         $validateData = $request->validate([
             'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
             'ssr-mode' => 'required|string',
             'code' => 'required|string',
@@ -607,6 +635,7 @@ class ATSController extends Controller
 
         $ATK = DB::table('aftn_header')->insert([
             'priority' => $validateData['priority'],
+            'filing_time' => $validateData['filing-time'],
             'message_id' => $message->id,
             'user_id' => $iduser,
             'originator' => $user->name,
@@ -657,6 +686,7 @@ class ATSController extends Controller
         $type = 'ARR'; //tipe pesan
         $validateData = $request->validate([
             'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
             'dep-id' => 'required|string',
             'time' => 'required|numeric',
@@ -712,6 +742,7 @@ class ATSController extends Controller
 
         $ATK = DB::table('aftn_header')->insert([
             'priority' => $validateData['priority'],
+            'filing_time' => $validateData['filing-time'],
             'message_id' => $message->id,
             'user_id' => $iduser,
             'originator' => $user->name,

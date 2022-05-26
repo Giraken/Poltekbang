@@ -61,24 +61,14 @@ Route::post('/arrival', [App\Http\Controllers\ATSController::class, 'arrivalPost
 */
 Route::get('/incoming-message', [App\Http\Controllers\IncomingController::class, 'incomingMessage'])->name('incomingMessage');
 Route::get('/incoming-message/api', [App\Http\Controllers\IncomingController::class, 'incomingMessageApi'])->name('incomingMessageApi');
-
 Route::get('/message', [App\Http\Controllers\IncomingController::class, 'message'])->name('message');
-
-Route::get('/incoming', function (Request $request) {
-    if ($request->ajax()) {
-            $data = DB::table('messages')->
-            join('aftn_header','aftn_header.message_id','=','messages.id')->
-            join('users','users.id','=','messages.user_id')->get();
-            return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($row){
-                    $actionBtn = '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        }
-})->name('incoming'); 
+/*
+|--------------------------------------------------------------------------
+| Message Sent
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/message-sent', [App\Http\Controllers\SentController::class, 'messageSent'])->name('messageSent');
 
 Route::get('/test', function () {
    

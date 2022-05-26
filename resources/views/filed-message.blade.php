@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="col-4 d-inline-flex align-items-center me-4">
                                         <label for="filing-time" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('FILING TIME:') }}</label>
-                                        <input name="filing-time" id="filing-time" class="p-2 me-1 rounded form-control" placeholder="DDhhmm" style="width: 120px;">
+                                        <input name="filing-time" id="filing-time" class="p-2 me-1 rounded form-control" placeholder="DDhhmm" style="width: 120px;" readonly>
                                         {{-- <input onclick="resetValue()" class="btn btn-primary text-white" value="Reset" style="width: 75px;"> --}}
                                         <button type="button" onclick="resetValue()" class="btn btn-primary text-white"><i class="bi bi-arrow-counterclockwise"></i></button>
                                     </div>
@@ -767,11 +767,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-5 fw-bold">
-                                        <label for="arrival-aerodrome" class="me-2 mb-0 col-form-label"></label>
-                                        <textarea class="form-control" name="arrival-aerodrome" id="arrival-aerodrome" style="height: 100px;"></textarea>
-                                    </div>
+                                <div class="col-2 me-4">
+                                    <button type="button" onclick="addPoint()" class="btn btn-primary text-white">
+                                        +
+                                    </button>
+                                </div>
+                                <div class="col-8 me-4 fw-bold">
+                                    <label for="routeP" class="me-2 mb-0 col-form-label"></label>
+                                    <textarea class="form-control" id="routeP" name="routeP"  style="height: 100px;"></textarea>
                                 </div>
                                 <div class="row mb-5">
                                     <div class="col-5 d-inline-flex gap-2">

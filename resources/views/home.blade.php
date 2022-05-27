@@ -318,11 +318,6 @@
             </div>
         </div>
     </div>
+    @include('layouts.footer')
 </div>
-
-<footer class="d-flex bg-black justify-content-center align-items-center bottom-0">
-    <div>
-        © Copyright Poltekbang 2022
-    </div>
-</footer>
 @endsection

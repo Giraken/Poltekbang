@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container mb-5" style="margin-top:15%">
+    <div class="container mb-5 mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card border-0 shadow" style="border-radius: 13px;">

@@ -56,7 +56,8 @@
                       ATS Message
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="/search">Search ATS Message</a></li><hr>
+                      <li><a class="dropdown-item" href="/search">Search ATS Message</a></li>
+                      <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="/filed-message">Filed Flight Plane (FPL)</a></li>
                       <li><a class="dropdown-item" href="/delay">Delay (DLA)</a></li>
                       <li><a class="dropdown-item" href="/modification">Modification (CHG)</a></li>
@@ -72,11 +73,12 @@
                     <a class="nav-link @yield('message-sent')" href="/message-sent">Message Sent</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle @yield('user')" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <a class="nav-link dropdown-toggle @yield('user')" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
                         User
                     </a>
-                    <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/profil">Settings</a></li><hr>
+                    <ul class="dropdown-menu text-center dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/profil">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/logout">Logout</a></li>
                       </ul>
                   </li>

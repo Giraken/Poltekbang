@@ -35,7 +35,8 @@
         }
     }
 </style>
-    <div class="container mt-5 mb-5 shadow border-0 p-5" style="border-radius: 13px;">
+<div class="position-relative w-100">
+    <div class="container mt-5 shadow border-0 p-5" style="border-radius: 13px; margin-bottom: 35vh;">
         <p>
             <b>Account Information</b>
             <table>
@@ -100,4 +101,8 @@
             </div>
         </div>
     </div>
+    <div class="position-absolute bottom-0" style="left: 0; right: 0;">
+        @include('layouts.footer')
+    </div>
+</div>
 @endsection

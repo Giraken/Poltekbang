@@ -49,19 +49,26 @@
                                 </div>
 
                                 <div class="col-8">
+                                    @if(count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                        {{ $error }} <br/>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                     <h3 class="text-uppercase" style="text-align: center">Flight Plan</h3>
                                     <div class="row mb-3">
-                                        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+                                        <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" placeholder="Masukkan username" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                                            <input id="name" type="name" placeholder="Masukkan username" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
                                             style="
                                             border: none;
                                             border-bottom: 2px solid black;
                                             box-sizing: border-box;
                                             border-radius: 0px;">
 
-                                            @error('email')
+                                            @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

@@ -41,7 +41,7 @@
             <div class="col-md-8">
                 <div class="card border-0 shadow" style="border-radius: 13px;">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}" style="font-family: 'Poppins', sans-serif;">
+                        <form method="POST" action="{{ route('register') }}" style="font-family: 'Poppins', sans-serif;">
                             @csrf
                             <div class="row align-items-center p-3">
                                 <div class="col-4">
@@ -61,7 +61,7 @@
                                             box-sizing: border-box;
                                             border-radius: 0px;">
 
-                                            @error('email')
+                                            @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -108,10 +108,10 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="password" class="col-md-4 col-form-label text-md-end">Konfirmasi</label>
+                                        <label for="password_confirmation" class="col-md-4 col-form-label text-md-end">Konfirmasi</label>
 
                                         <div class="col-md-6">
-                                            <input id="password" type="password" placeholder="Masukkan password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"
+                                            <input id="password_confirmation" type="password" placeholder="Masukkan password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="current-password"
                                             style="
                                             border: none;
                                             border-bottom: 2px solid black;
@@ -127,17 +127,17 @@
                                     </div>
 
                                     <div class="row mb-5">
-                                        <label for="nomor telfon" class="col-md-4 col-form-label text-md-end">{{ __('No. HP') }}</label>
+                                        <label for="no_hp" class="col-md-4 col-form-label text-md-end">{{ __('No. HP') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="nomor telfon" type="nomor telfon" placeholder="Masukkan nomor" class="form-control @error('nomer hp') is-invalid @enderror" name="nomor telfon" required autocomplete="current-nomer telfon"
+                                            <input id="no_hp" type="text" placeholder="Masukkan nomor" class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" required autocomplete="current-no_hp"
                                             style="
                                             border: none;
                                             border-bottom: 2px solid black;
                                             box-sizing: border-box;
                                             border-radius: 0px;">
 
-                                            @error('password')
+                                            @error('no_hp')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

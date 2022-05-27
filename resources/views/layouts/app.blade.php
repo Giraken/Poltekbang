@@ -74,12 +74,16 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle @yield('user')" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-                        User
+                        {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu text-center dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="/profil">Settings</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="{{Route('logout')}}" onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">Logout</a></li>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                          </form>
                       </ul>
                   </li>
                 </ul>

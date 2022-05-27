@@ -13,16 +13,6 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/message-sent', function () {
-    return view('message-sent');
-});
 /*
 |--------------------------------------------------------------------------
 | Profil
@@ -31,8 +21,10 @@ Route::get('/message-sent', function () {
 */
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/profil', [App\Http\Controllers\HomeController::class, 'profil'])->name('profil');
+Route::post('/profil', [App\Http\Controllers\HomeController::class, 'profilPost'])->name('profilPost');
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
 /*
 |--------------------------------------------------------------------------

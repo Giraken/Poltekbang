@@ -37,6 +37,17 @@
 </style>
 <div class="position-relative w-100">
     <div class="container mt-5 shadow border-0 p-5" style="border-radius: 13px; margin-bottom: 35vh;">
+        @if(session()->has('berhasil'))
+        <div class="alert alert-success la la-thumbs-up"> {{session()->get('berhasil')}} </div>
+        @elseif(session()->has('gagal')) 
+        <div class="alert alert-danger la la-thumbs-up"> {{session()->get('gagal')}} </div> @endif
+        @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+            {{ $error }} <br/>
+            @endforeach
+        </div>
+        @endif
         <p>
             <b>Account Information</b>
             <table>
@@ -63,43 +74,44 @@
             <b>Password</b>
         </p>
 
-        <form action="/#">
+        <form action="{{route('profilPost')}}" method="POST">@csrf
             <div class="row">
                 <div class="col-25">
                     <label for="oldpassword">Old Password :</label>
                 </div>
                 <div class="col-25">
-                    <input type="text" class="form-control" id="oldpassword" name="oldpassword" placeholder="Enter old password">
+                    <input type="password" class="form-control" id="oldpassword" name="oldpassword" placeholder="Enter old password">
                 </div>
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="newpassword">New Password :</label>
+                    <label for="password">New Password :</label>
                 </div>
                 <div class="col-25">
-                    <input type="text" class="form-control" id="newpassword" name="newpassword" placeholder="Enter new password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter new password" required autocomplete="current-password">
                 </div>
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="confirm">Confirm New Password :</label>
+                    <label for="password_confirmation">Confirm New Password :</label>
                 </div>
                 <div class="col-25">
-                    <input type="text" class="form-control" id="confirm" name="confirm" placeholder="Re-type new password">
+                    <input type="password" class="form-control" id="password_confirmation" placeholder="Re-type new password" name="password_confirmation" required autocomplete="current-password">
                 </div>
             </div>
-        </form>
+        
 
         <div class="row mb-2">
             <div class="col-3 d-inline-flex gap-2">
                 <button type="submit" class="btn btn-primary text-white">
                     {{ __('SAVE') }}
                 </button>
-                <button type="reset" class="btn btn-warning text-white" style="">
+                <a href="#" class="btn btn-warning text-white" style="">
                     {{ __('RESET') }}
-                </button>
+                </a>
             </div>
         </div>
+    </form>
     </div>
     <div class="position-absolute bottom-0" style="left: 0; right: 0;">
         @include('layouts.footer')

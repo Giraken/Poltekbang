@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'WARRATKP',
             'email' => 'WARRATKP@gmail.com',
             'password' => Hash::make('WARRATKP'),
+            'no_hp' => '089506014176',
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);

@@ -71,8 +71,14 @@
                   <li class="nav-item">
                     <a class="nav-link @yield('message-sent')" href="/message-sent">Message Sent</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link @yield('user')" href="/profil">User</a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle @yield('user')" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        User
+                    </a>
+                    <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/profil">Settings</a></li><hr>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                      </ul>
                   </li>
                 </ul>
               </div>
@@ -81,13 +87,8 @@
         <main class="d-flex h-100 align-items-center">
           @yield('content')
         </main>
-        {{-- <footer class="d-flex bg-black justify-content-center align-items-center">
-          <div>
-              © Copyright Poltekbang 2022
-          </div>
-        </footer> --}}
     </div>
-
+    {{-- {{View::make('layouts.footer')}} --}}
 </body>
 
 </html>

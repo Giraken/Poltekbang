@@ -254,7 +254,7 @@
             <a href="#about" class="image image1 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">About Us</h2>
             </a>
-            <a href="" class="image image2 d-flex justify-content-center align-items-center">
+            <a href="/incoming-message" class="image image2 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">Message</h2>
             </a>
             <a href="#contact" class="image image3 d-flex justify-content-center align-items-center">
@@ -319,4 +319,10 @@
         </div>
     </div>
 </div>
+
+<footer class="d-flex bg-black justify-content-center align-items-center bottom-0">
+    <div>
+        © Copyright Poltekbang 2022
+    </div>
+</footer>
 @endsection

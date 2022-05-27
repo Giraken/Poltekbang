@@ -214,10 +214,10 @@
                                     </select>
                                 </div>
                                 <div class="row mb-0">
-                                    <div class="col-3 me-4 fw-bold gap-2">
+                                    <div class="col-5 me-4 fw-bold gap-2">
                                         <label for="pointSelect" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
                                         <div class="d-inline-flex align-items-center gap-2">
-                                            <select name="pointSelect" id="pointSelect" class="p-2 rounded form-select" style="width: 130px;">
+                                            <select name="pointSelect" id="pointSelect" class="p-2 rounded form-select" style="width: 220px;">
                                                 <option value=""></option>
                                                 <option value="KIMON">KIMON</option>
                                                 <option value="BALIPAPAN HARBOR">BALIPAPAN HARBOR</option>
@@ -761,22 +761,17 @@
                                                 <option value="KALI JUDAN">KALI JUDAN</option>
                                                 <option value="POINT &quot;ROMEO&quot;">POINT "ROMEO"</option>
                                             </select>
-                                            <button type="button" onclick="addPoint()" class="btn btn-primary text-white">
+                                            <button type="button" onclick="addPoint()" class="btn btn-primary text-white" style="margin-top: 3%">
                                                 +
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2 me-4">
-                                    <button type="button" onclick="addPoint()" class="btn btn-primary text-white">
-                                        +
-                                    </button>
-                                </div>
                                 <div class="col-8 me-4 fw-bold">
                                     <label for="routeP" class="me-2 mb-0 col-form-label"></label>
                                     <textarea class="form-control" id="routeP" name="routeP"  style="height: 100px;"></textarea>
                                 </div>
-                                <div class="row mb-5">
+                                <div class="row mb-5 mt-3">
                                     <div class="col-5 d-inline-flex gap-2">
                                         <button type="button" onclick="removePoint()" class="btn btn-danger text-white">
                                             <-
@@ -892,10 +887,10 @@
                                         <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('19.ENDURANCE') }}</label>
                                         <input name="endurance" id="endurance" class="p-2 rounded form-control">
                                     </div>
-                                    <div class="col-2 me-4 fw-bold">
+                                    <div class="col-3 me-4 fw-bold">
                                         <label for="supp_people" class="me-2 mb-0 col-form-label text-primary">{{ __('PERSON ON BOARD') }}</label>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-2" style="margin-right: -8%">
                                                 <p>P/</p>
                                             </div>
                                             <div class="col-lg">
@@ -906,23 +901,24 @@
                                     <div class="col-4 me-4 fw-bold">
                                         <label for="supp_radio" class="me-2 mb-0 col-form-label text-primary">{{ __('EMERGENCY RADIO') }}</label>
                                         <div class="row">
-                                            <div class="col-2">
-                                                R/
+                                            <div class="col-3">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <label class="form-check-label" for="inlineCheckbox1">R/</label>
+                                                    <input class="form-check-input" type="checkbox" id="supp_radio[]" name="supp_radio[]" value="UHF" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">UHF</label>
+                                                </div>
                                             </div>
                                             <div class="col-2">
-                                                <label class="container">UHF
-                                                    <input id="supp_radio[]" name="supp_radio[]" type="checkbox" value="UHF">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_radio[]" name="supp_radio[]" value="VHF" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">VHF</label>
+                                                </div>
                                             </div>
                                             <div class="col-2">
-                                                <label class="container">VHF
-                                                    <input id="supp_radio[]" name="supp_radio[]" type="checkbox" value="VHF">
-                                                </label>
-                                            </div>
-                                            <div class="col-2">
-                                                <label class="container">ELT
-                                                    <input id="supp_radio[]" name="supp_radio[]" type="checkbox" value="ELT">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_radio[]" name="supp_radio[]" value="ELT" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">ELT</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -931,79 +927,92 @@
                                     <div class="col-6 me-4 fw-bold">
                                         <label for="supp_survival" class="me-2 mb-0 col-form-label text-primary">{{ __('SURVIVAL EQUIPMENT') }}</label>
                                         <div class="row">
-                                            <div class="col-1">
-                                                <label class="container">S/
-                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="S/">
-                                                </label>
+                                            <div class="col-1" style="margin-right:2%">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_survival[]" name="supp_survival[]" value="S/" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">S/</label>
+                                                </div>
                                             </div>
                                             <div class="col-2">
-                                                <label class="container">POLAR
-                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="POLAR">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_survival[]" name="supp_survival[]" value="POLAR" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">POLAR</label>
+                                                </div>
                                             </div>
                                             <div class="col-2">
-                                                <label class="container">DESERT
-                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="DESERT">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_survival[]" name="supp_survival[]" value="DESERT" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">DESERT</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2" style="margin-right: 2%">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_survival[]" name="supp_survival[]" value="MARITIME" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">MARITIME</label>
+                                                </div>
                                             </div>
                                             <div class="col-2">
-                                                <label class="container">MARITIME
-                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="MARITIME">
-                                                </label>
-                                            </div>
-                                            <div class="col-2">
-                                                <label class="container">JUNGLE
-                                                    <input id="supp_survival[]" name="supp_survival[]" type="checkbox" value="JUNGLE">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_survival[]" name="supp_survival[]" value="JUNGLE" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">JUNGLE</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4 me-4 fw-bold">
+                                    <div class="col-6 me-4 fw-bold">
                                         <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('JACKETS') }}</label>
                                         <div class="row">
+                                            <div class="col-1" style="margin-right:2%">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_jacket[]" name="supp_jacket[]" value="S/" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">J/</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_jacket[]" name="supp_jacket[]" value="LIGHT" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">LIGHT</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_jacket[]" name="supp_jacket[]" value="FLUORES" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">FLUORES</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-1" style="margin-right: 3%">
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_jacket[]" name="supp_jacket[]" value="UHF" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">UHF</label>
+                                                </div>
+                                            </div>
                                             <div class="col-1">
-                                                <label class="container">J/
-                                                    <input name="supp_jacket[]" type="checkbox" value="J/">
-                                                </label>
-                                            </div>
-                                            <div class="col-2">
-                                                <label class="container">LIGHT
-                                                    <input name="supp_jacket[]" type="checkbox" value="LIGHT">
-                                                </label>
-                                            </div>
-                                            <div class="col-3">
-                                                <label class="container">FLUORES
-                                                    <input name="supp_jacket[]" type="checkbox" value="FLUORES">
-                                                </label>
-                                            </div>
-                                            <div class="col-2">
-                                                <label class="container">UHF
-                                                    <input name="supp_jacket[]" type="checkbox" value="UHF">
-                                                </label>
-                                            </div>
-                                            <div class="col-2">
-                                                <label class="container">VHF
-                                                    <input name="supp_jacket[]" type="checkbox" value="VHF">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <input class="form-check-input" type="checkbox" id="supp_jacket[]" name="supp_jacket[]" value="VHF" style="width: 30px; height: 30px;">
+                                                    <label class="form-check-label" for="inlineCheckbox1">VHF</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
-                                    <div class="col-2 me-4 fw-bold">
+                                    <div class="col-1 me-4 fw-bold">
                                         <label for="supp_cover" class="me-2 mb-0 col-form-label text-primary">{{ __('COVER') }}</label>
-                                        <label class="container">C
-                                            <input name="supp_cover" type="checkbox" value="C">
-                                        </label>
+                                        <div class="d-inline-flex align-items-center gap-2">
+                                            <input class="form-check-input" type="checkbox" name="supp_cover" value="C" style="width: 30px; height: 30px;">
+                                            <label class="form-check-label" for="inlineCheckbox1">C</label>
+                                        </div>
                                     </div>
+
                                     <div class="col-2 me-4 fw-bold">
                                         <label for="colour" class="me-2 mb-0 col-form-label text-primary">{{ __('COLOUR') }}</label>
                                         <input name="colour" id="colour" class="p-2 rounded form-control">
                                     </div>
-                                    <div class="col-2 me-4 fw-bold">
+                                    <div class="col-3 me-4 fw-bold">
                                         <div class="row">
                                             <label for="aircraft-colour" class="me-2 mb-0 col-form-label text-primary">{{ __('AIRCRAFT COLOUR') }}</label>
-                                            <div class="col-1">
+                                            <div class="col-2" style="margin-right: -7%">
                                                 <p>A/</p>
                                             </div>
                                             <div class="col-10">
@@ -1015,9 +1024,10 @@
                                         <div class="row">
                                             <label for="supp_remark" class="me-2 mb-0 col-form-label">{{ __('REMARKS') }}</label>
                                             <div class="col-3">
-                                                <label class="container">N/
-                                                    <input name="supp_remark" value="N/" type="checkbox">
-                                                </label>
+                                                <div class="d-inline-flex align-items-center gap-1">
+                                                    <label class="form-check-label" for="inlineCheckbox1">N/</label>
+                                                    <input class="form-check-input" type="checkbox" id="supp_remark" name="supp_remark" value="N/" style="width: 30px; height: 30px;">
+                                                </div>
                                             </div>
                                             <div class="col-8">
                                                 <input name="supp_remark_desc" id="supp_remark_desc" class="p-2 rounded form-control" placeholder="NIL">
@@ -1028,7 +1038,7 @@
                                         <div class="col-4 me-4 fw-bold">
                                             <div class="row">
                                                 <label for="supp_pilot" class="me-2 mb-0 col-form-label text-primary">{{ __('PILOT IN COMMAND') }}</label>
-                                                <div class="col-2">
+                                                <div class="col-2" style="margin-right: -10%">
                                                     <p>C/</p>
                                                 </div>
                                                 <div class="col-9">
@@ -1052,7 +1062,7 @@
                                     <div class="row mb-3">
                                         <div class="col-2 me-4 fw-bold">
                                             <label class="container text-primary">
-                                                <input name="accept" type="checkbox" value="accept"> I accept the Terms adn Conditions
+                                                <input name="accept" type="checkbox" value="accept"> I accept the Terms and Conditions
                                             </label>
                                         </div>
                                     </div>

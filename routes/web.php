@@ -71,6 +71,6 @@ Route::get('/message', [App\Http\Controllers\IncomingController::class, 'message
 Route::get('/message-sent', [App\Http\Controllers\SentController::class, 'messageSent'])->name('messageSent');
 
 Route::get('/test', function () {
-   
+
     return view('test');
 });

@@ -94,7 +94,6 @@
           @yield('content')
         </main>
     </div>
-    {{-- {{View::make('layouts.footer')}} --}}
 </body>
 
 </html>

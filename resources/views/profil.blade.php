@@ -39,7 +39,7 @@
     <div class="container mt-5 shadow border-0 p-5" style="border-radius: 13px; margin-bottom: 35vh;">
         @if(session()->has('berhasil'))
         <div class="alert alert-success la la-thumbs-up"> {{session()->get('berhasil')}} </div>
-        @elseif(session()->has('gagal')) 
+        @elseif(session()->has('gagal'))
         <div class="alert alert-danger la la-thumbs-up"> {{session()->get('gagal')}} </div> @endif
         @if(count($errors) > 0)
         <div class="alert alert-danger">
@@ -99,16 +99,16 @@
                     <input type="password" class="form-control" id="password_confirmation" placeholder="Re-type new password" name="password_confirmation" required autocomplete="current-password">
                 </div>
             </div>
-        
+
 
         <div class="row mb-2">
             <div class="col-3 d-inline-flex gap-2">
                 <button type="submit" class="btn btn-primary text-white">
                     {{ __('SAVE') }}
                 </button>
-                <a href="#" class="btn btn-warning text-white" style="">
+                <button class="btn btn-warning text-white" type="reset">
                     {{ __('RESET') }}
-                </a>
+                </button>
             </div>
         </div>
     </form>

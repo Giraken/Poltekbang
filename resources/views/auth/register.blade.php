@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="reg container mb-5 mt-5">
+    <div class="reg container mb-5" style="margin-top: 9%">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card border-0 shadow" style="border-radius: 13px;">
@@ -51,7 +51,7 @@
                                 <div class="col-8">
                                     <h3 style="text-align: center;margin-left:0%;margin-bottom:10%">Flight Plan</h3>
                                     <div class="row mb-3">
-                                        <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nama') }}</label>
+                                        <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="name" type="name" placeholder="Masukkan username" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
@@ -169,3 +169,4 @@
         </div>
     </div>
 </body>
+</html>

@@ -27,39 +27,46 @@
                                             <label for="message-semt" class="me-2 mb-0 col-form-label text-primary"></label>
                                             <div class="row">
                                                 <div class="col-1">
-                                                    <label class="container">
-                                                        <input name="type" value="FPL" type="checkbox">FPL
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="FPL" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">FPL</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-1">
-                                                    <label class="container">
-                                                        <input name="type" value="CHG" type="checkbox">CHG
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="CHG" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">CHG</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-1">
-                                                    <label class="container">
-                                                        <input name="type" value="DLA" type="checkbox">DLA
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="DLA" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">DLA</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-1">
-                                                    <label class="container">
-                                                        <input name="type" value="CNL" type="checkbox">CNL
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="CNL" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">CNL</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-1">
-                                                    <label class="container">
-                                                        <input name="type" value="DEP" type="checkbox">DEP
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="DEP" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">DEP</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-1">
-                                                    <label class="container">
-                                                        <input name="type" value="ARR" type="checkbox">ARR
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="ARR" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">ARR</label>
+                                                    </div>
                                                 </div>
                                                 <div class="col-2">
-                                                    <label class="container">
-                                                        <input name="type" value="free_text" type="checkbox">FREE TEXT
-                                                    </label>
+                                                    <div class="d-inline-flex align-items-center gap-1">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="free_text" style="width: 30px; height: 30px;">
+                                                        <label class="form-check-label" for="inlineCheckbox1">FREE TEXT</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,23 +94,13 @@
                                             <a href="#" class="btn btn-primary text-white">
                                                 {{ __('VIEW') }}
                                             </a>
-                                            <a href="#" class="btn btn-warning text-white" style="">
+                                            <button class="btn btn-warning text-white" type="reset">
                                                 {{ __('RESET') }}
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
-                                {{-- <div class="row">
-                                    <div class="col-1">
-                                        <p>Search :</p>
-                                    </div>
-                                    <div class="col-2">
-                                        <form action="/">
-                                            <input type="text" name="search">
-                                        </form>
-                                    </div>
-                                </div> --}}
                                 <div class="table-responsive py-3">
                                     <table id="yajra-datatable" class="table yajra-datatable">
                                         <thead>
@@ -172,6 +169,7 @@
     </div>
 </div>
 <script type="text/javascript">
+
         $(function () {
 
                         $.fn.dataTable.ext.search.push(

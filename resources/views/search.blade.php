@@ -107,9 +107,9 @@
                                             <a href="#" class="btn btn-primary text-white">
                                                 {{ __('VIEW') }}
                                             </a>
-                                            <a href="#" class="btn btn-warning text-white" style="">
+                                            <button class="btn btn-warning text-white" type="reset">
                                                 {{ __('RESET') }}
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -184,6 +184,10 @@
     </div>
 </div>
 <script type="text/javascript">
+    function eraseText() {
+        document.getElementById("output").value = "";
+    }
+
     $(function () {
 
         var table = $('.yajra-datatable').DataTable({

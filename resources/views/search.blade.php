@@ -9,7 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <div class="position-relative w-100">
-    <div class="container mt-5" style="margin-bottom: 20vh;">
+    <div class="container mt-5" style="margin-bottom: 20rem;">
         <div class="row justify-content-center mb-5">
             <div class="col">
                 <div class="card border-0 shadow" style="border-radius: 13px;">
@@ -50,11 +50,25 @@
                                         </div>
                                         <div class="col">
                                             <label for="etd" class="col-md-4 mb-0 col-form-label">{{ __('ETD') }}</label>
-                                            <input name="etd" type="number" id="etd" class="p-2 rounded form-control">
+                                            <input name="etd" id="etd" class="p-2 rounded form-control">
                                         </div>
                                         <div class="col">
                                             <label for="to" class="col-md-4 mb-0 col-form-label">{{ __('TO') }}</label>
-                                            <input name="to" id="to" type="number" class="p-2 rounded form-control">
+                                            <input name="to" id="to" class="p-2 rounded form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-2">
+                                            <label for="dest" class="col-md-4 mb-0 col-form-label">{{ __('ARR') }}</label>
+                                            <input name="arr" id="arr" class="p-2 rounded form-control">
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="etd" class="col-md-4 mb-0 col-form-label">{{ __('ATA') }}</label>
+                                            <input name="ata" id="etd" class="p-2 rounded form-control">
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="to" class="col-md-4 mb-0 col-form-label">{{ __('TO') }}</label>
+                                            <input name="to" id="to" class="p-2 rounded form-control">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -104,7 +118,7 @@
                                     </div>
                                     <div class="row mb-0">
                                         <div class="col-3 d-inline-flex gap-2">
-                                            <a href="#" class="btn btn-primary text-white">
+                                            <a href="cnl-messages" class="btn btn-primary text-white">
                                                 {{ __('VIEW') }}
                                             </a>
                                             <button class="btn btn-warning text-white" type="reset">
@@ -157,9 +171,9 @@
             </div>
         </div> --}}
     </div>
-    <div class="position-absolute bottom-0" style="left: 0; right: 0;">
+    {{-- <div class="position-absolute bottom-0" style="left: 0; right: 0;">
         @include('layouts.footer')
-    </div>
+    </div> --}}
 </div>
 {{-- <div class="modal fade" id="message-box" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">

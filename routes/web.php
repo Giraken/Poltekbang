@@ -3,6 +3,43 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
+Route::get('/fpl-message-detail', function () {
+    return view('fpl-message-detail');
+});
+Route::get('/chg-message-detail', function () {
+    return view('chg-message-detail');
+});
+Route::get('/arr-message-detail', function () {
+    return view('arr-message-detail');
+});
+Route::get('/dla-message-detail', function () {
+    return view('dla-message-detail');
+});
+Route::get('/dep-message-detail', function () {
+    return view('dep-message-detail');
+});
+Route::get('/cnl-message-detail', function () {
+    return view('cnl-message-detail');
+});
+Route::get('/arr-messages', function () {
+    return view('arr-messages');
+});
+Route::get('/chg-messages', function () {
+    return view('chg-messages');
+});
+Route::get('/dep-messages', function () {
+    return view('dep-messages');
+});
+Route::get('/dla-messages', function () {
+    return view('dla-messages');
+});
+Route::get('/fpl-messages', function () {
+    return view('fpl-messages');
+});
+Route::get('/cnl-messages', function () {
+    return view('cnl-messages');
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes

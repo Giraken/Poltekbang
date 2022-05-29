@@ -9,7 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <div class="position-relative w-100">
-    <div class="container mt-5" style="margin-bottom: 20vh;">
+    <div class="container mt-5" style="margin-bottom: 56vh;">
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card border-0 shadow p-3" style="border-radius: 13px;">
@@ -28,38 +28,44 @@
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
+                            {{-- INI NANTI MASUKIN KE PALING SAMPING SETELAH SEMUA DATA MUNCUL BUAT DETAIL PESAN DI KOLOM Acton--}}
+                                {{-- <th>
+                                    <a href="/arr-message-detail" class="btn btn-dark text-white">
+                                        {{ __('Detail') }}
+                                    </a>
+                                </th> --}}
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>>
+    </div>
     {{-- <div class="position-absolute bottom-0" style="left: 0; right: 0;">
         @include('layouts.footer')
     </div> --}}
 </div>
-<div class="modal fade" id="message-box" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+{{-- <div class="modal fade" id="message-box" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          {{-- <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5> --}}
+          <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
           <h3 class="modal-title text-uppercase">View AFTN</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            {{-- Pesan nya ada di sini --}}
-            {{-- Contoh :
+            Pesan nya ada di sini
+            Contoh :
             FF WADDZTZX WARRZTZX WAAFZQZA WADDZPZX WRRRZPZX WADDZPZX WAAAZPZX
             240209 WADDZPZX
-            (DLA-LNI923-WADD1050-WARR-DOF/220524) --}}
+            (DLA-LNI923-WADD1050-WARR-DOF/220524)
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+            {{-- <button type="button" class="btn btn-primary">Save changes</button>
           </div>
       </div>
     </div>
-</div>
+</div> --}}
 <script type="text/javascript">
     function eraseText() {
         document.getElementById("output").value = "";

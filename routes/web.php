@@ -66,3 +66,28 @@ Route::get('/test', function () {
 
     return view('test');
 });
+
+// Sementara
+Route::get('/fpl-messages', function () {
+    return view('fpl-messages');
+});
+
+Route::get('/chg-messages', function () {
+    return view('chg-messages');
+});
+
+Route::get('/dla-messages', function () {
+    return view('dla-messages');
+});
+
+Route::get('/cnl-messages', function () {
+    return view('cnl-messages');
+});
+
+Route::get('/dep-messages', function () {
+    return view('dep-messages');
+});
+
+Route::get('/arr-messages', function () {
+    return view('arr-messages');
+});

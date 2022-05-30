@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use DataTables;
+use URL;
 
 class ATSController extends Controller
 {
@@ -51,8 +52,13 @@ class ATSController extends Controller
         }
         if($type == 'DLA')
         {
-            
-            return redirect()->route('dlaMessages');
+            $originator = $request->originator;
+            $dep_id = $request->dep;
+            $aircraft_id = $request['aircraft-id'];
+            $dest_id = $request->dest;
+            $dof = $request->dof;
+            //return redirect("/dla-messages?originator=$request->originator");
+            return redirect()->route('dlaMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'dest_id'=>$dest_id,'dof'=>$dof]);
         }
         if($type == 'CNL')
         {
@@ -72,7 +78,8 @@ class ATSController extends Controller
         $data = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('messages.type','CHG')->select('*','messages.id as id')
+        ->where('messages.type','CHG')->where('aftn_header.originator',$request->originator)
+        ->select('*','messages.id as id')
         ->get();
         
         if($request->ajax())
@@ -111,12 +118,39 @@ class ATSController extends Controller
     }
     public function dlaMessages(Request $request)
     {
-        $data = DB::table('messages')
+        $message = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('type','DLA')->select('*','messages.id as id')
-        ->get();
+        ->where('messages.type','DLA');
+
+        if($request->query('originator') != null)
+        {
+            $message->where('aftn_header.originator',$request->query('originator'));
+        }
+        if($request->query('aircraft_id') != null)
+        {
+            $message->where('messages.aircraft_id',$request->query('aircraft_id'));
+        }
+        if($request->query('from') != null)
+        {
+            $message->where('messages.created_at',$request->query('from'));
+        }
+        if($request->query('dep_id') != null)
+        {
+            $message->where('messages.dep_id',$request->query('dep_id'));
+        }
+        if($request->query('dest_id') != null)
+        {
+            $message->where('messages.dest_id',$request->query('dest_id'));
+        }
+        if($request->query('dof') != null)
+        {
+            $message->where('messages.dof',$request->query('dof'));
+        }
         
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+        //dump($data);
+
         if($request->ajax())
         {
         return DataTables::of($data)
@@ -128,7 +162,7 @@ class ATSController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('dla-messages');
+        return view('dla-messages',['data' => $data]);
     }
     public function arrMessages(Request $request)
     {

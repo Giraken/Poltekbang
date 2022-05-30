@@ -29,12 +29,32 @@
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
+                            <tbody>
+                            @php $no = 1 @endphp
+                            @foreach ($data as $d)
+                            <tr>
+                                <th>{{$no++}}</th>
+                                <th>{{$d->originator}}</th>
+                                <th>{{$d->created_at}}</th>
+                                <th>{{$d->aircraft_id}}</th>
+                                <th>{{$d->dep_id}}</th>
+                                <th>{{$d->time}}</th>
+                                <th>{{$d->dest_id}}</th>
+                                <th>{{$d->dof}}</th>
+                                <th>
+                                    <a href="/dla-message-detail/{{$d->id}}" class="btn btn-dark text-white">
+                                        {{ __('Detail') }}
+                                    </a>
+                                </th>
+                            </tr>
+                            @endforeach
                             {{-- INI NANTI MASUKIN KE PALING SAMPING SETELAH SEMUA DATA MUNCUL BUAT DETAIL PESAN DI KOLOM Acton--}}
                                 {{-- <th>
                                     <a href="/dla-message-detail" class="btn btn-dark text-white">
                                         {{ __('Detail') }}
                                     </a>
                                 </th> --}}
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -67,7 +87,7 @@
       </div>
     </div>
 </div> --}}
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     function eraseText() {
         document.getElementById("output").value = "";
     }
@@ -77,7 +97,7 @@
         var table = $('.yajra-datatable').DataTable({
             processing: true,
             serverSide: false,
-            ajax: "dla-messages",
+            ajax: "{{route('dlaMessages')}}",
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'originator', name: 'aftn_header.originator'},//1
@@ -96,41 +116,6 @@
             ]
 
         });
-                    var e = document.getElementById("msg-type");
-                    $('#msg-type').on('change', function () {
-                    table.columns(7).search( e.value ).draw();
-                    });
-                    $('#originator').on( 'keyup', function () {
-                    table.columns(1).search( this.value ).draw();
-                    });
-                    $('#aircraft-id').on( 'keyup', function () {
-                    table.columns(3).search( this.value ).draw();
-                    });
-                    $('#dep').on( 'keyup', function () {
-                    table.columns(8).search( this.value ).draw();
-                    });
-                    $('#dest').on( 'keyup', function () {
-                    table.columns(13).search( this.value ).draw();
-                    });
-                    $('#dof').on( 'keyup', function () {
-                    table.columns(6).search( this.value ).draw();
-                    });
-                    $('#reg').on( 'keyup', function () {
-                    table.columns(4).search( this.value ).draw();
-                    });
-                    $('#route').on( 'keyup', function () {
-                    table.columns(12).search( this.value ).draw();
-                    });
-                    var type = document.getElementById("type");
-                    $('#type').on('change', function () {
-                    table.columns(5).search( type.value ).draw();
-                    });
-                    // var group = document.getElementById("msg-type");
-                    // $('#group').on('change', function () {
-                    // table.columns(7).search( group.value ).draw();
-                    // });
-
-
       });
-    </script>
+    </script> --}}
 @endsection

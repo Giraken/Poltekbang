@@ -78,7 +78,7 @@
         var table = $('.yajra-datatable').DataTable({
             processing: true,
             serverSide: false,
-            ajax: "search",
+            ajax: "chg-messages",
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'originator', name: 'aftn_header.originator'},//1
@@ -88,7 +88,7 @@
                 {data: null, "defaultContent": ""},
                 {data: 'dest_id', name: 'messages.dest_id'},
                 {data: 'dof', name: 'messages.dof'},
-                {data: 'amendment', name: 'messages.amendment'},
+                {data: 'chg_amandement', name: 'messages.chg_amandement'},
                 {
                     data: 'action',
                     name: 'action',

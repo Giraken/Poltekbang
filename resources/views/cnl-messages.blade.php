@@ -77,7 +77,7 @@
         var table = $('.yajra-datatable').DataTable({
             processing: true,
             serverSide: false,
-            ajax: "search",
+            ajax: "cnl-messages",
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'originator', name: 'aftn_header.originator'},//1

@@ -17,42 +17,56 @@
                                             <tr>
                                                 <th><b>Originator</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$user->name}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Date/Time</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->created_at}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Aircraft ID</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->aircraft_id}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>DEP AD</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->dep_id}}
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <th><b>ATD</b></th>
+                                                <th>
+                                                    : {{$data->time}}
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <th><b>DEST AD</b></th>
+                                                <th>
+                                                    : {{$data->dest_id}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Arrival Aerodrome</b></th>
                                                 <th>
-                                                    :
+                                                    :{{$data->arr_aerodrome}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>ATA</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->arr_time}}
                                                 </th>
                                                 <th></th>
                                             </tr>

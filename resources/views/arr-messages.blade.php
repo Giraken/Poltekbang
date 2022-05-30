@@ -76,15 +76,15 @@
         var table = $('.yajra-datatable').DataTable({
             processing: true,
             serverSide: false,
-            ajax: "search",
+            ajax: "arr-messages",
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'originator', name: 'aftn_header.originator'},//1
                 {data: 'time', name: 'messages.time'},
                 {data: 'aircraft_id', name: 'messages.aircraft_id'},
                 {data: 'dep_id', name: 'messages.dep_id'},
+                {data: 'arr_aerodrome', name: 'messages.arr_aerodrome'},
                 {data: 'arr_time', name: 'messages.arr_time'},
-                {data: 'arrival_aerodrome', name: 'messages.arrival_aerodrome'},
                 {
                     data: 'action',
                     name: 'action',

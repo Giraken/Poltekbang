@@ -70,6 +70,19 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->nam
 |
 */
 Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
+Route::post('/search', [App\Http\Controllers\ATSController::class, 'searchPost'])->name('searchPost');
+Route::get('/arr-messages', [App\Http\Controllers\ATSController::class, 'arrMessages'])->name('arrMessages');
+Route::get('/chg-messages', [App\Http\Controllers\ATSController::class, 'chgMessages'])->name('chgMessages');
+Route::get('/dep-messages', [App\Http\Controllers\ATSController::class, 'depMessages'])->name('depMessages');
+Route::get('/dla-messages', [App\Http\Controllers\ATSController::class, 'dlaMessages'])->name('dlaMessages');
+Route::get('/fpl-messages', [App\Http\Controllers\ATSController::class, 'fplMessages'])->name('fplMessages');
+Route::get('/cnl-messages', [App\Http\Controllers\ATSController::class, 'cnlMessages'])->name('cnlMessages');
+Route::get('/fpl-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'fplDetail'])->name('fplDetail');
+Route::get('/chg-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'chgDetail'])->name('chgDetail');
+Route::get('/arr-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'arrDetail'])->name('arrDetail');
+Route::get('/dla-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'dlaDetail'])->name('dlaDetail');
+Route::get('/dep-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'depDetail'])->name('depDetail');
+Route::get('/cnl-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'cnlDetail'])->name('cnlDetail');
 /*
 |--------------------------------------------------------------------------
 | Messages

@@ -17,98 +17,98 @@
                                             <tr>
                                                 <th><b>Originator</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$user->name}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Date/Time</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->created_at}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Aircraft ID</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->aircraft_id}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>REG</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->fpl_reg}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>TYPE OF FLIGHT</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->fpl_flight_type}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>DOF</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->dof}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Type</b></th>
                                                 <th>
-                                                    :
+                                                    : FPL
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>DEP AD</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->dep_id}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>EOBT</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->time}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Speed</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->fpl_cruising_speed}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Level</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->fpl_cruising_level}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>Route</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$other->route}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>DEST AD</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->dest_id}}
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>EET</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->fpl_eet}}
                                                 </th>
                                                 <th></th>
                                             </tr>
@@ -122,14 +122,14 @@
                                             <tr>
                                                 <th><b>RMK</b></th>
                                                 <th>
-                                                    :
+                                                    : 
                                                 </th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th><b>ATA</b></th>
                                                 <th>
-                                                    :
+                                                    : {{$data->arr_time}}
                                                 </th>
                                                 <th></th>
                                             </tr>

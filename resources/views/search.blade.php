@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="card border-0 shadow" style="border-radius: 13px;">
                     <div class="card-body">
-                        <form method="POST" action="" style="font-family: 'Poppins', sans-serif;">
+                        <form method="post" action="{{route('searchPost')}}" style="font-family: 'Poppins', sans-serif;">
                             @csrf
                             <div class="row align-items-center p-3">
                                 <div class="col">
@@ -118,9 +118,9 @@
                                     </div>
                                     <div class="row mb-0">
                                         <div class="col-3 d-inline-flex gap-2">
-                                            <a href="cnl-messages" class="btn btn-primary text-white">
+                                            <button type="submit" class="btn btn-primary text-white">
                                                 {{ __('VIEW') }}
-                                            </a>
+                                            </button>
                                             <button class="btn btn-warning text-white" type="reset">
                                                 {{ __('RESET') }}
                                             </button>

@@ -70,18 +70,24 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->nam
 |
 */
 Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
-Route::get('/filed-message', [App\Http\Controllers\ATSController::class, 'filled_message'])->name('filled-message');
-Route::post('/filed-message', [App\Http\Controllers\ATSController::class, 'filled_messagePost'])->name('filled-messagePost');
-Route::get('/delay', [App\Http\Controllers\ATSController::class, 'delay'])->name('delay');
-Route::post('/delay', [App\Http\Controllers\ATSController::class, 'delayPost'])->name('delayPost');
-Route::get('/modification', [App\Http\Controllers\ATSController::class, 'modification'])->name('modification');
-Route::post('/modification', [App\Http\Controllers\ATSController::class, 'modificationPost'])->name('modificationPost');
-Route::get('/cancellation', [App\Http\Controllers\ATSController::class, 'cancellation'])->name('cancellation');
-Route::post('/cancellation', [App\Http\Controllers\ATSController::class, 'cancellationPost'])->name('cancellationPost');
-Route::get('/departure', [App\Http\Controllers\ATSController::class, 'departure'])->name('departure');
-Route::post('/departure', [App\Http\Controllers\ATSController::class, 'departurePost'])->name('departurePost');
-Route::get('/arrival', [App\Http\Controllers\ATSController::class, 'arrival'])->name('arrival');
-Route::post('/arrival', [App\Http\Controllers\ATSController::class, 'arrivalPost'])->name('arrivalPost');
+/*
+|--------------------------------------------------------------------------
+| Messages
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/filed-message', [App\Http\Controllers\MessagesController::class, 'filled_message'])->name('filled-message');
+Route::post('/filed-message', [App\Http\Controllers\MessagesController::class, 'filled_messagePost'])->name('filled-messagePost');
+Route::get('/delay', [App\Http\Controllers\MessagesController::class, 'delay'])->name('delay');
+Route::post('/delay', [App\Http\Controllers\MessagesController::class, 'delayPost'])->name('delayPost');
+Route::get('/modification', [App\Http\Controllers\MessagesController::class, 'modification'])->name('modification');
+Route::post('/modification', [App\Http\Controllers\MessagesController::class, 'modificationPost'])->name('modificationPost');
+Route::get('/cancellation', [App\Http\Controllers\MessagesController::class, 'cancellation'])->name('cancellation');
+Route::post('/cancellation', [App\Http\Controllers\MessagesController::class, 'cancellationPost'])->name('cancellationPost');
+Route::get('/departure', [App\Http\Controllers\MessagesController::class, 'departure'])->name('departure');
+Route::post('/departure', [App\Http\Controllers\MessagesController::class, 'departurePost'])->name('departurePost');
+Route::get('/arrival', [App\Http\Controllers\MessagesController::class, 'arrival'])->name('arrival');
+Route::post('/arrival', [App\Http\Controllers\MessagesController::class, 'arrivalPost'])->name('arrivalPost');
 /*
 |--------------------------------------------------------------------------
 | Incoming Message
@@ -105,26 +111,26 @@ Route::get('/test', function () {
 });
 
 // Sementara
-Route::get('/fpl-messages', function () {
-    return view('fpl-messages');
-});
+// Route::get('/fpl-messages', function () {
+//     return view('fpl-messages');
+// });
 
-Route::get('/chg-messages', function () {
-    return view('chg-messages');
-});
+// Route::get('/chg-messages', function () {
+//     return view('chg-messages');
+// });
 
-Route::get('/dla-messages', function () {
-    return view('dla-messages');
-});
+// Route::get('/dla-messages', function () {
+//     return view('dla-messages');
+// });
 
-Route::get('/cnl-messages', function () {
-    return view('cnl-messages');
-});
+// Route::get('/cnl-messages', function () {
+//     return view('cnl-messages');
+// });
 
-Route::get('/dep-messages', function () {
-    return view('dep-messages');
-});
+// Route::get('/dep-messages', function () {
+//     return view('dep-messages');
+// });
 
-Route::get('/arr-messages', function () {
-    return view('arr-messages');
-});
+// Route::get('/arr-messages', function () {
+//     return view('arr-messages');
+// });

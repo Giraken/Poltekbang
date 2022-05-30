@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+Route::get('/search-fpl-messages', function () {
+    return view('search-fpl-messages');
+});
+Route::get('/search-dla-messages', function () {
+    return view('search-dla-messages');
+});
+
 Route::get('/fpl-message-detail', function () {
     return view('fpl-message-detail');
 });
@@ -69,7 +76,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->nam
 |--------------------------------------------------------------------------
 |
 */
-Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
+// Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
 Route::post('/search', [App\Http\Controllers\ATSController::class, 'searchPost'])->name('searchPost');
 Route::get('/arr-messages', [App\Http\Controllers\ATSController::class, 'arrMessages'])->name('arrMessages');
 Route::get('/chg-messages', [App\Http\Controllers\ATSController::class, 'chgMessages'])->name('chgMessages');

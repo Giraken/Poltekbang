@@ -63,8 +63,8 @@
                                             <input name="arr" id="arr" class="p-2 rounded form-control">
                                         </div>
                                         <div class="col-2">
-                                            <label for="etd" class="col-md-4 mb-0 col-form-label">{{ __('ATA') }}</label>
-                                            <input name="ata" id="etd" class="p-2 rounded form-control">
+                                            <label for="ata" class="col-md-4 mb-0 col-form-label">{{ __('ATA') }}</label>
+                                            <input name="ata" id="ata" class="p-2 rounded form-control">
                                         </div>
                                         <div class="col-2">
                                             <label for="to" class="col-md-4 mb-0 col-form-label">{{ __('TO') }}</label>

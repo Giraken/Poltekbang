@@ -4,49 +4,49 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-Route::get('/search-fpl-messages', function () {
-    return view('search-fpl-messages');
-});
-Route::get('/search-dla-messages', function () {
-    return view('search-dla-messages');
-});
+// Route::get('/search-fpl-messages', function () {
+//     return view('search-fpl-messages');
+// });
+// Route::get('/search-dla-messages', function () {
+//     return view('search-dla-messages');
+// });
 
-Route::get('/fpl-message-detail', function () {
-    return view('fpl-message-detail');
-});
-Route::get('/chg-message-detail', function () {
-    return view('chg-message-detail');
-});
-Route::get('/arr-message-detail', function () {
-    return view('arr-message-detail');
-});
-Route::get('/dla-message-detail', function () {
-    return view('dla-message-detail');
-});
-Route::get('/dep-message-detail', function () {
-    return view('dep-message-detail');
-});
-Route::get('/cnl-message-detail', function () {
-    return view('cnl-message-detail');
-});
-Route::get('/arr-messages', function () {
-    return view('arr-messages');
-});
-Route::get('/chg-messages', function () {
-    return view('chg-messages');
-});
-Route::get('/dep-messages', function () {
-    return view('dep-messages');
-});
-Route::get('/dla-messages', function () {
-    return view('dla-messages');
-});
-Route::get('/fpl-messages', function () {
-    return view('fpl-messages');
-});
-Route::get('/cnl-messages', function () {
-    return view('cnl-messages');
-});
+// Route::get('/fpl-message-detail', function () {
+//     return view('fpl-message-detail');
+// });
+// Route::get('/chg-message-detail', function () {
+//     return view('chg-message-detail');
+// });
+// Route::get('/arr-message-detail', function () {
+//     return view('arr-message-detail');
+// });
+// Route::get('/dla-message-detail', function () {
+//     return view('dla-message-detail');
+// });
+// Route::get('/dep-message-detail', function () {
+//     return view('dep-message-detail');
+// });
+// Route::get('/cnl-message-detail', function () {
+//     return view('cnl-message-detail');
+// });
+// Route::get('/arr-messages', function () {
+//     return view('arr-messages');
+// });
+// Route::get('/chg-messages', function () {
+//     return view('chg-messages');
+// });
+// Route::get('/dep-messages', function () {
+//     return view('dep-messages');
+// });
+// Route::get('/dla-messages', function () {
+//     return view('dla-messages');
+// });
+// Route::get('/fpl-messages', function () {
+//     return view('fpl-messages');
+// });
+// Route::get('/cnl-messages', function () {
+//     return view('cnl-messages');
+// });
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,7 +76,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->nam
 |--------------------------------------------------------------------------
 |
 */
-// Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
+Route::get('/search', [App\Http\Controllers\ATSController::class, 'search'])->name('search');
 Route::post('/search', [App\Http\Controllers\ATSController::class, 'searchPost'])->name('searchPost');
 Route::get('/arr-messages', [App\Http\Controllers\ATSController::class, 'arrMessages'])->name('arrMessages');
 Route::get('/chg-messages', [App\Http\Controllers\ATSController::class, 'chgMessages'])->name('chgMessages');
@@ -130,27 +130,3 @@ Route::get('/test', function () {
     return view('test');
 });
 
-// Sementara
-// Route::get('/fpl-messages', function () {
-//     return view('fpl-messages');
-// });
-
-// Route::get('/chg-messages', function () {
-//     return view('chg-messages');
-// });
-
-// Route::get('/dla-messages', function () {
-//     return view('dla-messages');
-// });
-
-// Route::get('/cnl-messages', function () {
-//     return view('cnl-messages');
-// });
-
-// Route::get('/dep-messages', function () {
-//     return view('dep-messages');
-// });
-
-// Route::get('/arr-messages', function () {
-//     return view('arr-messages');
-// });

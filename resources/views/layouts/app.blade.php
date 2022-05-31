@@ -56,7 +56,7 @@
                       ATS Message
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="/search-fpl-messages">Search ATS Message</a></li>
+                      <li><a class="dropdown-item" href="/search">Search ATS Message</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="/filed-message">Filed Flight Plane (FPL)</a></li>
                       <li><a class="dropdown-item" href="/delay">Delay (DLA)</a></li>

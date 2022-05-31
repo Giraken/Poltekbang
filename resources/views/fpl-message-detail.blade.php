@@ -24,7 +24,7 @@
                                             <tr>
                                                 <th><b>Date/Time</b></th>
                                                 <th>
-                                                    : {{$data->created_at}}
+                                                    : {{$data->time}}
                                                 </th>
                                                 <th></th>
                                             </tr>

@@ -30,12 +30,33 @@
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
-                            {{-- INI NANTI MASUKIN KE PALING SAMPING SETELAH SEMUA DATA MUNCUL BUAT DETAIL PESAN DI KOLOM Acton--}}
-                                {{-- <th>
-                                    <a href="/chg-message-detail" class="btn btn-dark text-white">
-                                        {{ __('Detail') }}
-                                    </a>
-                                </th> --}}
+                            <tbody>
+                                @php $no = 1 @endphp
+                                @foreach ($data as $d)
+                                <tr>
+                                    <th>{{$no++}}</th>
+                                    <th>{{$d->originator}}</th>
+                                    <th>{{$d->time}}</th>
+                                    <th>{{$d->aircraft_id}}</th>
+                                    <th>{{$d->dep_id}}</th>
+                                    <th></th>
+                                    <th>{{$d->dest_id}}</th>
+                                    <th>{{$d->dof}}</th>
+                                    <th>{{$d->chg_amandement}}</th>
+                                    <th>
+                                        <a href="/chg-message-detail/{{$d->id}}" class="btn btn-dark text-white">
+                                            {{ __('Detail') }}
+                                        </a>
+                                    </th>
+                                </tr>
+                                @endforeach
+                                {{-- INI NANTI MASUKIN KE PALING SAMPING SETELAH SEMUA DATA MUNCUL BUAT DETAIL PESAN DI KOLOM Acton--}}
+                                    {{-- <th>
+                                        <a href="/dla-message-detail" class="btn btn-dark text-white">
+                                            {{ __('Detail') }}
+                                        </a>
+                                    </th> --}}
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -68,7 +89,7 @@
       </div>
     </div>
 </div> --}}
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     function eraseText() {
         document.getElementById("output").value = "";
     }
@@ -134,5 +155,5 @@
 
 
       });
-    </script>
+    </script> --}}
 @endsection

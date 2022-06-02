@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="card border-0 shadow" style="border-radius: 13px;">
                     <div class="card-body">
-                        <form method="post" action="{{route('searchPost')}}" style="font-family: 'Poppins', sans-serif;">
+                        <form method="POST" action="{{route('searchPost')}}" style="font-family: 'Poppins', sans-serif;">
                             @csrf
                             <div class="row align-items-center p-3">
                                 <div class="col">

@@ -34,11 +34,11 @@
                                                         <option value="">-- ALL MESSAGES --</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-3">
+                                                {{-- <div class="col-3">
                                                     <a href="search-dla-messages" class="btn btn-dark text-white">
                                                         {{ __('Select') }}
                                                     </a>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
 

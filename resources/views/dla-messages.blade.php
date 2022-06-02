@@ -56,6 +56,11 @@
                                 </th> --}}
                             </tbody>
                         </table>
+                        <div style="text-align: left">
+                            <button class="btn btn-primary" onclick="history.back()">
+                                Back
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

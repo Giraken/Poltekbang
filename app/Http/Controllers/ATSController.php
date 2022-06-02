@@ -44,11 +44,26 @@ class ATSController extends Controller
 
         if($type == 'FPL')
         {
-            return redirect()->route('fplMessages');
+            $originator = $request->originator;
+            $dep_id = $request->dep;
+            $aircraft_id = $request['aircraft-id'];
+            $dest_id = $request->dest;
+            $dof = $request->dof;
+            $reg = $request->reg;
+            $type = $request->type;
+            $route = $request->route;
+            return redirect()->route('fplMessages'
+            ,['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'dest_id'=>$dest_id,'dof'=>$dof
+            , 'reg'=>$reg,'type'=>$type,'route'=>$route]);
         }
         if($type == 'CHG')
         {
-            return redirect()->route('chgMessages');
+            $originator = $request->originator;
+            $dep_id = $request->dep;
+            $aircraft_id = $request['aircraft-id'];
+            $dest_id = $request->dest;
+            $dof = $request->dof;
+            return redirect()->route('chgMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'dest_id'=>$dest_id,'dof'=>$dof]);
         }
         if($type == 'DLA')
         {
@@ -57,64 +72,140 @@ class ATSController extends Controller
             $aircraft_id = $request['aircraft-id'];
             $dest_id = $request->dest;
             $dof = $request->dof;
-            //return redirect("/dla-messages?originator=$request->originator");
             return redirect()->route('dlaMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'dest_id'=>$dest_id,'dof'=>$dof]);
         }
         if($type == 'CNL')
         {
-            return redirect()->route('cnlMessages');
+            $originator = $request->originator;
+            $dep_id = $request->dep;
+            $aircraft_id = $request['aircraft-id'];
+            $dest_id = $request->dest;
+            $dof = $request->dof;
+            return redirect()->route('cnlMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'dest_id'=>$dest_id,'dof'=>$dof]);
         }
         if($type == 'DEP')
         {
-            return redirect()->route('depMessages');
+            $originator = $request->originator;
+            $dep_id = $request->dep;
+            $aircraft_id = $request['aircraft-id'];
+            $dest_id = $request->dest;
+            $dof = $request->dof;
+            return redirect()->route('depMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'dest_id'=>$dest_id,'dof'=>$dof]);
         }
         if($type == 'ARR')
         {
-            return redirect()->route('arrMessages');
+            $originator = $request->originator;
+            $dep_id = $request->dep;
+            $aircraft_id = $request['aircraft-id'];
+            $ata = $request->ata;
+            return redirect()->route('arrMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'ata'=>$ata]);
         }
     }
     public function chgMessages(Request $request)
     {
-        $data = DB::table('messages')
+        $message = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('messages.type','CHG')->where('aftn_header.originator',$request->originator)
-        ->select('*','messages.id as id')
-        ->get();
-        
-        if($request->ajax())
+        ->where('messages.type','CHG');
+
+        if($request->query('originator') != null)
         {
-        return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/chg-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            $message->where('aftn_header.originator',$request->query('originator'));
         }
-        return view('chg-messages');
+        if($request->query('aircraft_id') != null)
+        {
+            $message->where('messages.aircraft_id',$request->query('aircraft_id'));
+        }
+        if($request->query('from') != null)
+        {
+            $message->where('messages.time','like',$request->query('from'));
+        }
+        if($request->query('dep_id') != null)
+        {
+            $message->where('messages.dep_id',$request->query('dep_id'));
+        }
+        if($request->query('dest_id') != null)
+        {
+            $message->where('messages.dest_id',$request->query('dest_id'));
+        }
+        if($request->query('dof') != null)
+        {
+            $message->where('messages.dof',$request->query('dof'));
+        }
+        
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/chg-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        return view('chg-messages',['data' => $data]);
     }
     public function fplMessages(Request $request)
     {
-        $data = DB::table('messages')
+        $message = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('type','FPL')->select('*','messages.id as id')
-        ->get();
-        
-        if($request->ajax())
+        ->where('type','FPL');
+
+        if($request->query('originator') != null)
         {
-        return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/fpl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            $message->where('aftn_header.originator',$request->query('originator'));
         }
-        return view('fpl-messages');
+        if($request->query('aircraft_id') != null)
+        {
+            $message->where('messages.aircraft_id',$request->query('aircraft_id'));
+        }
+        if($request->query('from') != null)
+        {
+            $message->where('messages.time','like',$request->query('from'));
+        }
+        if($request->query('dep_id') != null)
+        {
+            $message->where('messages.dep_id',$request->query('dep_id'));
+        }
+        if($request->query('dest_id') != null)
+        {
+            $message->where('messages.dest_id',$request->query('dest_id'));
+        }
+        if($request->query('dof') != null)
+        {
+            $message->where('messages.dof',$request->query('dof'));
+        }
+        if($request->query('reg') != null)
+        {
+            $message->where('messages.fpl_reg',$request->query('reg'));
+        }
+        if($request->query('type') != null)
+        {
+            $message->where('messages.fpl_flight_type',$request->query('type'));
+        }
+        if($request->query('route') != null)
+        {
+            $message->where('additional_informations.route','like','%'.$request->query('route').'%');
+        }
+        
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+        
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/fpl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        return view('fpl-messages',['data'=>$data]);
     }
     public function dlaMessages(Request $request)
     {
@@ -133,7 +224,7 @@ class ATSController extends Controller
         }
         if($request->query('from') != null)
         {
-            $message->where('messages.created_at',$request->query('from'));
+            $message->where('messages.time',$request->query('from'));
         }
         if($request->query('dep_id') != null)
         {
@@ -149,83 +240,159 @@ class ATSController extends Controller
         }
         
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
-        //dump($data);
 
-        if($request->ajax())
-        {
-        return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/dla-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        }
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/dla-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
         return view('dla-messages',['data' => $data]);
     }
     public function arrMessages(Request $request)
     {
-        $data = DB::table('messages')
+        $message = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('type','ARR')->select('*','messages.id as id')
-        ->get();
-        
-        if($request->ajax())
+        ->where('type','ARR');
+
+        if($request->query('originator') != null)
         {
-        return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/arr-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            $message->where('aftn_header.originator',$request->query('originator'));
         }
-        return view('arr-messages');
+        if($request->query('aircraft_id') != null)
+        {
+            $message->where('messages.aircraft_id',$request->query('aircraft_id'));
+        }
+        if($request->query('from') != null)
+        {
+            $message->where('messages.time','like',$request->query('from'));
+        }
+        if($request->query('dep_id') != null)
+        {
+            $message->where('messages.dep_id',$request->query('dep_id'));
+        }
+        if($request->query('dest_id') != null)
+        {
+            $message->where('messages.dest_id',$request->query('dest_id'));
+        }
+        if($request->query('dof') != null)
+        {
+            $message->where('messages.dof',$request->query('dof'));
+        }
+        
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+        
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/arr-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        return view('arr-messages',['data'=>$data]);
     }
     public function cnlMessages(Request $request)
     {
-        $data = DB::table('messages')
+        $message = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('type','CNL')->select('*','messages.id as id')
-        ->get();
+        ->where('type','CNL');
         
-        if($request->ajax())
+        if($request->query('originator') != null)
         {
-        return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/cnl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            $message->where('aftn_header.originator',$request->query('originator'));
         }
-        return view('cnl-messages');
+        if($request->query('aircraft_id') != null)
+        {
+            $message->where('messages.aircraft_id',$request->query('aircraft_id'));
+        }
+        if($request->query('from') != null)
+        {
+            $message->where('messages.time',$request->query('from'));
+        }
+        if($request->query('dep_id') != null)
+        {
+            $message->where('messages.dep_id',$request->query('dep_id'));
+        }
+        if($request->query('dest_id') != null)
+        {
+            $message->where('messages.dest_id',$request->query('dest_id'));
+        }
+        if($request->query('dof') != null)
+        {
+            $message->where('messages.dof',$request->query('dof'));
+        }
+        
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/cnl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        return view('cnl-messages',['data'=>$data]);
     }
     public function depMessages(Request $request)
     {
-        $data = DB::table('messages')
+        $message = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
-        ->where('type','DEP')->select('*','messages.id as id')
-        ->get();
-        
-        if($request->ajax())
+        ->where('type','DEP');
+
+        if($request->query('originator') != null)
         {
-        return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/dep-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
-                    return $actionBtn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            $message->where('aftn_header.originator',$request->query('originator'));
         }
-        return view('dep-messages');
+        if($request->query('aircraft_id') != null)
+        {
+            $message->where('messages.aircraft_id',$request->query('aircraft_id'));
+        }
+        if($request->query('from') != null)
+        {
+            $message->where('messages.time','like',$request->query('from'));
+        }
+        if($request->query('dep_id') != null)
+        {
+            $message->where('messages.dep_id',$request->query('dep_id'));
+        }
+        if($request->query('dest_id') != null)
+        {
+            $message->where('messages.dest_id',$request->query('dest_id'));
+        }
+        if($request->query('dof') != null)
+        {
+            $message->where('messages.dof',$request->query('dof'));
+        }
+        
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+        
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/dep-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        return view('dep-messages',['data'=>$data]);
     }
     public function dlaDetail($id)
     {

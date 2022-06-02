@@ -35,10 +35,10 @@
                             <tr>
                                 <th>{{$no++}}</th>
                                 <th>{{$d->originator}}</th>
-                                <th>{{$d->created_at}}</th>
+                                <th>{{$d->time}}</th>
                                 <th>{{$d->aircraft_id}}</th>
                                 <th>{{$d->dep_id}}</th>
-                                <th>{{$d->time}}</th>
+                                <th></th>
                                 <th>{{$d->dest_id}}</th>
                                 <th>{{$d->dof}}</th>
                                 <th>

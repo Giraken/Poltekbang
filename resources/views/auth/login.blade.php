@@ -34,9 +34,34 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        @media screen and (max-width: 420px) {
+            .logo-1 {
+                width: 70%;
+                /* background-color: red; */
+                margin: 0 auto;
+            }
+
+            .logo-2 {
+                display: none;
+            }
+
+            .forgot {
+                /* background-color: red; */
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width: 421px) {
+            .logo-1 {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="w-100 position-relative d-flex align-items-center" style="height: 100vh;">
+    <div class="w-100 position-relative d-flex align-items-center login-mobile" style="height: 100vh;">
         <div class="container mb-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -45,11 +70,11 @@
                             <form method="POST" action="{{ route('login') }}" style="font-family: 'Poppins', sans-serif;">
                                 @csrf
                                 <div class="row align-items-center p-3">
-                                    <div class="col-4">
+                                    <div class="col-4 logo-2">
                                         <img src="img/unnamed.jpg" alt="Logo" style="width:120%">
                                     </div>
 
-                                    <div class="col-8">
+                                    <div class="col">
                                         @if(count($errors) > 0)
                                         <div class="alert alert-danger">
                                             @foreach ($errors->all() as $error)
@@ -58,6 +83,9 @@
                                         </div>
                                         @endif
                                         <h3 class="text-uppercase" style="text-align: center">Flight Plan</h3>
+                                        <div class="logo-1">
+                                            <img src="img/unnamed.jpg" alt="Logo" style="width:100%">
+                                        </div>
                                         <div class="row mb-3">
                                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
@@ -95,15 +123,15 @@
                                                 @enderror
                                             </div>
                                         </div>
-
-                                        @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}" style="margin-left: 55%;">
-                                                Forgot Password?
-                                            </a>
-                                        @endif
-
                                         <div class="row mb-0" style="margin-top:3%">
                                             <div class="col-md-6 offset-md-4 d-flex flex-column gap-3 align-items-center">
+                                                <div class="forgot">
+                                                @if (Route::has('password.request'))
+                                                    <a class="btn btn-link forgot" href="{{ route('password.request') }}">
+                                                        Forgot Password?
+                                                    </a>
+                                                @endif
+                                                </div>
                                                 <button type="submit" class="btn btn text-uppercase" style="width: 200px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                                     {{ __('Login') }}
                                                 </button>

@@ -34,9 +34,41 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        @media screen and (max-width: 420px) {
+            .register-mobile {
+                /* height: 100vh;
+                background-color: red; */
+                padding: 75px 0;
+            }
+
+            .logo-1 {
+                width: 70%;
+                /* background-color: red; */
+                margin: 0 auto;
+            }
+
+            .logo-2 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 421px) {
+            .register-mobile {
+                height: 100vh;
+                /* background-color: red; */
+                padding: 0 0;
+            }
+
+            .logo-1 {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="w-100 position-relative d-flex align-items-center" style="height: 100vh;">
+    <div class="w-100 position-relative d-flex align-items-center register-mobile" style="">
         <div class="reg container mb-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -45,12 +77,15 @@
                             <form method="POST" action="{{ route('register') }}" style="font-family: 'Poppins', sans-serif;">
                                 @csrf
                                 <div class="row align-items-center p-3">
-                                    <div class="col-4">
+                                    <div class="col-4 logo-2">
                                         <img src="img/unnamed.jpg" alt="Logo" style="width:100%;">
                                     </div>
 
-                                    <div class="col-8">
+                                    <div class="col">
                                         <h3 style="text-align: center;margin-left:0%;margin-bottom:10%">Flight Plan</h3>
+                                        <div class="logo-1">
+                                            <img src="img/unnamed.jpg" alt="Logo" style="width:100%">
+                                        </div>
                                         <div class="row mb-3">
                                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 

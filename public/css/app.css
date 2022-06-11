@@ -11400,3 +11400,13 @@ form .check-container {
     margin-bottom: 50px;
   }
 }
+
+/* @media screen and (max-width: 420px) {
+  .login-mobile {
+    background-color: red;
+  }
+
+  body {
+    background-color: red;
+  }
+} */

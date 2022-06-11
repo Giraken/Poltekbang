@@ -46,6 +46,34 @@
         text-align: center;
     }
 
+    @media screen and (max-width: 420px) {
+        .hero1 {
+            padding: 0 !important;
+        }
+
+        .hero1-title-1 {
+            font-size: 1.5rem;
+            overflow: visible;
+            width: 90% !important;
+            /* background-color: red; */
+        }
+
+        .hero1-title-2 {
+            font-size: 1rem;
+            overflow: visible;
+            width: 90% !important;
+            /* background-color: red; */
+        }
+
+
+        .hero1-title-3 {
+            font-size: 1rem;
+            overflow: visible;
+            width: 90% !important;
+            /* background-color: red; */
+        }
+    }
+
     .section-2 h1 {
         font-family: 'Poppins';
         font-style: normal;
@@ -126,7 +154,33 @@
         margin-left: 2%;
     }
 
-    .hero2{
+    @media screen and (max-width: 420px) {
+        .section-2 h1 {
+            font-size: 2.5rem;
+        }
+
+        .section-3 h1 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 60px;
+            text-align: center;
+            color: #474747;
+        }
+
+        .section-2 .main {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+        }
+
+        .section-2 .main h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .hero2 {
         height: 100vh;
         width: 100vw;
         background-image:
@@ -174,6 +228,28 @@
         font-size: 1.3vw;
         text-align: left;
         margin-left:-20%;
+    }
+
+    @media screen and (max-width: 420px) {
+        .hero2 {
+            padding: 10px !important;
+        }
+
+        .hero2-title-1 {
+            font-size: 1.5rem;
+        }
+
+        .hero2-title-2 {
+            font-size: .85rem;
+        }
+
+        .hero2-title-3 {
+            font-size: 1.5rem;
+        }
+
+        .hero2-title-4 {
+            font-size: .85rem;
+        }
     }
 
     .section-2 .contact {
@@ -233,6 +309,54 @@
         text-align: left;
         color:#99abb8;
     }
+
+    @media screen and (max-width: 420px) {
+        .section-2 .contact {
+            font-size: 2.5rem;
+            line-height: 60px;
+            text-align: center;
+            color: #474747;
+            margin-right: 0%
+        }
+        .hero3 {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0;
+            height: 100vh;
+        }
+
+        .hero3 div:nth-child(1) {
+            width: 100% !important;
+            height: 50% !important;
+        }
+
+        .hero3 div:nth-child(2) {
+            /* overflow-y: visible !important; */
+            margin-top: -25px !important;
+            width: 100% !important;
+            height: 50% !important;
+            /* background-color: yellow; */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center;
+            gap: 0px !important;
+        }
+
+        .hero3 div:nth-child(2) img {
+            margin-bottom: 20px;
+        }
+
+        .hero3 div:nth-child(2) h1,
+        .hero3 div:nth-child(2) h3,
+        .hero3 div:nth-child(2) p {
+            text-align: center;
+            overflow: visible !important;
+        }
+
+        .hero3-title-1::after {
+            display: none;
+        }
+    }
 </style>
 <div class="" style="overflow-x: hidden;">
     <div class="hero1 d-flex flex-column justify-content-center p-5 align-items-center text-center overflow-hidden gap-5">
@@ -250,7 +374,7 @@
 
     <div class="section-2 mt-5">
         <h1 class="">Look At Us</h1>
-        <div class="d-flex justify-content-center align-items-center gap-5 w-100">
+        <div class="d-flex justify-content-center align-items-center gap-5 w-100 main">
             <a href="#about" class="image image1 d-flex justify-content-center align-items-center">
                 <h2 class="fw-bold shadow">About Us</h2>
             </a>
@@ -263,8 +387,8 @@
         </div>
     </div>
     <div id="about" class="pt-5">
-        <div class="section-2 mt-5">
-            <h2 class="">Poltekbang Surabaya</h2>
+        <div class="section-3 mt-5">
+            <h1 class="">Poltekbang Surabaya</h1>
         </div>
 
         <div class="hero2 d-flex flex-column justify-content-center p-5 align-items-center overflow-hidden gap-5">

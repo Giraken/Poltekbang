@@ -48,6 +48,7 @@
                                             <label for="msg-type" class="col-md-4 mb-0 col-form-label">{{ __('Type Message') }}</label>
                                             <select name="msg-type" id="msg-type" class="p-2 rounded form-select">
                                                 <option value="FPL">FPL</option>
+                                                <option value="FREETEXT">FREETEXT</option>
                                                 <option value="CHG">CHG</option>
                                                 <option value="DLA">DLA</option>
                                                 <option value="CNL">CNL</option>
@@ -94,6 +95,10 @@
                                             <label for="to" class="col-md-4 mb-0 col-form-label">{{ __('TO') }}</label>
                                             <input name="to" id="to" class="p-2 rounded form-control">
                                         </div> --}}
+                                        <div class="col-3">
+                                            <label for="freetext" class="me-2 mb-0 col-form-label">{{ __('Freetext ATS') }}</label>
+                                            <input name="freetext" id="freetext" class="p-2 rounded form-control">
+                                        </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-2 d-inline-flex align-items-center me-4">

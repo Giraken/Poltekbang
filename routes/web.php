@@ -88,7 +88,7 @@ Route::get('/test', function () {
 });
 
 // Sementara
-Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
+Route::get('/downloadPDF',[App\Http\Controllers\IncomingController::class, 'downloadPDF'])->name('downloadPDF');
 
 Route::get('/free-text', function () {
     return view('free-text');

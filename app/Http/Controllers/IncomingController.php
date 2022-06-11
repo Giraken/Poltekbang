@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use DataTables;
+use PDF;
 
 class IncomingController extends Controller
 {
@@ -33,5 +34,11 @@ class IncomingController extends Controller
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])->make(true);
+    }
+    public function downloadPDF()
+    {
+        $pdf = PDF::loadView('pdf')->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        return $pdf->stream('invoice.pdf');
     }
 }

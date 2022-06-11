@@ -7,6 +7,7 @@ use DB;
 use Auth;
 use DataTables;
 use URL;
+use PDF;
 
 class ATSController extends Controller
 {
@@ -20,7 +21,7 @@ class ATSController extends Controller
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
         ->get();
-        
+
         if($request->ajax())
         {
         return DataTables::of($data)
@@ -34,6 +35,31 @@ class ATSController extends Controller
         }
         return view('search');
     }
+
+    public function downloadPDF(Request $request){
+        // $data = DB::table('messages')
+        // ->join('aftn_header','aftn_header.message_id','=','messages.id')
+        // ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
+        // ->get();
+
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($row){
+        //             $actionBtn = '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></button>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        // return view('search');
+        $user = DB::find($request->$id);
+
+        $pdf = PDF::loadView('pdf', compact('user'));
+        return $pdf->download('invoice.pdf');
+    }
+
     public function searchPost(Request $request)
     {
         $validateData = $request->validate([
@@ -132,7 +158,7 @@ class ATSController extends Controller
         {
             $message->where('messages.dof',$request->query('dof'));
         }
-        
+
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
 
         // if($request->ajax())
@@ -191,9 +217,9 @@ class ATSController extends Controller
         {
             $message->where('additional_informations.route','like','%'.$request->query('route').'%');
         }
-        
+
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
-        
+
         // if($request->ajax())
         // {
         // return DataTables::of($data)
@@ -238,7 +264,7 @@ class ATSController extends Controller
         {
             $message->where('messages.dof',$request->query('dof'));
         }
-        
+
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
 
         // if($request->ajax())
@@ -285,9 +311,9 @@ class ATSController extends Controller
         {
             $message->where('messages.dof',$request->query('dof'));
         }
-        
+
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
-        
+
         // if($request->ajax())
         // {
         // return DataTables::of($data)
@@ -307,7 +333,7 @@ class ATSController extends Controller
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
         ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
         ->where('type','CNL');
-        
+
         if($request->query('originator') != null)
         {
             $message->where('aftn_header.originator',$request->query('originator'));
@@ -332,7 +358,7 @@ class ATSController extends Controller
         {
             $message->where('messages.dof',$request->query('dof'));
         }
-        
+
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
         // if($request->ajax())
         // {
@@ -378,9 +404,9 @@ class ATSController extends Controller
         {
             $message->where('messages.dof',$request->query('dof'));
         }
-        
+
         $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
-        
+
         // if($request->ajax())
         // {
         // return DataTables::of($data)

@@ -88,8 +88,14 @@ Route::get('/test', function () {
 });
 
 // Sementara
+Route::get('/downloadPDF/{id}','UserDetailController@downloadPDF');
+
 Route::get('/free-text', function () {
     return view('free-text');
+});
+
+Route::get('/pdf', function () {
+    return view('pdf');
 });
 
 // Route::get('/chg-messages', function () {

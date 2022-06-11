@@ -50,7 +50,7 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    {{-- <tr>
+                                    <tr>
                                       <th scope="row">1</th>
                                       <td>Mark</td>
                                       <td>Otto</td>
@@ -64,7 +64,7 @@
                                       <td>
                                           <button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>
                                       </td>
-                                    </tr> --}}
+                                    </tr>
                                   </tbody>
                               </table>
                           </div>

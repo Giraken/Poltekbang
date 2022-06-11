@@ -88,9 +88,9 @@ Route::get('/test', function () {
 });
 
 // Sementara
-// Route::get('/fpl-messages', function () {
-//     return view('fpl-messages');
-// });
+Route::get('/free-text', function () {
+    return view('free-text');
+});
 
 // Route::get('/chg-messages', function () {
 //     return view('chg-messages');

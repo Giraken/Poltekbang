@@ -1,6 +1,23 @@
 @extends('layouts.app')
 @section('ats-message', 'active')
 @section('content')
+<style>
+    @media screen and (max-width: 420px) {
+        .custom {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .custom .col-1,
+        .custom .col-2,
+        .custom .col-3,
+        .custom .col-4,
+        .custom .col-5,
+        .custom .col-6 {
+            width: 100%;
+        }
+    }
+</style>
 <div class="position-relative w-100">
     <div class="container mt-5" style="margin-bottom: 20vh;">
         <div class="row justify-content-center">
@@ -38,7 +55,7 @@
                                         </div>
                                         <div>Aftn Header</div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-3 d-inline-flex align-items-center me-0">
                                             <label for="priority" class="me-2 mb-0 col-form-label fw-bold">{{ __('PRIORITY:') }}</label>
                                             <select name="priority" id="priority" class="p-2 rounded form-select" style="width: 70px;">
@@ -77,7 +94,7 @@
                                         </div>
                                         <div>Cancellation (CNL)</div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="aircraft-id" class="me-2 mb-0 col-form-label text-primary">{{ __('AIRCRAFT ID') }}</label>
                                             <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
@@ -99,7 +116,7 @@
                                             <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-3 me-4 fw-bold">
                                             <label for="filled-by" class="me-2 mb-0 col-form-label text-primary">{{ __('FILED BY') }}</label>
                                             <input name="filled-by" id="filled-by" class="p-2 rounded form-control">

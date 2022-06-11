@@ -154,6 +154,17 @@
         margin-left: 2%;
     }
 
+    .section-3 h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 70px;
+        margin-bottom: 10px;
+        text-align: left;
+        color: #474747;
+    }
+
     @media screen and (max-width: 420px) {
         .section-2 h1 {
             font-size: 2.5rem;
@@ -232,11 +243,29 @@
 
     @media screen and (max-width: 420px) {
         .hero2 {
-            padding: 10px !important;
+            padding: 0px !important;
+        }
+
+        .hero2 h1,
+        .hero2 h3 {
+            /* text-align: center !important; */
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .hero2 h1 {
+            text-align: center !important;
+        }
+
+        .hero2 h3 {
+            text-align: justify !important;
         }
 
         .hero2-title-1 {
             font-size: 1.5rem;
+            text-align: center !important;
+            width: 100% !important;
+            /* background-color: red; */
         }
 
         .hero2-title-2 {

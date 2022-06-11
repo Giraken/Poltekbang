@@ -64,6 +64,8 @@
                       <li><a class="dropdown-item" href="/cancellation">Flight Plan Cancellation (CNL)</a></li>
                       <li><a class="dropdown-item" href="/departure">Departure (DEP)</a></li>
                       <li><a class="dropdown-item" href="/arrival">Arrival (ARR)</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/free-text">Free Text ATS</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">

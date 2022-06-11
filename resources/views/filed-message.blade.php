@@ -18,6 +18,22 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
+
+    @media screen and (max-width: 420px) {
+        .custom {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .custom .col-1,
+        .custom .col-2,
+        .custom .col-3,
+        .custom .col-4,
+        .custom .col-5,
+        .custom .col-6 {
+            width: 100%;
+        }
+    }
 </style>
 <div class="position-relative w-100">
     <div class="container mt-5 mb-5">
@@ -69,7 +85,7 @@
                                         </div>
                                         <div>Aftn Header</div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-3 d-inline-flex align-items-center me-0">
                                             <label for="priority" class="me-2 mb-0 col-form-label fw-bold">{{ __('PRIORITY:') }}</label>
                                             <select name="priority" id="priority" class="p-2 rounded form-select" style="width: 70px;">
@@ -108,7 +124,7 @@
                                         </div>
                                         <div>FILED FLIGHT PLAN (FPL)</div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="aircraft-id" class="me-2 mb-0 col-form-label text-primary">{{ __('7. AIRCRAFT ID') }}</label>
                                             <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
@@ -143,7 +159,7 @@
                                             <input id="number" name="number" type="number" min="2" max="10" maxlength="2" class="style3" value="" style="width: 90px;text-transform: uppercase" onkeypress="return numberonly(this, event)" pattern="[0-9]{0,2}" data-pattern-error="Number should be numeric upto 2 characters" tooltiptext="Number of Aircraft (if more than one)<br><br>1 to 2 NUMERICS giving the number of aircraft in the flight. " onchange="showHintnumber()">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="type-aircraft" class="me-2 mb-0 col-form-label text-primary">{{ __('TYPE OF AIRCRAFT') }}</label>
                                             <input name="type-aircraft" id="type-aircraft" class="p-2 rounded form-control">
@@ -167,7 +183,7 @@
                                             <input name="equipment-surveillance" id="equipment-surveillance" class="p-2 rounded form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="dep-id" class="me-2 mb-0 col-form-label text-primary">{{ __('13.DEP AD') }}</label>
                                             <input name="dep-id" id="dep-id" class="p-2 rounded form-control">
@@ -197,7 +213,7 @@
                                             <input name="2nd-altn-ad" id="2nd-altn-ad" class="p-2 rounded form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-5">
+                                    <div class="row mb-5 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="cruising-speed" class="me-2 mb-0 col-form-label text-primary">{{ __('15.CRUISING SPEED') }}</label>
                                             <input name="cruising-speed" id="cruising-speed" class="p-2 rounded form-control">
@@ -214,7 +230,7 @@
                                             <option value="#"></option>
                                         </select>
                                     </div>
-                                    <div class="row mb-0">
+                                    <div class="row mb-0 custom">
                                         <div class="col-5 me-4 fw-bold gap-2">
                                             <label for="pointSelect" class="me-2 mb-0 col-form-label">{{ __('POINT') }}</label>
                                             <div class="d-inline-flex align-items-center gap-2">
@@ -782,7 +798,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <p>18. OTHER INFORMATION</p>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('STS/') }}</label>
@@ -805,7 +821,7 @@
                                             <textarea class="form-control" id="DAT" name="DAT" style="height: 100px;"></textarea>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('SUR/') }}</label>
                                             <textarea class="form-control" id="SUR" name="SUR" style="height: 100px;"></textarea>
@@ -827,7 +843,7 @@
                                             <textarea class="form-control" id="EET" name="EET" style="height: 100px;"></textarea>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('SEL/') }}</label>
                                             <textarea class="form-control" id="SEL" name="SEL" style="height: 100px;"></textarea>
@@ -849,7 +865,7 @@
                                             <textarea class="form-control" id="OPR" name="OPR" style="height: 100px;"></textarea>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('ORGN/') }}</label>
                                             <textarea class="form-control" id="ORGN" name="ORGN" style="height: 100px;"></textarea>
@@ -871,7 +887,7 @@
                                             <textarea class="form-control" id="TALT" name="TALT" style="height: 100px;"></textarea>
                                         </div>
                                     </div>
-                                    <div class="row mb-5">
+                                    <div class="row mb-5 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('RIF/') }}</label>
                                             <textarea class="form-control" id="RIF" name="RIF" style="height: 100px;"></textarea>
@@ -882,7 +898,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <p>SUPPLEMENTARY INFORMATION</p>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('19.ENDURANCE') }}</label>
@@ -924,7 +940,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-6 me-4 fw-bold">
                                             <label for="supp_survival" class="me-2 mb-0 col-form-label text-primary">{{ __('SURVIVAL EQUIPMENT') }}</label>
                                             <div class="row">
@@ -997,7 +1013,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="supp_cover" class="me-2 mb-0 col-form-label text-primary">{{ __('COVER') }}</label>
                                             <div class="d-inline-flex align-items-center gap-2">

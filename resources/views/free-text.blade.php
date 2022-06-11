@@ -30,7 +30,7 @@
                             @csrf
                             <div class="row align-items-center p-3">
                                 <div class="col">
-                                    <h3 class="text-uppercase">Delay (DLA) Message</h3>
+                                    <h3 class="text-uppercase">Free Text Message</h3>
                                     <div class="row mb-2">
                                         @if(count($errors) > 0)
                                         <div class="alert alert-danger">
@@ -94,34 +94,28 @@
                                         <div class="">
                                             <i class="bi bi-check2 fs-1"></i>
                                         </div>
-                                        <div>Delay (DLA)</div>
+                                        <div>Free Text</div>
                                     </div>
                                     <div class="row mb-3 custom">
-                                        <div class="col-2 me-4 fw-bold">
-                                            <label for="aircraft-id" class="me-2 mb-0 col-form-label text-primary">{{ __('AIRCRAFT ID') }}</label>
-                                            <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
-                                        </div>
-                                        <div class="col-1 me-4 fw-bold">
-                                            <label for="dep-id" class="me-2 mb-0 col-form-label text-primary">{{ __('DEP ID') }}</label>
-                                            <input name="dep-id" id="dep-id" class="p-2 rounded form-control">
-                                        </div>
-                                        <div class="col-1 me-4 fw-bold">
-                                            <label for="time" class="me-2 mb-0 col-form-label text-primary">{{ __('TIME') }}</label>
-                                            <input name="time" id="time" class="p-2 rounded form-control">
-                                        </div>
-                                        <div class="col-1 me-4 fw-bold">
-                                            <label for="dest-id" class="me-2 mb-0 col-form-label text-primary">{{ __('DEST ID') }}</label>
-                                            <input name="dest-id" id="dest-id" class="p-2 rounded form-control">
-                                        </div>
-                                        <div class="col-2 me-4 fw-bold">
-                                            <label for="dof" class="me-2 mb-0 col-form-label text-primary">{{ __('DOF') }}</label>
-                                            <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
+                                        <div class="col me-4 fw-bold">
+                                            {{-- <label for="amendment" class="me-2 mb-0 col-form-label text-primary">{{ __('AMENDMENT') }}</label> --}}
+                                            <textarea class="form-control" id="free-text" name="free-text" style="height: 250px;"></textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-3 me-4 fw-bold">
                                             <label for="filled-by" class="me-2 mb-0 col-form-label text-primary">{{ __('FILED BY') }}</label>
                                             <input name="filled-by" id="filled-by" class="p-2 rounded form-control">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="col-3 d-inline-flex gap-2">
+                                            <button type="submit" class="btn btn-primary text-white">
+                                            SEND
+                                            </button>
+                                            <button type="reset" class="btn btn-warning text-white" style="">
+                                                {{ __('RESET') }}
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

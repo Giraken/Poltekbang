@@ -1,6 +1,30 @@
 @extends('layouts.app')
 @section('ats-message', 'active')
 @section('content')
+
+<style>
+    @media screen and (max-width: 420px) {
+        .custom {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .custom .col-2,
+        .custom .col-3 {
+            width: 100%;
+        }
+
+        .buttons {
+            display: flex !important;
+            /* background-color: red; */
+            justify-content: center !important;
+            margin-top: 25px !important;
+            width: 100% !important;
+            gap: 10px !important;
+        }
+    }
+</style>
+
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
@@ -19,7 +43,7 @@
                             <div class="row align-items-center p-3">
                                 <div class="col">
                                     <h3 style="text-align: center">Search ATS Message</h3>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col">
                                             <label for="msg-type" class="col-md-4 mb-0 col-form-label">{{ __('Type Message') }}</label>
                                             <select name="msg-type" id="msg-type" class="p-2 rounded form-select">
@@ -57,7 +81,7 @@
                                             <input name="to" id="to" class="p-2 rounded form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2">
                                             <label for="dest" class="col-md-4 mb-0 col-form-label">{{ __('ARR') }}</label>
                                             <input name="arr" id="arr" class="p-2 rounded form-control">
@@ -66,12 +90,12 @@
                                             <label for="ata" class="col-md-4 mb-0 col-form-label">{{ __('ATA') }}</label>
                                             <input name="ata" id="ata" class="p-2 rounded form-control">
                                         </div>
-                                        <div class="col-2">
+                                        {{-- <div class="col-2">
                                             <label for="to" class="col-md-4 mb-0 col-form-label">{{ __('TO') }}</label>
                                             <input name="to" id="to" class="p-2 rounded form-control">
-                                        </div>
+                                        </div> --}}
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 d-inline-flex align-items-center me-4">
                                             <label for="dof" class="me-2 mb-0 col-form-label">{{ __('DOF') }}</label>
                                             <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
@@ -85,7 +109,7 @@
                                             <input name="route" id="route" class="p-2 rounded form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-3 d-inline-flex align-items-center me-4">
                                             <label for="type" class="me-2 mb-0 col-form-label">{{ __('Type of Flight') }}</label>
                                             <select name="type" id="type" class="p-2 rounded form-select text-uppercase">
@@ -104,20 +128,20 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 d-inline-flex align-items-center me-4">
                                             <label for="from" class="fw-bold me-2 mb-0 col-form-label" style="width: 50px;">{{ __('From') }}</label>
                                             <input name="from" id="from" type="datetime-local" class="p-2 rounded form-control" placeholder="YYYY-MM-DD">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3 custom">
                                         <div class="col-2 d-inline-flex align-items-center me-4">
                                             <label for="to" class="fw-bold me-2 mb-0 col-form-label" style="width: 52px;">{{ __('To') }}</label>
                                             <input name="to" id="to" type="datetime-local" class="p-2 rounded form-control" placeholder="YYYY-MM-DD">
                                         </div>
                                     </div>
                                     <div class="row mb-0">
-                                        <div class="col-3 d-inline-flex gap-2">
+                                        <div class="col-3 d-inline-flex gap-2 buttons">
                                             <button type="submit" class="btn btn-primary text-white">
                                                 {{ __('VIEW') }}
                                             </button>

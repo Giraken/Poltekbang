@@ -65,6 +65,8 @@ Route::get('/departure', [App\Http\Controllers\MessagesController::class, 'depar
 Route::post('/departure', [App\Http\Controllers\MessagesController::class, 'departurePost'])->name('departurePost');
 Route::get('/arrival', [App\Http\Controllers\MessagesController::class, 'arrival'])->name('arrival');
 Route::post('/arrival', [App\Http\Controllers\MessagesController::class, 'arrivalPost'])->name('arrivalPost');
+Route::get('/free-text', [App\Http\Controllers\MessagesController::class, 'freeText'])->name('freeText');
+Route::post('/free-text', [App\Http\Controllers\MessagesController::class, 'freeTextPost'])->name('freeTextPost');
 /*
 |--------------------------------------------------------------------------
 | Incoming Message
@@ -90,9 +92,7 @@ Route::get('/test', function () {
 // Sementara
 Route::get('/downloadPDF',[App\Http\Controllers\IncomingController::class, 'downloadPDF'])->name('downloadPDF');
 
-Route::get('/free-text', function () {
-    return view('free-text');
-});
+
 
 Route::get('/pdf', function () {
     return view('pdf');

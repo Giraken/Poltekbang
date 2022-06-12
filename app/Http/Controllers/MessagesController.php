@@ -761,4 +761,52 @@ class MessagesController extends Controller
 
         return redirect()->route('arrival')->with('berhasil','Pesan telah berhasil dikirim');
     }
+
+    public function freeText()
+    {
+        return view('free-text');
+    }
+    public function freeTextPost(Request $request)
+    {
+        $iduser = Auth::user()->id;
+        $user = DB::table('users')->where('id',$iduser)->first();
+        $type = 'FREETEXT'; //tipe pesan
+        $validateData = $request->validate([
+            'priority' => 'required|in:ff,dd,gg,kk,ss',
+            'filing-time' => 'required|numeric',
+            'free-text' => 'required|string',
+            'filled-by' => 'required|string',
+        ]);
+        for($x=1; $x<=28; $x++) {
+            $ok['address'. $x] = 'nullable|string';
+        }
+        $asem = $this->validate($request, $ok);
+        $mergeValidate = array_merge($validateData,$asem);
+        
+        DB::table('messages')->insert([
+            'user_id' => $user->id,
+            'type' => $type,
+            'free_text' => $mergeValidate['free-text'],
+            'filed_by' => $mergeValidate['filled-by'],
+            'created_at' => date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+        $message = DB::table('messages')->where('user_id',$iduser)->latest('created_at')->first();
+
+        $ATK = DB::table('aftn_header')->insert([
+            'priority' => $mergeValidate['priority'],
+            'filing_time' => $mergeValidate['filing-time'],
+            'message_id' => $message->id,
+            'user_id' => $iduser,
+            'originator' => $user->name,
+            'created_at' => date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+        $ATK2 = DB::table('aftn_header')->where( 'message_id',$message->id);
+        for($x=1; $x<=28; $x++) {
+            $address = 'address'.$x;
+            $ATK2->update([$address => $mergeValidate['address'.$x]]);
+        }
+        return redirect()->route('freeText')->with('berhasil','Pesan telah berhasil dikirim');
+    }
 }

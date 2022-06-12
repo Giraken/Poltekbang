@@ -26,7 +26,7 @@
                     <div class="card-body">
                         @if(session()->has('berhasil'))
                         <div class="alert alert-success la la-thumbs-up"> {{session()->get('berhasil')}} </div> @endif
-                        <form method="POST" action="{{ route('delayPost') }}" style="font-family: 'Poppins', sans-serif;">
+                        <form method="POST" action="{{ route('freeTextPost') }}" style="font-family: 'Poppins', sans-serif;">
                             @csrf
                             <div class="row align-items-center p-3">
                                 <div class="col">

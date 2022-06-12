@@ -37,8 +37,14 @@ class IncomingController extends Controller
     }
     public function downloadPDF()
     {
-        $pdf = PDF::loadView('pdf')->setOptions(['defaultFont' => 'sans-serif']);
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf',compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
         //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->stream('invoice.pdf');
     }
 }

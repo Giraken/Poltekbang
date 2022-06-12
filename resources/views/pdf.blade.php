@@ -7,19 +7,19 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'AirAsia.id') }}</title>
+    {{-- <title>{{ config('app.name', 'AirAsia.id') }}</title> --}}
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/filing.js') }}" defer></script>
-    <script src="{{ asset('js/rules.js') }}" defer></script>
+    <script src="{{ asset('js/rules.js') }}" defer></script> --}}
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> --}}
 
     {{-- Bootstrap Icons --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,8 +31,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> --}}
     <title>Document</title>
 
     <style>
@@ -41,10 +41,11 @@
             width: 100%;
             display: flex;
             align-items: center;
-            /* justify-content: center */
-            gap: 10px;
+            flex-direction: row;
+            justify-content: center;
+            gap: 0px;
             margin-bottom: 0;
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .head img {
@@ -64,331 +65,308 @@
 
         .main {
             font-weight: bold;
-            margin-bottom: 150px;
+            /* margin-bottom: 150px; */
+            /* background-color: blue; */
         }
 
         .main h3 {
             font-size: .8rem;
             font-weight: bold;
         }
+
+        .main .tab1 {
+            display: flex !important;
+            /* background-color: red; */
+        }
+
+        table {
+            border-collapse: collapse;
+            text-transform: uppercase;
+        }
+
+        table td, table th {
+        text-align: left;
+          border: 1px solid rgb(0, 0, 0);
+          padding: 8px;
+          font-size: .8rem;
+        }
     </style>
 </head>
 <body>
     <div>
         <div class="container">
-            <div class="head d-inline-flex">
-                <img src="img/unnamed.jpg" alt="Logo">
+            <div class="head">
+                {{-- <img src="img/unnamed.jpg" alt="Logo"> --}}
+                <img src="<?php echo $pic ?>" alt="Logo">
+                {{-- <img src="{{ URL::asset('img/unnamed.jpg')}}" alt="logo"> --}}
+                {{-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logo.png'))) }}"> --}}
                 <h2>Flight Plan</h2>
             </div>
             <hr>
             <div class="main">
-                <div class="row">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Priority</h3>
-                        <h3 class="">FF</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col text-uppercase">
-                        <h3 class="">Address</h3>
-                        {{-- <h3>123</h3> --}}
-                        <div class="d-inline-flex gap-4">
-                            <h3 class="">WADDZTZX</h3>
-                            <h3 class="">WADDZTZX</h3>
-                            <h3 class="">WADDZTZX</h3>
-                            <h3 class="">WADDZTZX</h3>
-                        </div>
-                    </div>
+                <div class="tab1">
+                    <table>
+                        <tr>
+                            <th>Priority</th>
+                            <th>Address</th>
+                        </tr>
+                        <tr>
+                            <td>FF</td>
+                            <td>WADDZTZX</td>
+                            <td>WADDZTZX</td>
+                            <td>WADDZTZX</td>
+                        </tr>
+                    </table>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Filling time</h3>
-                        <h3 class="">111345</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col text-uppercase">
-                        <h3 class="">originator</h3>
-                        <h3>WADDCTVX</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-uppercase">
-                        <h3 class="">SPECIFIC IDENTIFICATION OF ADDRESSEE(S) AND/OR ORIGINATOR
-                        </h3>
-                    </div>
+                <div class="tab2">
+                    <table>
+                        <tr>
+                            <th>Filling Time</th>
+                            <th>Originator</th>
+                        </tr>
+                        <tr>
+                            <td>111345</td>
+                            <td>WADDCTVX</td>
+                        </tr>
+                    </table>
+                    <h3 class="">SPECIFIC IDENTIFICATION OF ADDRESSEE(S) AND/OR ORIGINATOR</h3>
                 </div>
                 <hr>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">3. Message type</h3>
-                        <h3 class="">FPL</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">7. Aircraft ID</h3>
-                        <h3>CTV669</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">8. Flight rules</h3>
-                        <h3>I</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Type of flight</h3>
-                        <h3>S</h3>
-                    </div>
+                <div class="tab3" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>3. Message Type</th>
+                            <th>AIRCRAFT ID</th>
+                            <th>8. FLIGHT RULES</th>
+                            <th>TYPE OF FLIGHT</th>
+                        </tr>
+                        <tr>
+                            <td>FPL</td>
+                            <td>CTV669</td>
+                            <td>I</td>
+                            <td>S</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">9. Number</h3>
-                        <h3 class="">-</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Type of aircraft</h3>
-                        <h3>A320</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Wake turb</h3>
-                        <h3>M</h3>
-                    </div>
-                    <div class="col-4 text-uppercase">
-                        <h3 class="">10.EQUIPMENT AND CAPABILITIES</h3>
-                        <h3>SDE2E3FGHIRWY / LB1</h3>
-                    </div>
+                <div class="tab4" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>9. NUMBER</th>
+                            <th>Type of aircraft</th>
+                            <th>Wake turb</th>
+                            <th>10.EQUIPMENT AND CAPABILITIES</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>A320</td>
+                            <td>M</td>
+                            <td>SDE2E3FGHIRWY</td>
+                            <td>LB1</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">13. DEP AD</h3>
-                        <h3 class="">WADD</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Time</h3>
-                        <h3>0735</h3>
-                    </div>
+                <div class="tab5" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>13. DEP AD</th>
+                            <th>Time</th>
+                        </tr>
+                        <tr>
+                            <td>WADD</td>
+                            <td>0735</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Cruising Speed</h3>
-                        <h3 class="">N0440</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Cruising Level</h3>
-                        <h3>F280</h3>
-                    </div>
-                    <div class="col-6 text-uppercase">
-                        <h3 class="">Route</h3>
-                        <h3>LI OKANG SBR</h3>
-                    </div>
+                <div class="tab6" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>15. Cruising Speed</th>
+                            <th>Cruising Level</th>
+                            <th>Route</th>
+                        </tr>
+                        <tr>
+                            <td>N0440</td>
+                            <td>F280</td>
+                            <td>BLI OKANG SBR</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">16. DEST AD</h3>
-                        <h3 class="">WARR</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Total EET</h3>
-                        <h3>0105</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">1ST DEST ALTN AD</h3>
-                        <h3>WADD</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">2ND DEST ALTN AD</h3>
-                        <h3>-</h3>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col text-uppercase">
-                        <h3 class="">18. Other information</h3>
-                        <div class="d-flex gap-5">
-                            <div class="d-flex flex-column gap-2">
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">STS/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">PBN/</h3>
-                                    <h3>A1C2D2O1S2</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">NAV/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">COM/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">DAT/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">SUR/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">DEP/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">DEST/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">DOF/</h3>
-                                    <h3>220612</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">REG/</h3>
-                                    <h3>PKGQM</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">EET/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">SEL/</h3>
-                                    <h3>DLEF</h3>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column gap-2">
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">Type/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">Code/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">DLE/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">OPR/</h3>
-                                    <h3>CITILINK INDONESIA</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">ORGN/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">PER/</h3>
-                                    <h3>C</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">ALTN/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">RALT/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">TALT/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">RIF/</h3>
-                                    <h3>-</h3>
-                                </div>
-                                <div class="d-inline-flex gap-3">
-                                    <h3 class="">RMK/</h3>
-                                    <h3>-</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab7" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>16. DEST AD</th>
+                            <th>Total EET</th>
+                            <th>1ST DEST ALTN AD</th>
+                            <th>2ND DEST ALTN AD</th>
+                        </tr>
+                        <tr>
+                            <td>WARR</td>
+                            <td>0105</td>
+                            <td>WADD</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
                 <hr>
-                <h3 class="text-center">SUPPLEMENTARY INFORMATION (NOT TO BE TRANSMITTED IN FPL MESSAGES)</h3>
+                <div class="tab8" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>STS/</th>
+                            <th>PBN/</th>
+                            <th>NAV/</th>
+                            <th>COM/</th>
+                            <th>DAT/</th>
+                            <th>SUR/</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>A1C2D2O1S2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab9" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>DEP/</th>
+                            <th>DEST/</th>
+                            <th>DOF/</th>
+                            <th>REG/</th>
+                            <th>EET/</th>
+                            <th>SEL/</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>220612</td>
+                            <td>PKGQM</td>
+                            <td></td>
+                            <td>DLEF</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab10" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>TYPE/</th>
+                            <th>CODE/</th>
+                            <th>DLE/</th>
+                            <th>OPR/</th>
+                            <th>ORGN/</th>
+                            <th>PER/</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>CITILINK INDONESIA</td>
+                            <td></td>
+                            <td>C</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab11" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>ALTN/</th>
+                            <th>RALT/</th>
+                            <th>TALT/</th>
+                            <th>RIF/</th>
+                            <th>RMK/</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
                 <hr>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">19. Endurance</h3>
-                        <h3 class="">E/ -</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Person on board</h3>
-                        <h3>P/ -</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Emergency Radio</h3>
-                        <h3>-</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Survival Equipment</h3>
-                        <h3>-</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Jackets</h3>
-                        <h3>-</h3>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Number</h3>
-                        <h3 class="">D/ -</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Capacity</h3>
-                        <h3>-</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Cover</h3>
-                        <h3>-</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">Colour</h3>
-                        <h3>-</h3>
-                    </div>
-                    {{-- <div class="col-2 text-uppercase">
-                        <h3 class="">Jackets</h3>
-                        <h3>-</h3>
-                    </div> --}}
-                </div>
-                <div class="row mb-4">
-                    <div class="col text-uppercase">
-                        <h3 class="">AIRCRAFT COLOUR AND MARKINGS</h3>
-                        <h3 class="">A/ -</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col text-uppercase">
-                        <h3 class="">Remarks</h3>
-                        <h3 class="">N/ -</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col text-uppercase">
-                        <h3 class="">Pilot in Command</h3>
-                        <h3 class="">C/ -</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                </div>
+                <h3 class="" style="text-align: center;">SUPPLEMENTARY INFORMATION (NOT TO BE TRANSMITTED IN FPL MESSAGES)</h3>
                 <hr>
-                <div class="row mb-4">
-                    <div class="col-3 text-uppercase">
-                        <h3 class="">Filed By</h3>
-                        <h3 class="">-</h3>
-                        {{-- <h3>123</h3> --}}
-                    </div>
-                    <div class="col-5 text-uppercase">
-                        <h3 class="">SPACE RESERVED FOR ADDITIONAL REQUIREMENTS</h3>
-                        <h3>-</h3>
-                    </div>
-                    <div class="col-2 text-uppercase">
-                        <h3 class="">RECEIVED BY</h3>
-                        <h3>2022-06-11 13:45:42</h3>
-                    </div>
+                <div class="tab12" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>Endurance</th>
+                            <th>Person on board</th>
+                            <th>Emergency radio</th>
+                            <th>Survival equipment</th>
+                            <th>Jackets</th>
+                        </tr>
+                        <tr>
+                            <td>E/ -</td>
+                            <td>P/ -</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab13" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>Number</th>
+                            <th>Capacity</th>
+                            <th>Cover</th>
+                            <th>Colour</th>
+                        </tr>
+                        <tr>
+                            <td>D/ -</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab14" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>AIRCRAFT COLOUR AND MARKINGS</th>
+                        </tr>
+                        <tr>
+                            <td>A/ -</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab14" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>REMARKS</th>
+                        </tr>
+                        <tr>
+                            <td>N/ -</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab15" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>Pilot in command</th>
+                        </tr>
+                        <tr>
+                            <td>C/ -</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab16" style="margin-bottom: 20px;">
+                    <table>
+                        <tr>
+                            <th>Filed By</th>
+                            <th>SPACE RESERVED FOR ADDITIONAL REQUIREMENTS</th>
+                            <th>Received By</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>2022-06-11 13:45:42</td>
+                        </tr>
+                    </table>
                 </div>
         </div>
     </div>

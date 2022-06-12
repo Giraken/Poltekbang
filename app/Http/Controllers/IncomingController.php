@@ -21,8 +21,15 @@ class IncomingController extends Controller
 
     public function incomingMessageApi()
     {
+        $address = Auth::user()->name;
         $data = DB::table('messages')
         ->join('aftn_header','aftn_header.message_id','=','messages.id')
+        ->where(function ($query) use ($address) {
+            for ($i=1;$i<=28;$i++)
+            {
+                $query->orWhere('address'.$i,$address);
+            }
+        })
         ->get();
 
         return DataTables::of($data)

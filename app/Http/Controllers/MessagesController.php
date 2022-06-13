@@ -60,7 +60,7 @@ class MessagesController extends Controller
             'reg' => 'required|string',
             'rules' => 'required|in:IFR,VFR,Y,Z',
             'type' => 'required|in:S,N,G,M,X',
-            'number' => 'required|numeric',
+            'number' => 'numeric',
             'type-aircraft' =>  'required|string',
             'fpl_wake_turb' => 'required|string',
             'equipment-aircraft' => 'required|string',
@@ -71,7 +71,7 @@ class MessagesController extends Controller
             'dof' => 'required|string',
             'eet' => 'required|string',
             '1st-altn-ad' => 'required|string',
-            '2nd-altn-ad' => 'required|string',
+            '2nd-altn-ad' => 'string',
             'cruising-speed' => 'required|string',
             'cruising-level' => 'required|string',
             'routeP' => 'required|string',
@@ -556,12 +556,16 @@ class MessagesController extends Controller
         $iduser = Auth::user()->id;
         $user = DB::table('users')->where('id',$iduser)->first();
         $type = 'DEP'; //tipe pesan
+        if(!$request->has('ssr-mode'))
+        {
+            $request['ssr-mode'] = null;
+        }
         $validateData = $request->validate([
             'priority' => 'required|in:ff,dd,gg,kk,ss',
             'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
-            'ssr-mode' => 'required|string',
-            'code' => 'required|string',
+            'ssr-mode' => 'string|nullable',
+            'code' => 'string|nullable',
             'dep-id' => 'required|string',
             'time' => 'required|numeric',
             'dest-id' => 'required|string',
@@ -596,7 +600,7 @@ class MessagesController extends Controller
             'address27' => 'nullable|string',
             'address28' => 'nullable|string',
         ]);
-
+        
         DB::table('messages')->insert([
             'user_id' => $user->id,
             'type' => $type,
@@ -670,10 +674,10 @@ class MessagesController extends Controller
             'filing-time' => 'required|numeric',
             'aircraft-id' => 'required|string',
             'dep-id' => 'required|string',
-            'time' => 'required|numeric',
+            'time' => 'numeric',
             'arr-id' => 'required|string',
             'arr_time' => 'required|string',
-            'arrival-aerodrome' => 'required|string',
+            'arrival-aerodrome' => 'string',
             'filled-by' => 'required|string',
             'address1' => 'nullable|string',
             'address2' => 'nullable|string',

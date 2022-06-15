@@ -36,9 +36,9 @@ class IncomingController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
                     $actionBtn =
-                        '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></button>
-                        <button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>
-                        <button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-primary text-white"><i class="bi bi-pen"></i></button>';
+                        '<button type="button" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></button>
+                        <button type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>
+                        <button type="button" class="btn btn-primary text-white"><i class="bi bi-pen"></i></button>';
                     // $actionBtn2 = '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></button>';
                     // $actionBtn = [$actionBtn1, $actionBtn2];
                     return $actionBtn;

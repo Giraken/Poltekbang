@@ -76,6 +76,8 @@ Route::post('/free-text', [App\Http\Controllers\MessagesController::class, 'free
 Route::get('/incoming-message', [App\Http\Controllers\IncomingController::class, 'incomingMessage'])->name('incomingMessage');
 Route::get('/incoming-message/api', [App\Http\Controllers\IncomingController::class, 'incomingMessageApi'])->name('incomingMessageApi');
 Route::get('/message', [App\Http\Controllers\IncomingController::class, 'message'])->name('message');
+Route::get('/pdf/{id}', [App\Http\Controllers\IncomingController::class, 'PDF'])->name('PDF');
+Route::get('/downloadPDF/{id}',[App\Http\Controllers\IncomingController::class, 'downloadPDF'])->name('downloadPDF');
 /*
 |--------------------------------------------------------------------------
 | Message Sent
@@ -90,14 +92,10 @@ Route::get('/test', function () {
 });
 
 // Sementara
-Route::get('/downloadPDF',[App\Http\Controllers\IncomingController::class, 'downloadPDF'])->name('downloadPDF');
+
 
 Route::get('/edit-fpl', function () {
     return view('edit-fpl');
-});
-
-Route::get('/pdf', function () {
-    return view('pdf');
 });
 
 // Route::get('/chg-messages', function () {

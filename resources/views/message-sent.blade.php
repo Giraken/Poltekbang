@@ -81,7 +81,7 @@
                                                 </div>
                                                 <div class="col-2">
                                                     <div class="d-inline-flex align-items-center gap-1">
-                                                        <input class="form-check-input" type="checkbox" name="type" value="free_text" style="width: 30px; height: 30px;">
+                                                        <input class="form-check-input" type="checkbox" name="type" value="FREETEXT" style="width: 30px; height: 30px;">
                                                         <label class="form-check-label" for="inlineCheckbox1">FREE TEXT</label>
                                                     </div>
                                                 </div>
@@ -222,7 +222,7 @@
                           {data: 'fpl_reg', name: 'messages.fpl_reg'},
                           {data: 'arr_id', name: 'messages.arr_id'},
                           {data: 'arr_time', name: 'messages.arr_time'},
-                          {data: null, "defaultContent": ""},
+                          {data: 'free_text', name: "messages.free_text"},
                           {data: 'filing_time', name: 'aftn_header.filing_time'},
                           {data: 'fpl_status', name: 'aftn_header.fpl_status'}
                       ]

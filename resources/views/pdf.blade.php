@@ -33,7 +33,7 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css"> --}}
-    <title>Document</title>
+    <title>PDF</title>
 
     <style>
         .head {
@@ -111,10 +111,35 @@
                             <th>Address</th>
                         </tr>
                         <tr>
-                            <td>FF</td>
-                            <td>WADDZTZX</td>
-                            <td>WADDZTZX</td>
-                            <td>WADDZTZX</td>
+                            <td>{{$aftn->priority}}</td>                         
+                            @if($aftn->address1)<td>{{$aftn->address1}}</td>@endif
+                            @if($aftn->address2)<td>{{$aftn->address2}}</td>@endif
+                            @if($aftn->address3)<td>{{$aftn->address3}}</td>@endif
+                            @if($aftn->address4)<td>{{$aftn->address4}}</td>@endif
+                            @if($aftn->address5)<td>{{$aftn->address5}}</td>@endif
+                            @if($aftn->address6)<td>{{$aftn->address6}}</td>@endif
+                            @if($aftn->address7)<td>{{$aftn->address7}}</td>@endif
+                            @if($aftn->address8)<td>{{$aftn->address8}}</td>@endif
+                            @if($aftn->address9)<td>{{$aftn->address9}}</td>@endif
+                            @if($aftn->address10)<td>{{$aftn->address10}}</td>@endif
+                            @if($aftn->address11)<td>{{$aftn->address11}}</td>@endif
+                            @if($aftn->address12)<td>{{$aftn->address12}}</td>@endif
+                            @if($aftn->address13)<td>{{$aftn->address13}}</td>@endif
+                            @if($aftn->address14)<td>{{$aftn->address14}}</td>@endif
+                            @if($aftn->address15)<td>{{$aftn->address15}}</td>@endif
+                            @if($aftn->address16)<td>{{$aftn->address16}}</td>@endif
+                            @if($aftn->address17)<td>{{$aftn->address17}}</td>@endif
+                            @if($aftn->address18)<td>{{$aftn->address18}}</td>@endif
+                            @if($aftn->address19)<td>{{$aftn->address19}}</td>@endif
+                            @if($aftn->address20)<td>{{$aftn->address20}}</td>@endif
+                            @if($aftn->address21)<td>{{$aftn->address21}}</td>@endif
+                            @if($aftn->address22)<td>{{$aftn->address22}}</td>@endif
+                            @if($aftn->address23)<td>{{$aftn->address23}}</td>@endif
+                            @if($aftn->address24)<td>{{$aftn->address24}}</td>@endif
+                            @if($aftn->address25)<td>{{$aftn->address25}}</td>@endif
+                            @if($aftn->address26)<td>{{$aftn->address26}}</td>@endif
+                            @if($aftn->address27)<td>{{$aftn->address27}}</td>@endif
+                            @if($aftn->address28)<td>{{$aftn->address28}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -126,8 +151,8 @@
                             <th>Originator</th>
                         </tr>
                         <tr>
-                            <td>111345</td>
-                            <td>WADDCTVX</td>
+                            @if($aftn->filing_time)<td>{{$aftn->filing_time}}</td>@endif
+                            @if($aftn->originator)<td>{{$aftn->originator}}</td>@endif
                         </tr>
                     </table>
                     <h3 class="">SPECIFIC IDENTIFICATION OF ADDRESSEE(S) AND/OR ORIGINATOR</h3>
@@ -142,10 +167,10 @@
                             <th>TYPE OF FLIGHT</th>
                         </tr>
                         <tr>
-                            <td>FPL</td>
-                            <td>CTV669</td>
-                            <td>I</td>
-                            <td>S</td>
+                            @if($message->type)<td>{{$message->type}}</td>@endif
+                            @if($message->aircraft_id)<td>{{$message->aircraft_id}}</td>@endif
+                            @if($message->fpl_flight_rules)<td>{{$message->fpl_flight_rules}}</td>@endif
+                            @if($message->fpl_flight_type)<td>{{$message->fpl_flight_type}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -158,11 +183,11 @@
                             <th>10.EQUIPMENT AND CAPABILITIES</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>A320</td>
-                            <td>M</td>
-                            <td>SDE2E3FGHIRWY</td>
-                            <td>LB1</td>
+                            @if($message->fpl_number)<td>{{$message->fpl_number}}</td>@endif
+                            @if($message->fpl_aircraft_type)<td>{{$message->fpl_aircraft_type}}</td>@endif
+                            @if($message->fpl_wake_turb)<td>{{$message->fpl_wake_turb}}</td>@endif
+                            @if($message->fpl_aircraft_equipment)<td>{{$message->fpl_aircraft_equipment}}</td>@endif
+                            @if($message->fpl_surveillance_equipment)<td>{{$message->fpl_surveillance_equipment}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -173,8 +198,8 @@
                             <th>Time</th>
                         </tr>
                         <tr>
-                            <td>WADD</td>
-                            <td>0735</td>
+                            @if($message->dep_id)<td>{{$message->dep_id}}</td>@endif
+                            @if($message->time)<td>{{$message->time}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -186,9 +211,9 @@
                             <th>Route</th>
                         </tr>
                         <tr>
-                            <td>N0440</td>
-                            <td>F280</td>
-                            <td>BLI OKANG SBR</td>
+                            @if($message->dep_id)<td>{{$message->fpl_cruising_speed}}</td>@endif
+                            @if($message->time)<td>{{$message->fpl_cruising_level}}</td>@endif
+                            @if($add->route)<td>{{$add->route}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -201,10 +226,10 @@
                             <th>2ND DEST ALTN AD</th>
                         </tr>
                         <tr>
-                            <td>WARR</td>
-                            <td>0105</td>
-                            <td>WADD</td>
-                            <td></td>
+                            @if($message->dest_id)<td>{{$message->dest_id}}</td>@endif
+                            @if($message->fpl_eet)<td>{{$message->fpl_eet}}</td>@endif
+                            @if($message->fpl_1_altn)<td>{{$message->fpl_1_altn}}</td>@endif
+                            @if($message->fpl_2_altn)<td>{{$message->fpl_2_altn}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -220,12 +245,12 @@
                             <th>SUR/</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>A1C2D2O1S2</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            @if($add->STS)<td>{{$add->STS}}</td>@endif
+                            @if($add->PBN)<td>{{$add->PBN}}</td>@endif
+                            @if($add->NAV)<td>{{$add->NAV}}</td>@endif
+                            @if($add->COM)<td>{{$add->COM}}</td>@endif
+                            @if($add->DAT)<td>{{$add->DAT}}</td>@endif
+                            @if($add->SUR)<td>{{$add->SUR}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -240,12 +265,12 @@
                             <th>SEL/</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>220612</td>
-                            <td>PKGQM</td>
-                            <td></td>
-                            <td>DLEF</td>
+                            @if($add->DEP)<td>{{$add->DEP}}</td>@endif
+                            @if($add->DEST)<td>{{$add->DEST}}</td>@endif
+                            @if($message->dof)<td>{{$message->dof}}</td>@endif
+                            @if($add->REG)<td>{{$add->REG}}</td>@endif
+                            @if($add->EET)<td>{{$add->EET}}</td>@endif
+                            @if($add->SEL)<td>{{$add->SEL}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -260,12 +285,12 @@
                             <th>PER/</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>CITILINK INDONESIA</td>
-                            <td></td>
-                            <td>C</td>
+                            @if($add->TYP)<td>{{$add->TYP}}</td>@endif
+                            @if($add->CODE)<td>{{$add->CODE}}</td>@endif
+                            @if($add->DLE)<td>{{$add->DLE}}</td>@endif
+                            @if($add->OPR)<td>{{$add->OPR}}</td>@endif
+                            @if($add->ORGN)<td>{{$add->ORGN}}</td>@endif
+                            @if($add->PER)<td>{{$add->PER}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -279,11 +304,11 @@
                             <th>RMK/</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            @if($add->ALTN)<td>{{$add->ALTN}}</td>@endif
+                            @if($add->RALT)<td>{{$add->RALT}}</td>@endif
+                            @if($add->TALT)<td>{{$add->TALT}}</td>@endif
+                            @if($add->RIF)<td>{{$add->RIF}}</td>@endif
+                            @if($add->RMK)<td>{{$add->RMK}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -300,11 +325,11 @@
                             <th>Jackets</th>
                         </tr>
                         <tr>
-                            <td>E/ -</td>
-                            <td>P/ -</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            @if($add->supp_endurance)<td>{{$add->supp_endurance}}</td>@endif
+                            @if($add->supp_people)<td>{{$add->supp_people}}</td>@endif
+                            @if($add->supp_radio)<td>{{$add->supp_radio}}</td>@endif
+                            @if($add->supp_survival)<td>{{$add->supp_survival}}</td>@endif
+                            @if($add->supp_jacket)<td>{{$add->supp_jacket}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -317,10 +342,10 @@
                             <th>Colour</th>
                         </tr>
                         <tr>
-                            <td>D/ -</td>
                             <td></td>
                             <td></td>
-                            <td></td>
+                            @if($add->supp_cover)<td>{{$add->supp_cover}}</td>@endif
+                            @if($add->supp_color)<td>{{$add->supp_color}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -330,7 +355,7 @@
                             <th>AIRCRAFT COLOUR AND MARKINGS</th>
                         </tr>
                         <tr>
-                            <td>A/ -</td>
+                            @if($add->supp_aircraft_color)<td>{{$add->supp_aircraft_color}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -340,7 +365,8 @@
                             <th>REMARKS</th>
                         </tr>
                         <tr>
-                            <td>N/ -</td>
+                            @if($add->supp_remark)<td>{{$add->supp_remark}}</td>@endif
+                            @if($add->supp_remark_desc)<td>{{$add->supp_remark_desc}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -350,7 +376,7 @@
                             <th>Pilot in command</th>
                         </tr>
                         <tr>
-                            <td>C/ -</td>
+                            @if($add->supp_pilot)<td>{{$add->supp_pilot}}</td>@endif
                         </tr>
                     </table>
                 </div>
@@ -362,9 +388,9 @@
                             <th>Received By</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>2022-06-11 13:45:42</td>
+                            @if($message->filed_by)<td>{{$message->filed_by}}</td>@endif
+                            @if($add->supp_reserved)<td>{{$add->supp_reserved}}</td>@endif
+                            @if($add->created_at)<td>{{$add->created_at}}</td>@endif
                         </tr>
                     </table>
                 </div>

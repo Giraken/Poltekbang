@@ -92,7 +92,9 @@ Route::get('/test', function () {
 // Sementara
 Route::get('/downloadPDF',[App\Http\Controllers\IncomingController::class, 'downloadPDF'])->name('downloadPDF');
 
-
+Route::get('/edit-fpl', function () {
+    return view('edit-fpl');
+});
 
 Route::get('/pdf', function () {
     return view('pdf');

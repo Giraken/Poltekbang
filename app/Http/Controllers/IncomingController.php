@@ -77,4 +77,83 @@ class IncomingController extends Controller
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream('invoice.pdf');
     }
+
+    // Sementara
+    public function downloadDLAPDF()
+    {
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf-dla', compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('invoice.pdf');
+    }
+
+    public function downloadCHGPDF()
+    {
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf-chg', compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('invoice.pdf');
+    }
+
+    public function downloadCNLPDF()
+    {
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf-cnl', compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('invoice.pdf');
+    }
+
+    public function downloadDEPPDF()
+    {
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf-dep', compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('invoice.pdf');
+    }
+
+    public function downloadARRPDF()
+    {
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf-arr', compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('invoice.pdf');
+    }
+
+    public function downloadFreeTextPDF()
+    {
+        $path = base_path('public/img/unnamed.jpg');
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf-freetext', compact('pic'))->setOptions(['defaultFont' => 'sans-serif']);
+        //dump($pdf);
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('invoice.pdf');
+    }
 }

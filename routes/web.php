@@ -92,6 +92,12 @@ Route::get('/test', function () {
 });
 
 // Sementara
+Route::get('/downloadDLAPDF',[App\Http\Controllers\IncomingController::class, 'downloadDLAPDF'])->name('downloadDLAPDF');
+Route::get('/downloadCHGPDF',[App\Http\Controllers\IncomingController::class, 'downloadCHGPDF'])->name('downloadCHGPDF');
+Route::get('/downloadCNLPDF',[App\Http\Controllers\IncomingController::class, 'downloadCNLPDF'])->name('downloadCNLPDF');
+Route::get('/downloadDEPPDF',[App\Http\Controllers\IncomingController::class, 'downloadDEPPDF'])->name('downloadDEPPDF');
+Route::get('/downloadARRPDF',[App\Http\Controllers\IncomingController::class, 'downloadARRPDF'])->name('downloadARRPDF');
+Route::get('/downloadFreeTextPDF',[App\Http\Controllers\IncomingController::class, 'downloadFreeTextPDF'])->name('downloadFreeTextPDF');
 
 
 Route::get('/edit-fpl', function () {

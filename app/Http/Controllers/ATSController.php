@@ -457,4 +457,10 @@ class ATSController extends Controller
         $user = DB::table('users')->where('id',$data->user_id)->first();
         return view ('dep-message-detail',['data'=>$data,'user'=>$user]);
     }
+    public function freetextDetail($id)
+    {
+        $data = DB::table('messages')->where('id',$id)->first();
+        $user = DB::table('users')->where('id',$data->user_id)->first();
+        return view ('free-text-message-detail',['data'=>$data,'user'=>$user]);
+    }
 }

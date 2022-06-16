@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="col-3 d-inline-flex align-items-center me-4">
                                             <label for="originator" class="fw-bold me-2 mb-0 col-form-label" style="">{{ __('ORIGINATOR:') }}</label>
-                                            <input name="originator" id="originator" class="p-2 me-1 rounded form-control" value="{{Auth::user()->name}}" readonly>
+                                            <input name="originator" id="originator" class="p-2 me-1 rounded form-control" value="{{$aftn['originator']}}" readonly>
                                         </div>
                                     </div>
                                     <div class="row text-uppercase">
@@ -114,7 +114,7 @@
                                     <div class="d-flex flex-wrap gap-2 mb-3" style="width: 90%;">
                                         @for($i = 1; $i <= 28; $i++)
                                         <div class="">
-                                            <input name="address{{$i}}" id="address{{$i}}" class="p-2 rounded form-control" style="width: 120px">
+                                            <input name="address{{$i}}" id="address{{$i}}" class="p-2 rounded form-control" style="width: 120px" value="{{$aftn['address'.$i]}}">
                                         </div>
                                         @endfor
                                     </div>
@@ -128,11 +128,11 @@
                                     <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="aircraft-id" class="me-2 mb-0 col-form-label text-primary">{{ __('7. AIRCRAFT ID') }}</label>
-                                            <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control">
+                                            <input name="aircraft-id" id="aircraft-id" class="p-2 rounded form-control" value="{{$message->aircraft_id}}">
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="reg" class="me-2 mb-0 col-form-label text-primary"><i>{{ __('REG/') }}</i></label>
-                                            <input name="reg" id="reg" class="p-2 rounded form-control" placeholder="SEARCH REG">
+                                            <input name="reg" id="reg" class="p-2 rounded form-control" value="{{$message->fpl_reg}}">
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="rules" class="me-2 mb-0 col-form-label text-primary">{{ __('8. FLIGHT RULES') }}</label>
@@ -157,13 +157,13 @@
                                         </div>
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="number" class="me-2 mb-0 col-form-label text-primary">{{ __('9.NUMBER') }}</label>
-                                            <input id="number" name="number" type="number" min="2" max="10" maxlength="2" class="style3" value="" style="width: 90px;text-transform: uppercase" onkeypress="return numberonly(this, event)" pattern="[0-9]{0,2}" data-pattern-error="Number should be numeric upto 2 characters" tooltiptext="Number of Aircraft (if more than one)<br><br>1 to 2 NUMERICS giving the number of aircraft in the flight. " onchange="showHintnumber()">
+                                            <input id="number" name="number" type="number" min="2" max="10" maxlength="2" class="style3" value="{{$message->fpl_number}}" style="width: 90px;text-transform: uppercase" onkeypress="return numberonly(this, event)" pattern="[0-9]{0,2}" data-pattern-error="Number should be numeric upto 2 characters" tooltiptext="Number of Aircraft (if more than one)<br><br>1 to 2 NUMERICS giving the number of aircraft in the flight. " onchange="showHintnumber()">
                                         </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="type-aircraft" class="me-2 mb-0 col-form-label text-primary">{{ __('TYPE OF AIRCRAFT') }}</label>
-                                            <input name="type-aircraft" id="type-aircraft" class="p-2 rounded form-control">
+                                            <input name="type-aircraft" id="type-aircraft" class="p-2 rounded form-control" value="{{$message->fpl_aircraft_type}}">
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="fpl_wake_turb" class="me-2 mb-0 col-form-label text-primary">{{ __('WAKE TURB. CAT.') }}</label>
@@ -177,51 +177,51 @@
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="equipment-aircraft" class="me-2 mb-0 col-form-label text-primary">{{ __('10.AIRCRAFT EQUIPMENT') }}</label>
-                                            <input name="equipment-aircraft" id="equipment-aircraft" class="p-2 rounded form-control">
+                                            <input name="equipment-aircraft" id="equipment-aircraft" class="p-2 rounded form-control" value="{{$message->fpl_aircraft_equipment}}">
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="equipment-surveillance" class="me-2 mb-0 col-form-label text-primary">{{ __('SURVEILLANCE EQUIPMENT') }}</label>
-                                            <input name="equipment-surveillance" id="equipment-surveillance" class="p-2 rounded form-control">
+                                            <input name="equipment-surveillance" id="equipment-surveillance" class="p-2 rounded form-control" value="{{$message->fpl_surveillance_equipment}}">
                                         </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="dep-id" class="me-2 mb-0 col-form-label text-primary">{{ __('13.DEP AD') }}</label>
-                                            <input name="dep-id" id="dep-id" class="p-2 rounded form-control">
+                                            <input name="dep-id" id="dep-id" class="p-2 rounded form-control" value="{{$message->dep_id}}">
                                         </div>
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="eobt" class="me-2 mb-0 col-form-label text-primary">{{ __('EOBT') }}</label>
-                                            <input name="eobt" id="eobt" class="p-2 rounded form-control">
+                                            <input name="eobt" id="eobt" class="p-2 rounded form-control" value="{{$message->time}}">
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="dof" class="me-2 mb-0 col-form-label text-primary">{{ __('DOF') }}</label>
-                                            <input name="dof" id="dof" type="date" class="p-2 rounded form-control">
+                                            <input name="dof" id="dof" type="date" class="p-2 rounded form-control" value="{{$message->dof}}">
                                         </div>
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="dest-id" class="me-2 mb-0 col-form-label text-primary">{{ __('16.DEST AD') }}</label>
-                                            <input name="dest-id" id="dest-id" class="p-2 rounded form-control">
+                                            <input name="dest-id" id="dest-id" class="p-2 rounded form-control" value="{{$message->dest_id}}">
                                         </div>
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="eet" class="me-2 mb-0 col-form-label text-primary">{{ __('EET') }}</label>
-                                            <input name="eet" id="eet" class="p-2 rounded form-control">
+                                            <input name="eet" id="eet" class="p-2 rounded form-control" value="{{$message->fpl_eet}}">
                                         </div>
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="1st-altn-ad" class="me-2 mb-0 col-form-label text-primary">{{ __('1st ALTN AD') }}</label>
-                                            <input name="1st-altn-ad" id="1st-altn-ad" class="p-2 rounded form-control">
+                                            <input name="1st-altn-ad" id="1st-altn-ad" class="p-2 rounded form-control" value="{{$message->fpl_1_altn}}">
                                         </div>
                                         <div class="col-1 me-4 fw-bold">
                                             <label for="2nd-altn-ad" class="me-2 mb-0 col-form-label text-primary">{{ __('2nd ALTN AD') }}</label>
-                                            <input name="2nd-altn-ad" id="2nd-altn-ad" class="p-2 rounded form-control">
+                                            <input name="2nd-altn-ad" id="2nd-altn-ad" class="p-2 rounded form-control" value="{{$message->fpl_2_altn}}">
                                         </div>
                                     </div>
                                     <div class="row mb-5 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="cruising-speed" class="me-2 mb-0 col-form-label text-primary">{{ __('15.CRUISING SPEED') }}</label>
-                                            <input name="cruising-speed" id="cruising-speed" class="p-2 rounded form-control">
+                                            <input name="cruising-speed" id="cruising-speed" class="p-2 rounded form-control" value="{{$message->fpl_cruising_speed}}">
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="cruising-level" class="me-2 mb-0 col-form-label text-primary">{{ __('CRUISING LEVEL') }}</label>
-                                            <input name="cruising-level" id="cruising-level" class="p-2 rounded form-control">
+                                            <input name="cruising-level" id="cruising-level" class="p-2 rounded form-control" value="{{$message->fpl_cruising_level}}">
                                         </div>
                                     </div>
                                     <hr>
@@ -787,7 +787,7 @@
                                     </div>
                                     <div class="col-8 me-4 fw-bold">
                                         <label for="routeP" class="me-2 mb-0 col-form-label"></label>
-                                        <textarea class="form-control" id="routeP" name="routeP"  style="height: 100px;"></textarea>
+                                        <textarea class="form-control" id="routeP" name="routeP" style="height: 100px;">{{$add->route}}</textarea>
                                     </div>
                                     <div class="row mb-5 mt-3">
                                         <div class="col-5 d-inline-flex gap-2">
@@ -803,99 +803,99 @@
                                         <p>18. OTHER INFORMATION</p>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('STS/') }}</label>
-                                            <textarea class="form-control" id="STS" name="STS" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="STS" name="STS" style="height: 100px;">{{$add->STS}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('PBN/') }}</label>
-                                            <textarea class="form-control" id="PBN" name="PBN" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="PBN" name="PBN" style="height: 100px;">{{$add->PBN}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('NAV/') }}</label>
-                                            <textarea class="form-control" id="NAV" name="NAV" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="NAV" name="NAV" style="height: 100px;">{{$add->NAV}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('COM/') }}</label>
-                                            <textarea class="form-control" id="COM" name="COM" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="COM" name="COM" style="height: 100px;">{{$add->COM}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('DAT/') }}</label>
-                                            <textarea class="form-control" id="DAT" name="DAT" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="DAT" name="DAT" style="height: 100px;">{{$add->DAT}}</textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('SUR/') }}</label>
-                                            <textarea class="form-control" id="SUR" name="SUR" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="SUR" name="SUR" style="height: 100px;">{{$add->SUR}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('DEP/') }}</label>
-                                            <textarea class="form-control" id="DEP" name="DEP" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="DEP" name="DEP" style="height: 100px;">{{$add->DEP}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('DEST/') }}</label>
-                                            <textarea class="form-control" id="DEST" name="DEST" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="DEST" name="DEST" style="height: 100px;">{{$add->DEST}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label text-primary">{{ __('REG/') }}</label>
-                                            <textarea class="form-control" id="REG" name="REG" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="REG" name="REG" style="height: 100px;">{{$add->REG}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('EET/') }}</label>
-                                            <textarea class="form-control" id="EET" name="EET" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="EET" name="EET" style="height: 100px;">{{$add->EET}}</textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('SEL/') }}</label>
-                                            <textarea class="form-control" id="SEL" name="SEL" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="SEL" name="SEL" style="height: 100px;">{{$add->SEL}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('TYP/') }}</label>
-                                            <textarea class="form-control" id="TYP" name="TYP" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="TYP" name="TYP" style="height: 100px;">{{$add->TYP}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('CODE/') }}</label>
-                                            <textarea class="form-control" id="CODE" name="CODE" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="CODE" name="CODE" style="height: 100px;">{{$add->CODE}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('DLE/') }}</label>
-                                            <textarea class="form-control" id="DLE" name="DLE" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="DLE" name="DLE" style="height: 100px;">{{$add->DLE}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label text-primary">{{ __('OPR/') }}</label>
-                                            <textarea class="form-control" id="OPR" name="OPR" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="OPR" name="OPR" style="height: 100px;">{{$add->OPR}}</textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('ORGN/') }}</label>
-                                            <textarea class="form-control" id="ORGN" name="ORGN" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="ORGN" name="ORGN" style="height: 100px;">{{$add->ORGN}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('PER/') }}</label>
-                                            <textarea class="form-control" id="PER" name="PER" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="PER" name="PER" style="height: 100px;">{{$add->PER}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('ALTN/') }}</label>
-                                            <textarea class="form-control" id="ALTN" name="ALTN" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="ALTN" name="ALTN" style="height: 100px;">{{$add->ALTN}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('RALT/') }}</label>
-                                            <textarea class="form-control" id="RALT" name="RALT" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="RALT" name="RALT" style="height: 100px;">{{$add->RALT}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('TALT/') }}</label>
-                                            <textarea class="form-control" id="TALT" name="TALT" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="TALT" name="TALT" style="height: 100px;">{{$add->TALT}}</textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-5 custom">
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('RIF/') }}</label>
-                                            <textarea class="form-control" id="RIF" name="RIF" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="RIF" name="RIF" style="height: 100px;">{{$add->RIF}}</textarea>
                                         </div>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="" class="me-2 mb-0 col-form-label">{{ __('RMK/') }}</label>
-                                            <textarea class="form-control" id="RMK" name="RMK" style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="RMK" name="RMK" style="height: 100px;">{{$add->RMK}}</textarea>
                                         </div>
                                     </div>
                                     <hr>
@@ -903,7 +903,7 @@
                                         <p>SUPPLEMENTARY INFORMATION</p>
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="endurance" class="me-2 mb-0 col-form-label text-primary">{{ __('19.ENDURANCE') }}</label>
-                                            <input name="endurance" id="endurance" class="p-2 rounded form-control">
+                                            <input name="endurance" id="endurance" class="p-2 rounded form-control" value="{{$add->supp_endurance}}">
                                         </div>
                                         <div class="col-3 me-4 fw-bold">
                                             <label for="supp_people" class="me-2 mb-0 col-form-label text-primary">{{ __('PERSON ON BOARD') }}</label>
@@ -912,7 +912,7 @@
                                                     <p>P/</p>
                                                 </div>
                                                 <div class="col-lg">
-                                                    <input name="supp_people" id="supp_people" class="p-2 rounded form-control">
+                                                    <input name="supp_people" id="supp_people" class="p-2 rounded form-control" value="{{$add->supp_people}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -1025,7 +1025,7 @@
 
                                         <div class="col-2 me-4 fw-bold">
                                             <label for="colour" class="me-2 mb-0 col-form-label text-primary">{{ __('COLOUR') }}</label>
-                                            <input name="colour" id="colour" class="p-2 rounded form-control">
+                                            <input name="colour" id="colour" class="p-2 rounded form-control" value="{{$add->supp_color}}">
                                         </div>
                                         <div class="col-3 me-4 fw-bold">
                                             <div class="row">
@@ -1034,7 +1034,7 @@
                                                     <p>A/</p>
                                                 </div>
                                                 <div class="col-10">
-                                                    <input name="aircraft-colour" id="aircraft-colour" class="p-2 rounded form-control">
+                                                    <input name="aircraft-colour" id="aircraft-colour" class="p-2 rounded form-control" value="{{$add->supp_aircraft_color}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -1048,7 +1048,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-8">
-                                                    <input name="supp_remark_desc" id="supp_remark_desc" class="p-2 rounded form-control" placeholder="NIL">
+                                                    <input name="supp_remark_desc" id="supp_remark_desc" class="p-2 rounded form-control" value="{{$add->supp_remark_desc}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -1060,7 +1060,7 @@
                                                         <p>C/</p>
                                                     </div>
                                                     <div class="col-9">
-                                                        <input name="supp_pilot" id="supp_pilot" class="p-2 rounded form-control">
+                                                        <input name="supp_pilot" id="supp_pilot" class="p-2 rounded form-control" value="{{$add->supp_pilot}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1068,13 +1068,13 @@
                                         <div class="row mb-3">
                                             <div class="col-4 me-4 fw-bold">
                                                 <label for="supp_reserved" class="me-2 mb-0 col-form-label">{{ __('SPACE RESERVED/') }}</label>
-                                                <textarea class="form-control" name="supp_reserved" style="height: 120px;">NIL</textarea>
+                                                <textarea class="form-control" name="supp_reserved" style="height: 120px;">{{$add->supp_reserved}}</textarea>
                                             </div>
                                         </div>
                                         <div class="row mb-5">
                                             <div class="col-3 me-4 fw-bold">
                                                 <label for="filled-by" class="me-2 mb-0 col-form-label text-primary">{{ __('FILED BY') }}</label>
-                                                <input name="filled-by" id="filled-by" class="p-2 rounded form-control">
+                                                <input name="filled-by" id="filled-by" class="p-2 rounded form-control" value="{{$message->filed_by}}">
                                             </div>
                                         </div>
                                         <div class="row mb-3">

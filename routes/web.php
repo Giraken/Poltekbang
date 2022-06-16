@@ -47,6 +47,7 @@ Route::get('/arr-message-detail/{id}', [App\Http\Controllers\ATSController::clas
 Route::get('/dla-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'dlaDetail'])->name('dlaDetail');
 Route::get('/dep-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'depDetail'])->name('depDetail');
 Route::get('/cnl-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'cnlDetail'])->name('cnlDetail');
+Route::get('/freetext-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'freetextDetail'])->name('freetextDetail');
 /*
 |--------------------------------------------------------------------------
 | Messages
@@ -55,6 +56,8 @@ Route::get('/cnl-message-detail/{id}', [App\Http\Controllers\ATSController::clas
 */
 Route::get('/filed-message', [App\Http\Controllers\MessagesController::class, 'filled_message'])->name('filled-message');
 Route::post('/filed-message', [App\Http\Controllers\MessagesController::class, 'filled_messagePost'])->name('filled-messagePost');
+Route::get('/filed-message/edit/{id}', [App\Http\Controllers\MessagesController::class, 'edit_filled_message'])->name('edit_filled-message');
+Route::post('/filed-message/edit/{id}', [App\Http\Controllers\MessagesController::class, 'edit_filled_messagePost'])->name('edit_filled-messagePost');
 Route::get('/delay', [App\Http\Controllers\MessagesController::class, 'delay'])->name('delay');
 Route::post('/delay', [App\Http\Controllers\MessagesController::class, 'delayPost'])->name('delayPost');
 Route::get('/modification', [App\Http\Controllers\MessagesController::class, 'modification'])->name('modification');

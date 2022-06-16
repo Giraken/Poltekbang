@@ -35,17 +35,43 @@ class IncomingController extends Controller
         return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($data){
-                    $actionBtn = '<a href="/downloadPDF/'.$data->id.'" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></a>';
-                    $actionBtn .= '<button type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></button>';
-                    if($data->type == "FPL")
-                    {
-                    $actionBtn .= '<button type="button" class="btn btn-primary text-white"><i class="bi bi-pen"></i></button>';
+                    
+                    if($data->type == "FPL"){
+                        $actionBtn = '<a href="fpl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                        $actionBtn .= '<a href="/downloadPDF/'.$data->id.'" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></a>';
+                        $actionBtn .= '<a href="/filed-message/edit/'.$data->id.'" class="btn btn-primary text-white"><i class="bi bi-pen"></i></a>';
                     }
-                    // $actionBtn .= '<button data-bs-toggle="modal" data-bs-target="#message-box" type="button" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></button>';
+                    elseif($data->type =="CHG"){
+                        $actionBtn = '<a href="/chg-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
+                    elseif($data->type =="DEP"){
+                        $actionBtn = '<a href="/dep-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
+                    elseif($data->type =="DLA"){
+                        $actionBtn = '<a href="/dla-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
+                    elseif($data->type =="CNL"){
+                        $actionBtn = '<a href="/cnl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
+                    elseif($data->type =="ARR"){
+                        $actionBtn = '<a href="/arr-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
+                    elseif($data->type =="FREETEXT"){
+                        $actionBtn = '<a href="/freetext-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
+                    else {
+                        $actionBtn = '<a type="button" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+                    }
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])->make(true);
     }
+
+    public function detailMessage($id)
+    {
+        $idMessage = $id;
+    }
+
     public function pdf($id)
     {
         $path = base_path('public/img/unnamed.jpg');

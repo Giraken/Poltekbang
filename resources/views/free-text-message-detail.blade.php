@@ -31,7 +31,7 @@
                                             <tr>
                                                 <th><b>Free Text</b></th>
                                                 <th>
-                                                    : free text
+                                                    : {{$data->free_text}}
                                                 </th>
                                                 <th></th>
                                             </tr>

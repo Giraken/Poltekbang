@@ -122,7 +122,7 @@
                                             <tr>
                                                 <th><b>RMK</b></th>
                                                 <th>
-                                                    : 
+                                                    : {{$other->RMK}}
                                                 </th>
                                                 <th></th>
                                             </tr>

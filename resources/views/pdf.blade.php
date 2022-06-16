@@ -112,34 +112,34 @@
                         </tr>
                         <tr>
                             <td>{{$aftn->priority}}</td>
-                            @if($aftn->address1)<td>{{$aftn->address1}}</td>@endif
-                            @if($aftn->address2)<td>{{$aftn->address2}}</td>@endif
-                            @if($aftn->address3)<td>{{$aftn->address3}}</td>@endif
-                            @if($aftn->address4)<td>{{$aftn->address4}}</td>@endif
-                            @if($aftn->address5)<td>{{$aftn->address5}}</td>@endif
-                            @if($aftn->address6)<td>{{$aftn->address6}}</td>@endif
-                            @if($aftn->address7)<td>{{$aftn->address7}}</td>@endif
-                            @if($aftn->address8)<td>{{$aftn->address8}}</td>@endif
-                            @if($aftn->address9)<td>{{$aftn->address9}}</td>@endif
-                            @if($aftn->address10)<td>{{$aftn->address10}}</td>@endif
-                            @if($aftn->address11)<td>{{$aftn->address11}}</td>@endif
-                            @if($aftn->address12)<td>{{$aftn->address12}}</td>@endif
-                            @if($aftn->address13)<td>{{$aftn->address13}}</td>@endif
-                            @if($aftn->address14)<td>{{$aftn->address14}}</td>@endif
-                            @if($aftn->address15)<td>{{$aftn->address15}}</td>@endif
-                            @if($aftn->address16)<td>{{$aftn->address16}}</td>@endif
-                            @if($aftn->address17)<td>{{$aftn->address17}}</td>@endif
-                            @if($aftn->address18)<td>{{$aftn->address18}}</td>@endif
-                            @if($aftn->address19)<td>{{$aftn->address19}}</td>@endif
-                            @if($aftn->address20)<td>{{$aftn->address20}}</td>@endif
-                            @if($aftn->address21)<td>{{$aftn->address21}}</td>@endif
-                            @if($aftn->address22)<td>{{$aftn->address22}}</td>@endif
-                            @if($aftn->address23)<td>{{$aftn->address23}}</td>@endif
-                            @if($aftn->address24)<td>{{$aftn->address24}}</td>@endif
-                            @if($aftn->address25)<td>{{$aftn->address25}}</td>@endif
-                            @if($aftn->address26)<td>{{$aftn->address26}}</td>@endif
-                            @if($aftn->address27)<td>{{$aftn->address27}}</td>@endif
-                            @if($aftn->address28)<td>{{$aftn->address28}}</td>@endif
+                            <td>@if($aftn->address1){{$aftn->address1}}@endif</td>
+                            <td>@if($aftn->address2){{$aftn->address2}}@endif</td>
+                            <td>@if($aftn->address3){{$aftn->address3}}@endif</td>
+                            <td>@if($aftn->address4){{$aftn->address4}}@endif</td>
+                            <td>@if($aftn->address5){{$aftn->address5}}@endif</td>
+                            <td>@if($aftn->address6){{$aftn->address6}}@endif</td>
+                            <td>@if($aftn->address7){{$aftn->address7}}@endif</td>
+                            <td>@if($aftn->address8){{$aftn->address8}}@endif</td>
+                            <td>@if($aftn->address9){{$aftn->address9}}@endif</td>
+                            <td>@if($aftn->address10){{$aftn->address10}}@endif</td>
+                            <td>@if($aftn->address11){{$aftn->address11}}@endif</td>
+                            <td>@if($aftn->address12){{$aftn->address12}}@endif</td>
+                            <td>@if($aftn->address13){{$aftn->address13}}@endif</td>
+                            <td>@if($aftn->address14){{$aftn->address14}}@endif</td>
+                            <td>@if($aftn->address15){{$aftn->address15}}@endif</td>
+                            <td>@if($aftn->address16){{$aftn->address16}}@endif</td>
+                            <td>@if($aftn->address17){{$aftn->address17}}@endif</td>
+                            <td>@if($aftn->address18){{$aftn->address18}}@endif</td>
+                            <td>@if($aftn->address19){{$aftn->address19}}@endif</td>
+                            <td>@if($aftn->address20){{$aftn->address20}}@endif</td>
+                            <td>@if($aftn->address21){{$aftn->address21}}@endif</td>
+                            <td>@if($aftn->address22){{$aftn->address22}}@endif</td>
+                            <td>@if($aftn->address23){{$aftn->address23}}@endif</td>
+                            <td>@if($aftn->address24){{$aftn->address24}}@endif</td>
+                            <td>@if($aftn->address25){{$aftn->address25}}@endif</td>
+                            <td>@if($aftn->address26){{$aftn->address26}}@endif</td>
+                            <td>@if($aftn->address27){{$aftn->address27}}@endif</td>
+                            <td>@if($aftn->address28){{$aftn->address28}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -151,8 +151,8 @@
                             <th>Originator</th>
                         </tr>
                         <tr>
-                            @if($aftn->filing_time)<td>{{$aftn->filing_time}}</td>@endif
-                            @if($aftn->originator)<td>{{$aftn->originator}}</td>@endif
+                            <td>@if($aftn->filing_time){{$aftn->filing_time}}@endif</td>
+                            <td>@if($aftn->originator){{$aftn->originator}}@endif</td>
                         </tr>
                     </table>
                     <h3 class="">SPECIFIC IDENTIFICATION OF ADDRESSEE(S) AND/OR ORIGINATOR</h3>
@@ -167,10 +167,10 @@
                             <th>TYPE OF FLIGHT</th>
                         </tr>
                         <tr>
-                            @if($message->type)<td>{{$message->type}}</td>@endif
-                            @if($message->aircraft_id)<td>{{$message->aircraft_id}}</td>@endif
-                            @if($message->fpl_flight_rules)<td>{{$message->fpl_flight_rules}}</td>@endif
-                            @if($message->fpl_flight_type)<td>{{$message->fpl_flight_type}}</td>@endif
+                            <td>@if($message->type){{$message->type}}@endif</td>
+                            <td>@if($message->aircraft_id){{$message->aircraft_id}}@endif</td>
+                            <td>@if($message->fpl_flight_rules){{$message->fpl_flight_rules}}@endif</td>
+                            <td>@if($message->fpl_flight_type){{$message->fpl_flight_type}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -183,11 +183,11 @@
                             <th>10.EQUIPMENT AND CAPABILITIES</th>
                         </tr>
                         <tr>
-                            @if($message->fpl_number)<td>{{$message->fpl_number}}</td>@endif
-                            @if($message->fpl_aircraft_type)<td>{{$message->fpl_aircraft_type}}</td>@endif
-                            @if($message->fpl_wake_turb)<td>{{$message->fpl_wake_turb}}</td>@endif
-                            @if($message->fpl_aircraft_equipment)<td>{{$message->fpl_aircraft_equipment}}</td>@endif
-                            @if($message->fpl_surveillance_equipment)<td>{{$message->fpl_surveillance_equipment}}</td>@endif
+                            <td>@if($message->fpl_number){{$message->fpl_number}}@endif</td>
+                            <td>@if($message->fpl_aircraft_type){{$message->fpl_aircraft_type}}@endif</td>
+                            <td>@if($message->fpl_wake_turb){{$message->fpl_wake_turb}}@endif</td>
+                            <td>@if($message->fpl_aircraft_equipment){{$message->fpl_aircraft_equipment}}@endif</td>
+                            <td>@if($message->fpl_surveillance_equipment){{$message->fpl_surveillance_equipment}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -198,8 +198,8 @@
                             <th>Time</th>
                         </tr>
                         <tr>
-                            @if($message->dep_id)<td>{{$message->dep_id}}</td>@endif
-                            @if($message->time)<td>{{$message->time}}</td>@endif
+                            <td>@if($message->dep_id){{$message->dep_id}}@endif</td>
+                            <td>@if($message->time){{$message->time}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -211,9 +211,9 @@
                             <th>Route</th>
                         </tr>
                         <tr>
-                            @if($message->dep_id)<td>{{$message->fpl_cruising_speed}}</td>@endif
-                            @if($message->time)<td>{{$message->fpl_cruising_level}}</td>@endif
-                            @if($add->route)<td>{{$add->route}}</td>@endif
+                            <td>@if($message->dep_id){{$message->fpl_cruising_speed}}@endif</td>
+                            <td>@if($message->time){{$message->fpl_cruising_level}}@endif</td>
+                            <td>@if($add->route){{$add->route}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -226,10 +226,10 @@
                             <th>2ND DEST ALTN AD</th>
                         </tr>
                         <tr>
-                            @if($message->dest_id)<td>{{$message->dest_id}}</td>@endif
-                            @if($message->fpl_eet)<td>{{$message->fpl_eet}}</td>@endif
-                            @if($message->fpl_1_altn)<td>{{$message->fpl_1_altn}}</td>@endif
-                            @if($message->fpl_2_altn)<td>{{$message->fpl_2_altn}}</td>@endif
+                            <td>@if($message->dest_id){{$message->dest_id}}@endif</td>
+                            <td>@if($message->fpl_eet){{$message->fpl_eet}}@endif</td>
+                            <td>@if($message->fpl_1_altn){{$message->fpl_1_altn}}@endif</td>
+                            <td>@if($message->fpl_2_altn){{$message->fpl_2_altn}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -245,12 +245,12 @@
                             <th>SUR/</th>
                         </tr>
                         <tr>
-                            @if($add->STS)<td>{{$add->STS}}</td>@endif
-                            @if($add->PBN)<td>{{$add->PBN}}</td>@endif
-                            @if($add->NAV)<td>{{$add->NAV}}</td>@endif
-                            @if($add->COM)<td>{{$add->COM}}</td>@endif
-                            @if($add->DAT)<td>{{$add->DAT}}</td>@endif
-                            @if($add->SUR)<td>{{$add->SUR}}</td>@endif
+                            <td>@if($add->STS){{$add->STS}}@endif</td>
+                            <td>@if($add->PBN){{$add->PBN}}@endif</td>
+                            <td>@if($add->NAV){{$add->NAV}}@endif</td>
+                            <td>@if($add->COM){{$add->COM}}@endif</td>
+                            <td>@if($add->DAT){{$add->DAT}}@endif</td>
+                            <td>@if($add->SUR){{$add->SUR}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -265,12 +265,12 @@
                             <th>SEL/</th>
                         </tr>
                         <tr>
-                            @if($add->DEP)<td>{{$add->DEP}}</td>@endif
-                            @if($add->DEST)<td>{{$add->DEST}}</td>@endif
-                            @if($message->dof)<td>{{$message->dof}}</td>@endif
-                            @if($add->REG)<td>{{$add->REG}}</td>@endif
-                            @if($add->EET)<td>{{$add->EET}}</td>@endif
-                            @if($add->SEL)<td>{{$add->SEL}}</td>@endif
+                            <td>@if($add->DEP){{$add->DEP}}@endif</td>
+                            <td>@if($add->DEST){{$add->DEST}}@endif</td>
+                            <td>@if($message->dof){{$message->dof}}@endif</td>
+                            <td>@if($add->REG){{$add->REG}}@endif</td>
+                            <td>@if($add->EET){{$add->EET}}@endif</td>
+                            <td>@if($add->SEL){{$add->SEL}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -285,12 +285,12 @@
                             <th>PER/</th>
                         </tr>
                         <tr>
-                            @if($add->TYP)<td>{{$add->TYP}}</td>@endif
-                            @if($add->CODE)<td>{{$add->CODE}}</td>@endif
-                            @if($add->DLE)<td>{{$add->DLE}}</td>@endif
-                            @if($add->OPR)<td>{{$add->OPR}}</td>@endif
-                            @if($add->ORGN)<td>{{$add->ORGN}}</td>@endif
-                            @if($add->PER)<td>{{$add->PER}}</td>@endif
+                            <td>@if($add->TYP){{$add->TYP}}@endif</td>
+                            <td>@if($add->CODE){{$add->CODE}}@endif</td>
+                            <td>@if($add->DLE){{$add->DLE}}@endif</td>
+                            <td>@if($add->OPR){{$add->OPR}}@endif</td>
+                            <td>@if($add->ORGN){{$add->ORGN}}@endif</td>
+                            <td>@if($add->PER){{$add->PER}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -304,11 +304,11 @@
                             <th>RMK/</th>
                         </tr>
                         <tr>
-                            @if($add->ALTN)<td>{{$add->ALTN}}</td>@endif
-                            @if($add->RALT)<td>{{$add->RALT}}</td>@endif
-                            @if($add->TALT)<td>{{$add->TALT}}</td>@endif
-                            @if($add->RIF)<td>{{$add->RIF}}</td>@endif
-                            @if($add->RMK)<td>{{$add->RMK}}</td>@endif
+                            <td>@if($add->ALTN){{$add->ALTN}}@endif</td>
+                            <td>@if($add->RALT){{$add->RALT}}@endif</td>
+                            <td>@if($add->TALT){{$add->TALT}}@endif</td>
+                            <td>@if($add->RIF){{$add->RIF}}@endif</td>
+                            <td>@if($add->RMK){{$add->RMK}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -325,11 +325,11 @@
                             <th>Jackets</th>
                         </tr>
                         <tr>
-                            @if($add->supp_endurance)<td>{{$add->supp_endurance}}</td>@endif
-                            @if($add->supp_people)<td>{{$add->supp_people}}</td>@endif
-                            @if($add->supp_radio)<td>{{$add->supp_radio}}</td>@endif
-                            @if($add->supp_survival)<td>{{$add->supp_survival}}</td>@endif
-                            @if($add->supp_jacket)<td>{{$add->supp_jacket}}</td>@endif
+                            <td>@if($add->supp_endurance){{$add->supp_endurance}}@endif</td>
+                            <td>@if($add->supp_people){{$add->supp_people}}@endif</td>
+                            <td>@if($add->supp_radio){{$add->supp_radio}}@endif</td>
+                            <td>@if($add->supp_survival){{$add->supp_survival}}@endif</td>
+                            <td>@if($add->supp_jacket){{$add->supp_jacket}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -344,8 +344,8 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            @if($add->supp_cover)<td>{{$add->supp_cover}}</td>@endif
-                            @if($add->supp_color)<td>{{$add->supp_color}}</td>@endif
+                            <td>@if($add->supp_cover){{$add->supp_cover}}@endif</td>
+                            <td>@if($add->supp_color){{$add->supp_color}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -355,7 +355,7 @@
                             <th>AIRCRAFT COLOUR AND MARKINGS</th>
                         </tr>
                         <tr>
-                            @if($add->supp_aircraft_color)<td>{{$add->supp_aircraft_color}}</td>@endif
+                            <td>@if($add->supp_aircraft_color){{$add->supp_aircraft_color}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -365,8 +365,8 @@
                             <th>REMARKS</th>
                         </tr>
                         <tr>
-                            @if($add->supp_remark)<td>{{$add->supp_remark}}</td>@endif
-                            @if($add->supp_remark_desc)<td>{{$add->supp_remark_desc}}</td>@endif
+                            <td>@if($add->supp_remark){{$add->supp_remark}}@endif</td>
+                            <td>@if($add->supp_remark_desc){{$add->supp_remark_desc}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -376,7 +376,7 @@
                             <th>Pilot in command</th>
                         </tr>
                         <tr>
-                            @if($add->supp_pilot)<td>{{$add->supp_pilot}}</td>@endif
+                            <td>@if($add->supp_pilot){{$add->supp_pilot}}@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -388,9 +388,9 @@
                             <th>Received By</th>
                         </tr>
                         <tr>
-                            @if($message->filed_by)<td>{{$message->filed_by}}</td>@endif
-                            @if($add->supp_reserved)<td>{{$add->supp_reserved}}</td>@endif
-                            @if($add->created_at)<td>{{$add->created_at}}</td>@endif
+                            <td>@if($message->filed_by){{$message->filed_by}}@endif</td>
+                            <td>@if($add->supp_reserved){{$add->supp_reserved}}@endif</td>
+                            <td>@if($add->created_at){{$add->created_at}}@endif</td>
                         </tr>
                     </table>
                 </div>

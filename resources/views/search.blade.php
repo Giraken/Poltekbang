@@ -54,7 +54,6 @@
                                                 <option value="CNL">CNL</option>
                                                 <option value="DEP">DEP</option>
                                                 <option value="ARR">ARR</option>
-                                                <option value="">-- ALL MESSAGES --</option>
                                             </select>
                                         </div>
                                         <div class="col">

@@ -22,11 +22,6 @@
                                 <th scope="col">Originator</th>
                                 <th scope="col">Date/Time</th>
                                 <th scope="col">Fretext</th>
-                                {{-- <th scope="col">Aircraft ID</th> --}}
-                                {{-- <th scope="col">DEP AD</th> --}}
-                                {{-- <th scope="col">ATD</th> --}}
-                                {{-- <th scope="col">DEST AD</th> --}}
-                                {{-- <th scope="col">DOF</th> --}}
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -38,11 +33,6 @@
                                 <th>{{$d->originator}}</th>
                                 <th>{{$d->time}}</th>
                                 <th>freetext</th>
-                                {{-- <th>{{$d->aircraft_id}}</th> --}}
-                                {{-- <th>{{$d->dep_id}}</th> --}}
-                                {{-- <th></th> --}}
-                                {{-- <th>{{$d->dest_id}}</th> --}}
-                                {{-- <th>{{$d->dof}}</th> --}}
                                 <th>
                                     <a href="/free-text-message-detail/{{$d->id}}" class="btn btn-dark text-white">
                                         {{ __('Detail') }}

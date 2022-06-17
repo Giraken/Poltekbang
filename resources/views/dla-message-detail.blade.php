@@ -45,7 +45,7 @@
                                             <tr>
                                                 <th><b>ATD</b></th>
                                                 <th>
-                                                    : 
+                                                    :
                                                 </th>
                                                 <th></th>
                                             </tr>
@@ -78,9 +78,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="position-absolute bottom-0" style="left: 0; right: 0;">
-        @include('layouts.footer')
     </div>
 </div>
 @endsection

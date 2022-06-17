@@ -41,6 +41,7 @@ Route::get('/dep-messages', [App\Http\Controllers\ATSController::class, 'depMess
 Route::get('/dla-messages', [App\Http\Controllers\ATSController::class, 'dlaMessages'])->name('dlaMessages');
 Route::get('/fpl-messages', [App\Http\Controllers\ATSController::class, 'fplMessages'])->name('fplMessages');
 Route::get('/cnl-messages', [App\Http\Controllers\ATSController::class, 'cnlMessages'])->name('cnlMessages');
+Route::get('/free-text-messages', [App\Http\Controllers\ATSController::class, 'freetextMessages'])->name('freetextMessages');
 Route::get('/fpl-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'fplDetail'])->name('fplDetail');
 Route::get('/chg-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'chgDetail'])->name('chgDetail');
 Route::get('/arr-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'arrDetail'])->name('arrDetail');

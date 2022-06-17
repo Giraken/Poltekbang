@@ -126,6 +126,12 @@ class ATSController extends Controller
             $ata = $request->ata;
             return redirect()->route('arrMessages',['originator'=>$originator,'aircraft_id'=>$aircraft_id,'dep_id'=>$dep_id,'ata'=>$ata]);
         }
+        if($type == 'FREETEXT')
+        {
+            $originator = $request->originator;
+            $freetext = $request->freetext;
+            return redirect()->route('freetextMessages',['originator'=>$originator,'freetext'=>$freetext]);
+        }
     }
     public function chgMessages(Request $request)
     {
@@ -419,6 +425,37 @@ class ATSController extends Controller
         //         ->make(true);
         // }
         return view('dep-messages',['data'=>$data]);
+    }
+    public function freetextMessages(Request $request)
+    {
+        $message = DB::table('messages')
+        ->join('aftn_header','aftn_header.message_id','=','messages.id')
+        ->leftjoin('additional_informations','additional_informations.message_id','=','messages.id')
+        ->where('type','FREETEXT');
+
+        if($request->query('originator') != null)
+        {
+            $message->where('aftn_header.originator',$request->query('originator'));
+        }
+        if($request->query('freetext') != null)
+        {
+            $message->where('messages.free_text','like','%'.$request->query('freetext').'%');
+        }
+
+        $data = $message->select('*','messages.id as id','aftn_header.originator as originator')->get();
+
+        // if($request->ajax())
+        // {
+        // return DataTables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = '<a href="/dep-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
+        return view('free-text-messages',['data'=>$data]);
     }
     public function dlaDetail($id)
     {

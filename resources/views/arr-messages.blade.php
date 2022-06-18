@@ -43,6 +43,9 @@
                                         <a href="/arr-message-detail/{{$d->id}}" class="btn btn-dark text-white">
                                             {{ __('Detail') }}
                                         </a>
+                                        <a href="" class="btn btn-danger text-white">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 @endforeach

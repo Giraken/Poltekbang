@@ -135,9 +135,9 @@
                                                 <button type="submit" class="btn btn text-uppercase" style="width: 200px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                                     {{ __('Login') }}
                                                 </button>
-                                                <button href="{{ route('register') }}" type="submit" class="btn btn text-uppercase" style="width: 200px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
+                                                {{-- <button href="{{ route('register') }}" type="submit" class="btn btn text-uppercase" style="width: 200px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Create Account') }}</a>
-                                                </button>
+                                                </button> --}}
                                             </div>
                                         </div>
                                     </div>

@@ -69,12 +69,13 @@
                                     <th></th>
                                     <th></th>
                                     <th>
-                                        {{-- <a href="/fpl-message-detail/{{$d->id}}" class="btn btn-dark text-white">
-                                            {{ __('Detail') }}
-                                        </a> --}}
                                         <a href="/fpl-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
                                         <a href="/downloadPDF/{{$d->id}}" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></a>
                                         <a href="/filed-message/edit/{{$d->id}}" class="btn btn-primary text-white"><i class="bi bi-pen"></i></a>
+                                        {{-- Tombol Hapus muncul saat login dengan admin --}}
+                                        <a href="" class="btn btn-danger text-white">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 @endforeach

@@ -34,10 +34,11 @@
                                     <th>{{$d->time}}</th>
                                     <th>{{$d->free_text}}</th>
                                     <th>
-                                        {{-- <a href="/freetext-message-detail/{{$d->id}}" class="btn btn-dark text-white">
-                                            {{ __('Detail') }}
-                                        </a> --}}
                                         <a href="/freetext-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
+                                        {{-- Tombol Hapus muncul saat login dengan admin --}}
+                                        <a href="" class="btn btn-danger text-white">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 @endforeach
@@ -53,9 +54,6 @@
             </div>
         </div>
     </div>
-    {{-- <div class="position-absolute bottom-0" style="left: 0; right: 0;">
-        @include('layouts.footer')
-    </div> --}}
 </div>
 {{-- <div class="modal fade" id="message-box" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">

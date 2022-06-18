@@ -44,10 +44,11 @@
                                     <th>{{$d->dof}}</th>
                                     <th>{{$d->chg_amandement}}</th>
                                     <th>
-                                        {{-- <a href="/chg-message-detail/{{$d->id}}" class="btn btn-dark text-white">
-                                            {{ __('Detail') }}
-                                        </a> --}}
                                         <a href="/chg-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
+                                        {{-- Tombol Hapus muncul saat login dengan admin --}}
+                                        <a href="" class="btn btn-danger text-white">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 @endforeach

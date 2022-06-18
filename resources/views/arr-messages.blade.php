@@ -40,10 +40,11 @@
                                     <th>{{$d->arr_aerodrome}}</th>
                                     <th>{{$d->arr_time}}</th>
                                     <th>
-                                        {{-- <a href="/arr-message-detail/{{$d->id}}" class="btn btn-dark text-white">
-                                            {{ __('Detail') }}
-                                        </a> --}}
                                         <a href="/arr-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
+                                        {{-- Tombol Hapus muncul saat login dengan admin --}}
+                                        <a href="" class="btn btn-danger text-white">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 @endforeach

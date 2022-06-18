@@ -108,16 +108,6 @@
                                             <input name="filled-by" id="filled-by" class="p-2 rounded form-control">
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="col-3 d-inline-flex gap-2">
-                                            <button type="submit" class="btn btn-primary text-white">
-                                            SEND
-                                            </button>
-                                            <button type="reset" class="btn btn-warning text-white" style="">
-                                                {{ __('RESET') }}
-                                            </button>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </form>

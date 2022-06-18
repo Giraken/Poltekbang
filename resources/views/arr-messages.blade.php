@@ -40,18 +40,13 @@
                                     <th>{{$d->arr_aerodrome}}</th>
                                     <th>{{$d->arr_time}}</th>
                                     <th>
-                                        <a href="/arr-message-detail/{{$d->id}}" class="btn btn-dark text-white">
+                                        {{-- <a href="/arr-message-detail/{{$d->id}}" class="btn btn-dark text-white">
                                             {{ __('Detail') }}
-                                        </a>
+                                        </a> --}}
+                                        <a href="/arr-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
                                     </th>
                                 </tr>
                                 @endforeach
-                                {{-- INI NANTI MASUKIN KE PALING SAMPING SETELAH SEMUA DATA MUNCUL BUAT DETAIL PESAN DI KOLOM Acton--}}
-                                    {{-- <th>
-                                        <a href="/dla-message-detail" class="btn btn-dark text-white">
-                                            {{ __('Detail') }}
-                                        </a>
-                                    </th> --}}
                             </tbody>
                         </table>
                         <div style="text-align: left">

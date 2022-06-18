@@ -44,9 +44,10 @@
                                     <th>{{$d->dof}}</th>
                                     <th>{{$d->chg_amandement}}</th>
                                     <th>
-                                        <a href="/chg-message-detail/{{$d->id}}" class="btn btn-dark text-white">
+                                        {{-- <a href="/chg-message-detail/{{$d->id}}" class="btn btn-dark text-white">
                                             {{ __('Detail') }}
-                                        </a>
+                                        </a> --}}
+                                        <a href="/chg-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
                                     </th>
                                 </tr>
                                 @endforeach

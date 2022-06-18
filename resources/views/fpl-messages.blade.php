@@ -69,18 +69,15 @@
                                     <th></th>
                                     <th></th>
                                     <th>
-                                        <a href="/fpl-message-detail/{{$d->id}}" class="btn btn-dark text-white">
+                                        {{-- <a href="/fpl-message-detail/{{$d->id}}" class="btn btn-dark text-white">
                                             {{ __('Detail') }}
-                                        </a>
+                                        </a> --}}
+                                        <a href="/fpl-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
+                                        <a href="/downloadPDF/{{$d->id}}" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></a>
+                                        <a href="/filed-message/edit/{{$d->id}}" class="btn btn-primary text-white"><i class="bi bi-pen"></i></a>
                                     </th>
                                 </tr>
                                 @endforeach
-                                {{-- INI NANTI MASUKIN KE PALING SAMPING SETELAH SEMUA DATA MUNCUL BUAT DETAIL PESAN DI KOLOM Acton--}}
-                                    {{-- <th>
-                                        <a href="/dla-message-detail" class="btn btn-dark text-white">
-                                            {{ __('Detail') }}
-                                        </a>
-                                    </th> --}}
                             </tbody>
                         </table>
                         <div style="text-align: left">

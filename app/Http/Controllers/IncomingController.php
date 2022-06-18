@@ -35,7 +35,7 @@ class IncomingController extends Controller
         return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($data){
-                    
+
                     if($data->type == "FPL"){
                         $actionBtn = '<a href="fpl-message-detail/'.$data->id.'" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>';
                         $actionBtn .= '<a href="/downloadPDF/'.$data->id.'" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></a>';

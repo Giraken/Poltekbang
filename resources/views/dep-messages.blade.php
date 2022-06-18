@@ -42,9 +42,10 @@
                                     <th>{{$d->dest_id}}</th>
                                     <th>{{$d->dof}}</th>
                                     <th>
-                                        <a href="/dep-message-detail/{{$d->id}}" class="btn btn-dark text-white">
+                                        {{-- <a href="/dep-message-detail/{{$d->id}}" class="btn btn-dark text-white">
                                             {{ __('Detail') }}
-                                        </a>
+                                        </a> --}}
+                                        <a href="/dep-message-detail/{{$d->id}}" class="btn btn-secondary text-white"><i class="bi bi-search"></i></a>
                                     </th>
                                 </tr>
                                 @endforeach

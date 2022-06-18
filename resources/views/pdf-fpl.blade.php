@@ -112,8 +112,12 @@
                         </tr>
                         <tr>
                             <td>{{$aftn->priority}}</td>
-                            @if($aftn->address1)<td>{{$aftn->address1}}</td>@endif
-                            @if($aftn->address2)<td>{{$aftn->address2}}</td>@endif
+                            @if($aftn->address1)<td>tes123</td>@endif
+                            @if($aftn->address2)
+                                <td>{{$aftn->address2}}</td>
+                            @else
+                                <td>tes</td>
+                            @endif
                             @if($aftn->address3)<td>{{$aftn->address3}}</td>@endif
                             @if($aftn->address4)<td>{{$aftn->address4}}</td>@endif
                             @if($aftn->address5)<td>{{$aftn->address5}}</td>@endif

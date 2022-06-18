@@ -79,6 +79,8 @@
                                 {{Auth::user()->name}}
                             </a>
                             <ul class="dropdown-menu text-center dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                {{-- kalau login sebagai admin, maka tombol register muncul. selain itu tidak --}}
+                                <li><a class="dropdown-item" href={{ route('register') }}>Register</a></li>
                                 <li><a class="dropdown-item" href="/profil">Settings</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{Route('logout')}}" onclick="event.preventDefault();

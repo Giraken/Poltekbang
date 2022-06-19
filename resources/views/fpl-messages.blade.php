@@ -13,6 +13,8 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card border-0 shadow p-3" style="border-radius: 13px;">
+                    @if(session()->has('berhasil'))
+                        <div class="alert alert-success la la-thumbs-up"> {{session()->get('berhasil')}} </div> @endif
                     <h3 class="fw-bold">FPL Messages</h3>
                     <div class="card-body table-responsive">
                         <table id="yajra-datatable" class="table yajra-datatable">
@@ -73,9 +75,11 @@
                                         <a href="/downloadPDF/{{$d->id}}" class="btn btn-danger text-white"><i class="bi bi-file-earmark-pdf"></i></a>
                                         <a href="/filed-message/edit/{{$d->id}}" class="btn btn-primary text-white"><i class="bi bi-pen"></i></a>
                                         {{-- Tombol Hapus muncul saat login dengan admin --}}
-                                        <a href="" class="btn btn-danger text-white">
+                                        @if(Auth::user()->role == "admin")
+                                        <a href="/delete/{{$d->id}}" class="btn btn-danger text-white">
                                             <i class="bi bi-trash"></i>
                                         </a>
+                                        @endif
                                     </th>
                                 </tr>
                                 @endforeach

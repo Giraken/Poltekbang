@@ -24,5 +24,15 @@ class DatabaseSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'role'  => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('PoLBaNg@321'),
+            'no_hp' => '089506014176',
+            'created_at' => date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
     }
 }

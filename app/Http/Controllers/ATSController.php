@@ -500,4 +500,55 @@ class ATSController extends Controller
         $user = DB::table('users')->where('id',$data->user_id)->first();
         return view ('free-text-message-detail',['data'=>$data,'user'=>$user]);
     }
+    public function delete($id)
+    {
+        if(Auth::user()->role == "admin")
+        {
+            $message = DB::table('messages')->where('id',$id)->first();
+            $aftn = DB::table('aftn_header')->where('message_id',$id)->first();
+            $add = DB::table('additional_informations')->where('message_id',$id)->first();
+
+            if($message->type == "DLA"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                return redirect()->route('dlaMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+            elseif($message->type == "FPL"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                DB::table('additional_informations')->where('message_id',$id)->delete();
+                return redirect()->route('fplMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+            elseif($message->type == "CHG"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                return redirect()->route('chgMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+            elseif($message->type == "CNL"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                return redirect()->route('cnlMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+            elseif($message->type == "DEP"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                return redirect()->route('depMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+            elseif($message->type == "ARR"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                return redirect()->route('arrMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+            elseif($message->type == "FREETEXT"){
+                DB::table('messages')->where('id',$id)->delete();
+                DB::table('aftn_header')->where('message_id',$id)->delete();
+                return redirect()->route('freetextMessages')->with('berhasil','Pesan berhasil dihapus');
+            }
+
+            else{
+                return abort(404);
+            }
+        }
+        return abort(403, 'Unauthorized action.');
+    }
 }

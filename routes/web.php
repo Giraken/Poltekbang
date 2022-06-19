@@ -49,6 +49,7 @@ Route::get('/dla-message-detail/{id}', [App\Http\Controllers\ATSController::clas
 Route::get('/dep-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'depDetail'])->name('depDetail');
 Route::get('/cnl-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'cnlDetail'])->name('cnlDetail');
 Route::get('/freetext-message-detail/{id}', [App\Http\Controllers\ATSController::class, 'freetextDetail'])->name('freetextDetail');
+Route::get('/delete/{id}', [App\Http\Controllers\ATSController::class, 'delete'])->name('delete');
 /*
 |--------------------------------------------------------------------------
 | Messages

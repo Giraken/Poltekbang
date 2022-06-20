@@ -97,7 +97,7 @@
         <div class="container">
             <div class="head">
                 {{-- <img src="img/unnamed.jpg" alt="Logo"> --}}
-                <img src="<?php echo $pic ?>" alt="Logo">
+                {{-- <img src="<?php echo $pic ?>" alt="Logo"> --}}
                 {{-- <img src="{{ URL::asset('img/unnamed.jpg')}}" alt="logo"> --}}
                 {{-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logo.png'))) }}"> --}}
                 <h2>Flight Plan</h2>

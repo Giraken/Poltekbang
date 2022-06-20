@@ -74,10 +74,10 @@ class IncomingController extends Controller
 
     public function pdf($id)
     {
-        $path = base_path('public/img/unnamed.jpg');
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $path = base_path('public/img/unnamed.jpg');
+        // $type = pathinfo($path, PATHINFO_EXTENSION);
+        // $data = file_get_contents($path);
+        // $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
         $message = DB::table('messages')->where('id',$id)->first();
         $aftn = DB::table('aftn_header')->where('message_id',$id)->first();
@@ -85,20 +85,22 @@ class IncomingController extends Controller
         // ->join('aftn_header','aftn_header.message_id','=','messages.id')
         // ->leftJoin('additional_informations','additional_informations.message_id','=','messages.id')
         // ->where('messages.id',$id)->get();
-        return view('pdf',compact('pic','message','aftn','add'));
+        return view('pdf',compact('message','aftn','add'));
+        // return view('pdf',compact('pic','message','aftn','add'));
     }
     public function downloadPDF($id)
     {
-        $path = base_path('public/img/unnamed.jpg');
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        // $path = base_path('public/img/unnamed.jpg');
+        // $type = pathinfo($path, PATHINFO_EXTENSION);
+        // $data = file_get_contents($path);
+        // $pic = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
         $message = DB::table('messages')->where('id',$id)->first();
         $aftn = DB::table('aftn_header')->where('message_id',$id)->first();
         $add = DB::table('additional_informations')->where('message_id',$id)->first();
         // $pdf = PDF::loadView('pdf')->setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true, 'defaultFont' => 'sans-serif']);
-        $pdf = PDF::loadView('pdf',compact('pic','message','aftn','add'))->setOptions(['defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('pdf',compact('message','aftn','add'))->setOptions(['defaultFont' => 'sans-serif']);
+        // $pdf = PDF::loadView('pdf',compact('pic','message','aftn','add'))->setOptions(['defaultFont' => 'sans-serif']);
         //dump($pdf);
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream('invoice.pdf');

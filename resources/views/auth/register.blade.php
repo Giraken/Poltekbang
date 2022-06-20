@@ -110,9 +110,8 @@
                             {{Auth::user()->name}}
                         </a>
                         <ul class="dropdown-menu text-center dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/profil">Settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                            <li><a class="dropdown-item" href="/profil">Settings</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{Route('logout')}}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">Logout</a></li>
@@ -238,19 +237,13 @@
                                                 </div>
                                             </div>
 
-                                            {{-- <div class="row mb-0">
+                                            <div class="row mb-0">
                                                 <div class="col-md-6 offset-md-4 d-flex flex-column gap-3 justify-content-center align-items-center">
                                                     <button type="submit" class="btn btn" style="width: 175px; background-color:#FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);font-weight: 600;border-radius:12px">
                                                         {{ __('Create Account') }}
                                                     </button>
-                                                    <div class="text-center" style="">
-                                                        <p style="font-weight: 600;">Have Account?<br><a class="btn btn-link" href="{{ route('login') }}" style="margin-top: -10px; font-weight: 600">
-                                                            {{ __('Login Now') }}
-                                                        </a></p>
-
-                                                    </div>
                                                 </div>
-                                            </div> --}}
+                                            </div>
 
                                         </div>
                                     </div>

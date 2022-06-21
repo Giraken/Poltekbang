@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -40,21 +43,31 @@ class RegisterController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        // $this->guard()->login($user);
+        return $this->redirectTo();
+    }
     /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+     protected function validator(array $data)
     {
+        if(Auth::user()->role == 'admin')
+        {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255','unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'no_hp' => ['required', 'numeric', 'min:8','digits_between:6,20'],
         ]);
+        }
+        return abort(401);
     }
 
     /**
@@ -71,5 +84,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'no_hp' => $data['no_hp'],
         ]);
+    }
+    protected function redirectTo()
+    {
+        return redirect()->route('register')->with('berhasil','User berhasil didaftarkan');
     }
 }

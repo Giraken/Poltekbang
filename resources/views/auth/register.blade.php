@@ -130,6 +130,8 @@
                     <div class="col-md-8">
                         <div class="card border-0 shadow" style="border-radius: 13px;">
                             <div class="card-body">
+                                @if(session()->has('berhasil'))
+                                <div class="alert alert-success la la-thumbs-up"> {{session()->get('berhasil')}} </div> @endif
                                 <form method="POST" action="{{ route('register') }}" style="font-family: 'Poppins', sans-serif;">
                                     @csrf
                                     <div class="row align-items-center p-3">
